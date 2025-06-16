@@ -1,0 +1,146 @@
+import os
+import arcpy
+import netCDF4
+
+# Set base directory
+base_dir = r"E:\Work\rt_Night"
+
+# Define output path
+output_path = os.path.join(base_dir, "Cairo-rt-Night")
+if not os.path.exists(output_path):
+    os.makedirs(output_path)
+
+# Define the NetCDF files to process with their corresponding variables and dimensions
+netcdf_files_info = [
+    {"file": "rt3-clipped-Cairo.nc", "variable": "rt3-clipped", "x_dimension": "lon", "y_dimension": "lat"},
+    {"file": "rt4-clipped-Cairo.nc", "variable": "rt4-clipped", "x_dimension": "lon", "y_dimension": "lat"},
+    {"file": "rt5-clipped-Cairo.nc", "variable": "rt5-clipped", "x_dimension": "lon", "y_dimension": "lat"},
+    {"file": "rt6-clipped-Cairo.nc", "variable": "rt6-clipped", "x_dimension": "lon", "y_dimension": "lat"},
+    {"file": "rt7-clipped-Cairo.nc", "variable": "rt7-clipped", "x_dimension": "lon", "y_dimension": "lat"},
+    {"file": "rt8-clipped-Cairo.nc", "variable": "rt8-clipped", "x_dimension": "lon", "y_dimension": "lat"}
+]
+
+# RGB color codes for categories
+rgb_codes = {
+    1: (255, 0, 0),  # Category 1
+    2: (255, 69, 0),   # Category 2
+    3: (255, 99, 71),  # Category 3
+    4: (255, 140, 0),  # Category 4
+    5: (255, 165, 0),   # Category 5
+    6: (0, 191, 255),    # Category 6
+    7: (30, 144, 255),  # Category 7
+    8: (70, 130, 180),    # Category 8
+    9: (0, 0, 255),     # Category 9
+    10: (0, 0, 205)     # Category 10
+}
+
+# Function to check data in NetCDF files
+def check_netcdf_data(nc_file, variable_name):
+    with netCDF4.Dataset(nc_file, 'r') as nc:
+        if variable_name not in nc.variables:
+            print(f"Variable {variable_name} not found in {nc_file}. Available variables: {list(nc.variables.keys())}")
+            return False
+        variable_data = nc.variables[variable_name][:]
+        print(f"Data check for {nc_file}:")
+        print(f"Variable {variable_name} data range: Min={variable_data.min()}, Max={variable_data.max()}")
+        return True
+
+# Function to reclassify raster based on categories
+def reclassify_raster(input_raster, reclassified_raster):
+    remap = arcpy.sa.RemapRange([
+        [-0.0301006, 0.00242586, 10],
+        [0.00242586, 0.03495232, 9],
+        [0.03495232, 0.06747878, 8],
+        [0.06747878, 0.10000524, 7],
+        [0.10000524, 0.1325317, 6],
+        [0.1325317, 0.16505816, 5],
+        [0.16505816, 0.19758462, 4],
+        [0.19758462, 0.23011108, 3],
+        [0.23011108, 0.26263754, 2],
+        [0.26263754, 0.295164, 1]
+    ])
+    reclassified = arcpy.sa.Reclassify(input_raster, "Value", remap)
+    reclassified.save(reclassified_raster)
+    return reclassified_raster
+
+# Process each NetCDF file
+for nc_info in netcdf_files_info:
+    nc_file = nc_info["file"]
+    variable_name = nc_info["variable"]
+    x_dimension = nc_info["x_dimension"]
+    y_dimension = nc_info["y_dimension"]
+
+    nc_path = os.path.join(base_dir, nc_file)
+
+    if not os.path.exists(nc_path):
+        print(f"File does not exist: {nc_path}")
+        continue
+
+    # Check data in NetCDF file
+    if not check_netcdf_data(nc_path, variable_name):
+        continue
+
+    # Define the output layer name
+    layer_name = nc_file.replace('.nc', '_layer').replace("\\", "_")
+
+    # Create NetCDF raster layer
+    try:
+        arcpy.md.MakeNetCDFRasterLayer(
+            nc_path, 
+            variable=variable_name, 
+            x_dimension=x_dimension, 
+            y_dimension=y_dimension, 
+            out_raster_layer=layer_name
+        )
+        print(f"Created raster layer: {layer_name}")
+    except arcpy.ExecuteError as e:
+        print(f"Failed to create raster layer for {nc_file}. Error: {e}")
+        continue
+
+    # Save the raster as single-band integer raster
+    intermediate_raster_path = os.path.join(output_path, f"intermediate_{layer_name}.tif")
+    output_raster_path = os.path.join(output_path, f"SAT_raster_{layer_name}.tif")
+    try:
+        arcpy.management.CopyRaster(layer_name, intermediate_raster_path)
+
+        # Debugging: Check if intermediate raster contains data
+        raster = arcpy.Raster(intermediate_raster_path)
+        min_value = raster.minimum
+        max_value = raster.maximum
+        print(f"Intermediate raster {intermediate_raster_path} - Min: {min_value}, Max: {max_value}")
+
+        # Reclassify raster based on categories
+        reclassified_raster_path = os.path.join(output_path, f"reclassified_{layer_name}.tif")
+        reclassify_raster(intermediate_raster_path, reclassified_raster_path)
+
+        # Debugging: Check if reclassified raster contains data
+        raster = arcpy.Raster(reclassified_raster_path)
+        min_value = raster.minimum
+        max_value = raster.maximum
+        print(f"Reclassified raster {reclassified_raster_path} - Min: {min_value}, Max: {max_value}")
+
+        # Add raster attribute table
+        arcpy.management.BuildRasterAttributeTable(reclassified_raster_path, "Overwrite")
+
+        # Add color columns to the raster attribute table
+        arcpy.management.AddField(reclassified_raster_path, "Red", "SHORT")
+        arcpy.management.AddField(reclassified_raster_path, "Green", "SHORT")
+        arcpy.management.AddField(reclassified_raster_path, "Blue", "SHORT")
+
+        # Populate the raster attribute table with color values
+        print("Populating raster attribute table with colors...")
+        with arcpy.da.UpdateCursor(reclassified_raster_path, ["Value", "Red", "Green", "Blue"]) as cursor:
+            for row in cursor:
+                value = row[0]
+                if value in rgb_codes:
+                    row[1], row[2], row[3] = rgb_codes[value]
+                    print(f"Assigning Value: {value}, Red: {row[1]}, Green: {row[2]}, Blue: {row[3]}")
+                else:
+                    print(f"Value {value} not found in rgb_codes.")
+                cursor.updateRow(row)
+
+        print(f"Processed and saved: {reclassified_raster_path}")
+    except arcpy.ExecuteError as e:
+        print(f"Error processing raster for {layer_name}: {e}")
+
+print("Processing completed.")
