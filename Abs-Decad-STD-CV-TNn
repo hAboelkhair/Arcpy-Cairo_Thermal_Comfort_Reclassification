@@ -1,0 +1,88 @@
+##################################################      
+############### Directory #######################    
+#mkdir C:/OpenGrADS-old/Contents/Resources/SampleDatasets/Abs-TNn/DecAve    
+#mkdir C:/OpenGrADS-old/Contents/Resources/SampleDatasets/Abs-TNn/STD    
+#mkdir C:/OpenGrADS-old/Contents/Resources/SampleDatasets/Abs-TNn/COV     
+#export DIR=C:/OpenGrADS-old/Contents/Resources/SampleDatasets/Abs-TNn/DecAve    
+#export DIR1=C:/OpenGrADS-old/Contents/Resources/SampleDatasets/Abs-TNn/STD     
+#export DIR2=C:/OpenGrADS-old/Contents/Resources/SampleDatasets/Abs-TNn/COV
+#export DIR3=C:/OpenGrADS-old/Contents/Resources/SampleDatasets/Abs-TNn     
+#export DIR4=C:/OpenGrADS-old/Contents/Resources/SampleDatasets/CDO-11-Indices-33     
+############################################################# 
+##############  Calculate Absolute Values for all years  ####
+#cdo abs C:/OpenGrADS-old/Contents/Resources/SampleDatasets/Abs-TNn/DecAve4/ERA5_TNn.nc C:/OpenGrADS-old/Contents/Resources/SampleDatasets/Abs-TNn/DecAve3/Abs-EAR5_TNn.nc
+#cdo abs C:/OpenGrADS-old/Contents/Resources/SampleDatasets/Abs-TNn/DecAve4/CFSR_TNn.nc C:/OpenGrADS-old/Contents/Resources/SampleDatasets/Abs-TNn/DecAve3/Abs-CFSR_TNn.nc
+#cdo abs C:/OpenGrADS-old/Contents/Resources/SampleDatasets/Abs-TNn/DecAve4/Power_TNn.nc C:/OpenGrADS-old/Contents/Resources/SampleDatasets/Abs-TNn/DecAve3/Abs-Power_TNn.nc
+#############################################################      
+##############    The Decadal Mean     ################ 
+###################   Abs-ERA5__TNn    #############
+cdo -timmean -selyear,1981/1990 C:/OpenGrADS-old/Contents/Resources/SampleDatasets/Abs-TNn/Abs-ERA5_TNn.nc C:/OpenGrADS-old/Contents/Resources/SampleDatasets/Abs-TNn/DecAve/Abs-ERA5_TNn_decade1981-1990.nc  
+cdo -timmean -selyear,1991/2000 C:/OpenGrADS-old/Contents/Resources/SampleDatasets/Abs-TNn/Abs-ERA5_TNn.nc C:/OpenGrADS-old/Contents/Resources/SampleDatasets/Abs-TNn/DecAve/Abs-ERA5_TNn_decade1991-2000.nc  
+cdo -timmean -selyear,2001/2010 C:/OpenGrADS-old/Contents/Resources/SampleDatasets/Abs-TNn/Abs-ERA5_TNn.nc C:/OpenGrADS-old/Contents/Resources/SampleDatasets/Abs-TNn/DecAve/Abs-ERA5_TNn_decade2001-2010.nc  
+cdo -timmean -selyear,2011/2019 C:/OpenGrADS-old/Contents/Resources/SampleDatasets/Abs-TNn/Abs-ERA5_TNn.nc C:/OpenGrADS-old/Contents/Resources/SampleDatasets/Abs-TNn/DecAve/Abs-ERA5_TNn_decade2011-2019.nc  
+###################   Abs-Power_TNn    #############      
+cdo -timmean -selyear,1981/1990 C:/OpenGrADS-old/Contents/Resources/SampleDatasets/Abs-TNn/Abs-Power_TNn.nc C:/OpenGrADS-old/Contents/Resources/SampleDatasets/Abs-TNn/DecAve/Abs-Power_TNn_decade1981-1990.nc  
+cdo -timmean -selyear,1991/2000 C:/OpenGrADS-old/Contents/Resources/SampleDatasets/Abs-TNn/Abs-Power_TNn.nc C:/OpenGrADS-old/Contents/Resources/SampleDatasets/Abs-TNn/DecAve/Abs-Power_TNn_decade1991-2000.nc  
+cdo -timmean -selyear,2001/2010 C:/OpenGrADS-old/Contents/Resources/SampleDatasets/Abs-TNn/Abs-Power_TNn.nc C:/OpenGrADS-old/Contents/Resources/SampleDatasets/Abs-TNn/DecAve/Abs-Power_TNn_decade2001-2010.nc  
+cdo -timmean -selyear,2011/2019 C:/OpenGrADS-old/Contents/Resources/SampleDatasets/Abs-TNn/Abs-Power_TNn.nc C:/OpenGrADS-old/Contents/Resources/SampleDatasets/Abs-TNn/DecAve/Abs-Power_TNn_decade2011-2019.nc  
+###################   Abs-CFSR_TNn   c#############      
+cdo -timmean -selyear,1981/1990 C:/OpenGrADS-old/Contents/Resources/SampleDatasets/Abs-TNn/Abs-CFSR_TNn.nc C:/OpenGrADS-old/Contents/Resources/SampleDatasets/Abs-TNn/DecAve/Abs-CFSR_TNn_decade1981-1990.nc  
+cdo -timmean -selyear,1991/2000 C:/OpenGrADS-old/Contents/Resources/SampleDatasets/Abs-TNn/Abs-CFSR_TNn.nc C:/OpenGrADS-old/Contents/Resources/SampleDatasets/Abs-TNn/DecAve/Abs-CFSR_TNn_decade1991-2000.nc  
+cdo -timmean -selyear,2001/2010 C:/OpenGrADS-old/Contents/Resources/SampleDatasets/Abs-TNn/Abs-CFSR_TNn.nc C:/OpenGrADS-old/Contents/Resources/SampleDatasets/Abs-TNn/DecAve/Abs-CFSR_TNn_decade2001-2010.nc  
+cdo -timmean -selyear,2011/2019 C:/OpenGrADS-old/Contents/Resources/SampleDatasets/Abs-TNn/Abs-CFSR_TNn.nc C:/OpenGrADS-old/Contents/Resources/SampleDatasets/Abs-TNn/DecAve/Abs-CFSR_TNn_decade2011-2019.nc  
+#############################################################      
+#############################################################      
+############## The standard deviation (SD) ################ 
+###################    Abs-ERA5__TNn    ############# 
+cdo -timstd -selyear,1981/1990 C:/OpenGrADS-old/Contents/Resources/SampleDatasets/Abs-TNn/Abs-ERA5_TNn.nc C:/OpenGrADS-old/Contents/Resources/SampleDatasets/Abs-TNn/STD/Abs-ERA5_TNn_STD1981-1990.nc
+cdo -timstd -selyear,1991/2000 C:/OpenGrADS-old/Contents/Resources/SampleDatasets/Abs-TNn/Abs-ERA5_TNn.nc C:/OpenGrADS-old/Contents/Resources/SampleDatasets/Abs-TNn/STD/Abs-ERA5_TNn_STD1991-2000.nc
+cdo -timstd -selyear,2001/2010 C:/OpenGrADS-old/Contents/Resources/SampleDatasets/Abs-TNn/Abs-ERA5_TNn.nc C:/OpenGrADS-old/Contents/Resources/SampleDatasets/Abs-TNn/STD/Abs-ERA5_TNn_STD2001-2010.nc
+cdo -timstd -selyear,2011/2019 C:/OpenGrADS-old/Contents/Resources/SampleDatasets/Abs-TNn/Abs-ERA5_TNn.nc C:/OpenGrADS-old/Contents/Resources/SampleDatasets/Abs-TNn/STD/Abs-ERA5_TNn_STD2011-2019.nc
+###################  Abs-Power_TNn   #############      
+cdo -timstd -selyear,1981/1990 C:/OpenGrADS-old/Contents/Resources/SampleDatasets/Abs-TNn/Abs-Power_TNn.nc C:/OpenGrADS-old/Contents/Resources/SampleDatasets/Abs-TNn/STD/Abs-Power_TNn_STD1981-1990.nc
+cdo -timstd -selyear,1991/2000 C:/OpenGrADS-old/Contents/Resources/SampleDatasets/Abs-TNn/Abs-Power_TNn.nc C:/OpenGrADS-old/Contents/Resources/SampleDatasets/Abs-TNn/STD/Abs-Power_TNn_STD1991-2000.nc
+cdo -timstd -selyear,2001/2010 C:/OpenGrADS-old/Contents/Resources/SampleDatasets/Abs-TNn/Abs-Power_TNn.nc C:/OpenGrADS-old/Contents/Resources/SampleDatasets/Abs-TNn/STD/Abs-Power_TNn_STD2001-2010.nc
+cdo -timstd -selyear,2011/2019 C:/OpenGrADS-old/Contents/Resources/SampleDatasets/Abs-TNn/Abs-Power_TNn.nc C:/OpenGrADS-old/Contents/Resources/SampleDatasets/Abs-TNn/STD/Abs-Power_TNn_STD2011-2019.nc
+###################    Abs-CFSR_TNn     #############      
+cdo -timstd -selyear,1981/1990 C:/OpenGrADS-old/Contents/Resources/SampleDatasets/Abs-TNn/Abs-CFSR_TNn.nc C:/OpenGrADS-old/Contents/Resources/SampleDatasets/Abs-TNn/STD/Abs-CFSR_TNn_STD1981-1990.nc
+cdo -timstd -selyear,1991/2000 C:/OpenGrADS-old/Contents/Resources/SampleDatasets/Abs-TNn/Abs-CFSR_TNn.nc C:/OpenGrADS-old/Contents/Resources/SampleDatasets/Abs-TNn/STD/Abs-CFSR_TNn_STD1991-2000.nc
+cdo -timstd -selyear,2001/2010 C:/OpenGrADS-old/Contents/Resources/SampleDatasets/Abs-TNn/Abs-CFSR_TNn.nc C:/OpenGrADS-old/Contents/Resources/SampleDatasets/Abs-TNn/STD/Abs-CFSR_TNn_STD2001-2010.nc
+cdo -timstd -selyear,2011/2019 C:/OpenGrADS-old/Contents/Resources/SampleDatasets/Abs-TNn/Abs-CFSR_TNn.nc C:/OpenGrADS-old/Contents/Resources/SampleDatasets/Abs-TNn/STD/Abs-CFSR_TNn_STD2011-2019.nc
+#############################################################      
+#############################################################      
+########### The coefficient of variation (CV) #############
+###################     Abs-STD & Abs-Decadal-ERA5_TNn    #############      
+cdo div C:/OpenGrADS-old/Contents/Resources/SampleDatasets/Abs-TNn/STD/Abs-ERA5_TNn_STD1981-1990.nc C:/OpenGrADS-old/Contents/Resources/SampleDatasets/Abs-TNn/DecAve/Abs-ERA5_TNn_decade1981-1990.nc C:/OpenGrADS-old/Contents/Resources/SampleDatasets/Abs-TNn/COV/Abs-ERA5_TNn_CV1981-1990.nc  
+cdo div C:/OpenGrADS-old/Contents/Resources/SampleDatasets/Abs-TNn/STD/Abs-ERA5_TNn_STD1991-2000.nc C:/OpenGrADS-old/Contents/Resources/SampleDatasets/Abs-TNn/DecAve/Abs-ERA5_TNn_decade1991-2000.nc C:/OpenGrADS-old/Contents/Resources/SampleDatasets/Abs-TNn/COV/Abs-ERA5_TNn_CV1991-2000.nc  
+cdo div C:/OpenGrADS-old/Contents/Resources/SampleDatasets/Abs-TNn/STD/Abs-ERA5_TNn_STD2001-2010.nc C:/OpenGrADS-old/Contents/Resources/SampleDatasets/Abs-TNn/DecAve/Abs-ERA5_TNn_decade2001-2010.nc C:/OpenGrADS-old/Contents/Resources/SampleDatasets/Abs-TNn/COV/Abs-ERA5_TNn_CV2001-2010.nc  
+cdo div C:/OpenGrADS-old/Contents/Resources/SampleDatasets/Abs-TNn/STD/Abs-ERA5_TNn_STD2011-2019.nc C:/OpenGrADS-old/Contents/Resources/SampleDatasets/Abs-TNn/DecAve/Abs-ERA5_TNn_decade2011-2019.nc C:/OpenGrADS-old/Contents/Resources/SampleDatasets/Abs-TNn/COV/Abs-ERA5_TNn_CV2011-2019.nc  
+###################   Abs-STD & Abs-Decadal-Power_TNn    #############      
+cdo div C:/OpenGrADS-old/Contents/Resources/SampleDatasets/Abs-TNn/STD/Abs-Power_TNn_STD1981-1990.nc C:/OpenGrADS-old/Contents/Resources/SampleDatasets/Abs-TNn/DecAve/Abs-Power_TNn_decade1981-1990.nc C:/OpenGrADS-old/Contents/Resources/SampleDatasets/Abs-TNn/COV/Abs-Power_TNn_CV1981-1990.nc  
+cdo div C:/OpenGrADS-old/Contents/Resources/SampleDatasets/Abs-TNn/STD/Abs-Power_TNn_STD1991-2000.nc C:/OpenGrADS-old/Contents/Resources/SampleDatasets/Abs-TNn/DecAve/Abs-Power_TNn_decade1991-2000.nc C:/OpenGrADS-old/Contents/Resources/SampleDatasets/Abs-TNn/COV/Abs-Power_TNn_CV1991-2000.nc  
+cdo div C:/OpenGrADS-old/Contents/Resources/SampleDatasets/Abs-TNn/STD/Abs-Power_TNn_STD2001-2010.nc C:/OpenGrADS-old/Contents/Resources/SampleDatasets/Abs-TNn/DecAve/Abs-Power_TNn_decade2001-2010.nc C:/OpenGrADS-old/Contents/Resources/SampleDatasets/Abs-TNn/COV/Abs-Power_TNn_CV2001-2010.nc  
+cdo div C:/OpenGrADS-old/Contents/Resources/SampleDatasets/Abs-TNn/STD/Abs-Power_TNn_STD2011-2019.nc C:/OpenGrADS-old/Contents/Resources/SampleDatasets/Abs-TNn/DecAve/Abs-Power_TNn_decade2011-2019.nc C:/OpenGrADS-old/Contents/Resources/SampleDatasets/Abs-TNn/COV/Abs-Power_TNn_CV2011-2019.nc
+###################   Abs-STD & Abs-Decadal-CFSR_TNn     #############      
+cdo div C:/OpenGrADS-old/Contents/Resources/SampleDatasets/Abs-TNn/STD/Abs-CFSR_TNn_STD1981-1990.nc C:/OpenGrADS-old/Contents/Resources/SampleDatasets/Abs-TNn/DecAve/Abs-CFSR_TNn_decade1981-1990.nc C:/OpenGrADS-old/Contents/Resources/SampleDatasets/Abs-TNn/COV/Abs-CFSR_TNn_CV1981-1990.nc  
+cdo div C:/OpenGrADS-old/Contents/Resources/SampleDatasets/Abs-TNn/STD/Abs-CFSR_TNn_STD1991-2000.nc C:/OpenGrADS-old/Contents/Resources/SampleDatasets/Abs-TNn/DecAve/Abs-CFSR_TNn_decade1991-2000.nc C:/OpenGrADS-old/Contents/Resources/SampleDatasets/Abs-TNn/COV/Abs-CFSR_TNn_CV1991-2000.nc  
+cdo div C:/OpenGrADS-old/Contents/Resources/SampleDatasets/Abs-TNn/STD/Abs-CFSR_TNn_STD2001-2010.nc C:/OpenGrADS-old/Contents/Resources/SampleDatasets/Abs-TNn/DecAve/Abs-CFSR_TNn_decade2001-2010.nc C:/OpenGrADS-old/Contents/Resources/SampleDatasets/Abs-TNn/COV/Abs-CFSR_TNn_CV2001-2010.nc  
+cdo div C:/OpenGrADS-old/Contents/Resources/SampleDatasets/Abs-TNn/STD/Abs-CFSR_TNn_STD2011-2019.nc C:/OpenGrADS-old/Contents/Resources/SampleDatasets/Abs-TNn/DecAve/Abs-CFSR_TNn_decade2011-2019.nc C:/OpenGrADS-old/Contents/Resources/SampleDatasets/Abs-TNn/COV/Abs-CFSR_TNn_CV2011-2019.nc  
+###############################################################################################################################   
+#############################################################      
+#############################################################      
+########### The coefficient of variation (CV) #############
+###################    Origin STD & Abs-Decadal-ERA5_TNn    #############      
+cdo div C:/OpenGrADS-old/Contents/Resources/SampleDatasets/Abs-TNn/origin-STD/ERA5_TNn_STD1981-1990.nc C:/OpenGrADS-old/Contents/Resources/SampleDatasets/Abs-TNn/DecAve/Abs-ERA5_TNn_decade1981-1990.nc C:/OpenGrADS-old/Contents/Resources/SampleDatasets/Abs-TNn/COV1/Abs-ERA5_TNn_CV1981-1990.nc  
+cdo div C:/OpenGrADS-old/Contents/Resources/SampleDatasets/Abs-TNn/origin-STD/ERA5_TNn_STD1991-2000.nc C:/OpenGrADS-old/Contents/Resources/SampleDatasets/Abs-TNn/DecAve/Abs-ERA5_TNn_decade1991-2000.nc C:/OpenGrADS-old/Contents/Resources/SampleDatasets/Abs-TNn/COV1/Abs-ERA5_TNn_CV1991-2000.nc  
+cdo div C:/OpenGrADS-old/Contents/Resources/SampleDatasets/Abs-TNn/origin-STD/ERA5_TNn_STD2001-2010.nc C:/OpenGrADS-old/Contents/Resources/SampleDatasets/Abs-TNn/DecAve/Abs-ERA5_TNn_decade2001-2010.nc C:/OpenGrADS-old/Contents/Resources/SampleDatasets/Abs-TNn/COV1/Abs-ERA5_TNn_CV2001-2010.nc  
+cdo div C:/OpenGrADS-old/Contents/Resources/SampleDatasets/Abs-TNn/origin-STD/ERA5_TNn_STD2011-2019.nc C:/OpenGrADS-old/Contents/Resources/SampleDatasets/Abs-TNn/DecAve/Abs-ERA5_TNn_decade2011-2019.nc C:/OpenGrADS-old/Contents/Resources/SampleDatasets/Abs-TNn/COV1/Abs-ERA5_TNn_CV2011-2019.nc  
+###################   Origin STD & Abs-Decadal-Power_TNn    #############      
+cdo div C:/OpenGrADS-old/Contents/Resources/SampleDatasets/Abs-TNn/origin-STD/Power_TNn_STD1981-1990.nc C:/OpenGrADS-old/Contents/Resources/SampleDatasets/Abs-TNn/DecAve/Abs-Power_TNn_decade1981-1990.nc C:/OpenGrADS-old/Contents/Resources/SampleDatasets/Abs-TNn/COV1/Abs-Power_TNn_CV1981-1990.nc  
+cdo div C:/OpenGrADS-old/Contents/Resources/SampleDatasets/Abs-TNn/origin-STD/Power_TNn_STD1991-2000.nc C:/OpenGrADS-old/Contents/Resources/SampleDatasets/Abs-TNn/DecAve/Abs-Power_TNn_decade1991-2000.nc C:/OpenGrADS-old/Contents/Resources/SampleDatasets/Abs-TNn/COV1/Abs-Power_TNn_CV1991-2000.nc  
+cdo div C:/OpenGrADS-old/Contents/Resources/SampleDatasets/Abs-TNn/origin-STD/Power_TNn_STD2001-2010.nc C:/OpenGrADS-old/Contents/Resources/SampleDatasets/Abs-TNn/DecAve/Abs-Power_TNn_decade2001-2010.nc C:/OpenGrADS-old/Contents/Resources/SampleDatasets/Abs-TNn/COV1/Abs-Power_TNn_CV2001-2010.nc  
+cdo div C:/OpenGrADS-old/Contents/Resources/SampleDatasets/Abs-TNn/origin-STD/Power_TNn_STD2011-2019.nc C:/OpenGrADS-old/Contents/Resources/SampleDatasets/Abs-TNn/DecAve/Abs-Power_TNn_decade2011-2019.nc C:/OpenGrADS-old/Contents/Resources/SampleDatasets/Abs-TNn/COV1/Abs-Power_TNn_CV2011-2019.nc
+###################   Origin STD & Abs-Decadal-CFSR_TNn     #############      
+cdo div C:/OpenGrADS-old/Contents/Resources/SampleDatasets/Abs-TNn/origin-STD/CFSR_TNn_STD1981-1990.nc C:/OpenGrADS-old/Contents/Resources/SampleDatasets/Abs-TNn/DecAve/Abs-CFSR_TNn_decade1981-1990.nc C:/OpenGrADS-old/Contents/Resources/SampleDatasets/Abs-TNn/COV1/Abs-CFSR_TNn_CV1981-1990.nc  
+cdo div C:/OpenGrADS-old/Contents/Resources/SampleDatasets/Abs-TNn/origin-STD/CFSR_TNn_STD1991-2000.nc C:/OpenGrADS-old/Contents/Resources/SampleDatasets/Abs-TNn/DecAve/Abs-CFSR_TNn_decade1991-2000.nc C:/OpenGrADS-old/Contents/Resources/SampleDatasets/Abs-TNn/COV1/Abs-CFSR_TNn_CV1991-2000.nc  
+cdo div C:/OpenGrADS-old/Contents/Resources/SampleDatasets/Abs-TNn/origin-STD/CFSR_TNn_STD2001-2010.nc C:/OpenGrADS-old/Contents/Resources/SampleDatasets/Abs-TNn/DecAve/Abs-CFSR_TNn_decade2001-2010.nc C:/OpenGrADS-old/Contents/Resources/SampleDatasets/Abs-TNn/COV1/Abs-CFSR_TNn_CV2001-2010.nc  
+cdo div C:/OpenGrADS-old/Contents/Resources/SampleDatasets/Abs-TNn/origin-STD/CFSR_TNn_STD2011-2019.nc C:/OpenGrADS-old/Contents/Resources/SampleDatasets/Abs-TNn/DecAve/Abs-CFSR_TNn_decade2011-2019.nc C:/OpenGrADS-old/Contents/Resources/SampleDatasets/Abs-TNn/COV1/Abs-CFSR_TNn_CV2011-2019.nc  
+###############################################################################################################################   
