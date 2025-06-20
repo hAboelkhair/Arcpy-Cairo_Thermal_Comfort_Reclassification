@@ -1,0 +1,141 @@
+##################################################
+###############  Directory #######################
+mkdir C:/cygwin64/home/Dr-Mostafa/Temp_Anomalies
+mkdir C:/cygwin64/home/Dr-Mostafa/Climatology1981-2010
+export DIR=C:/cygwin64/home/Dr-Mostafa/Temp_Anomalies
+export DIR1=C:/cygwin64/home/Dr-Mostafa/CDO-11-Indices-33
+export DIR2=C:/cygwin64/home/Dr-Mostafa/Climatology1981-2010
+#################################################
+###################CFSR_CSDI1981-2019#############
+cdo timmean -selyear,1981/2010 $DIR1/CFSR_CSDI1981-2019.nc $DIR2/CFSR_CSDI-climatology-1981-2010.nc
+cdo sub $DIR1/CFSR_CSDI1981-2019.nc $DIR2/CFSR_CSDI-climatology-1981-2010.nc CFSR_CSDI-Anomaly.nc
+cdo setreftime,1981-01-01,00:00:00,hours CFSR_CSDI-Anomaly.nc $DIR/CFSR_CSDI-Anomaly-final.nc
+###################CFSR_SU1981-2019.nc#############
+cdo timmean -selyear,1981/2010 $DIR1/CFSR_SU1981-2019.nc $DIR2/CFSR_SU-climatology-1981-2010.nc
+cdo sub $DIR1/CFSR_SU1981-2019.nc $DIR2/CFSR_SU-climatology-1981-2010.nc CFSR_SU-Anomaly.nc
+cdo setreftime,1981-01-01,00:00:00,hours CFSR_SU-Anomaly.nc $DIR/CFSR_SU-Anomaly-final.nc
+###################CFSR_TN10p1981-2019.nc#############
+cdo timmean -selyear,1981/2010 $DIR1/CFSR_TN10p1981-2019.nc $DIR2/CFSR_TN10p-climatology-1981-2010.nc
+cdo sub $DIR1/CFSR_TN10p1981-2019.nc $DIR2/CFSR_TN10p-climatology-1981-2010.nc CFSR_TN10p-Anomaly.nc
+cdo setreftime,1981-01-01,00:00:00,hours CFSR_TN10p-Anomaly.nc $DIR/CFSR_TN10p-Anomaly-final.nc
+###################CFSR_TN90p1981-2019.nc#############
+cdo timmean -selyear,1981/2010 $DIR1/CFSR_TN90p1981-2019.nc $DIR2/CFSR_TN90p-climatology-1981-2010.nc
+cdo sub $DIR1/CFSR_TN90p1981-2019.nc $DIR2/CFSR_TN90p-climatology-1981-2010.nc CFSR_TN90p-Anomaly.nc
+cdo setreftime,1981-01-01,00:00:00,hours CFSR_TN90p-Anomaly.nc $DIR/CFSR_TN90p-Anomaly-final.nc
+###################CFSR_TNn.nc#############
+cdo timmean -selyear,1981/2010 $DIR1/CFSR_TNn.nc $DIR2/CFSR_TNn-climatology-1981-2010.nc
+cdo sub $DIR1/CFSR_TNn.nc $DIR2/CFSR_TNn-climatology-1981-2010.nc CFSR_TNn-Anomaly.nc
+cdo setreftime,1981-01-01,00:00:00,hours CFSR_TNn-Anomaly.nc $DIR/CFSR_TNn-Anomaly-final.nc
+###################CFSR_TNx.nc#############
+cdo timmean -selyear,1981/2010 $DIR1/CFSR_TNx.nc $DIR2/CFSR_TNx-climatology-1981-2010.nc
+cdo sub $DIR1/CFSR_TNx.nc $DIR2/CFSR_TNx-climatology-1981-2010.nc CFSR_TNx-Anomaly.nc
+cdo setreftime,1981-01-01,00:00:00,hours CFSR_TNx-Anomaly.nc $DIR/CFSR_TNx-Anomaly-final.nc
+###################CFSR_TX10p1981-2019.nc#############
+cdo timmean -selyear,1981/2010 $DIR1/CFSR_TX10p1981-2019.nc $DIR2/CFSR_TX10p-climatology-1981-2010.nc
+cdo sub $DIR1/CFSR_TX10p1981-2019.nc $DIR2/CFSR_TX10p-climatology-1981-2010.nc CFSR_TX10p-Anomaly.nc
+cdo setreftime,1981-01-01,00:00:00,hours CFSR_TX10p-Anomaly.nc $DIR/CFSR_TX10p-Anomaly-final.nc
+###################CFSR_TX90p1981-2019.nc#############
+cdo timmean -selyear,1981/2010 $DIR1/CFSR_TX90p1981-2019.nc $DIR2/CFSR_TX90p-climatology-1981-2010.nc
+cdo sub $DIR1/CFSR_TX90p1981-2019.nc $DIR2/CFSR_TX90p-climatology-1981-2010.nc CFSR_TX90p-Anomaly.nc
+cdo setreftime,1981-01-01,00:00:00,hours CFSR_TX90p-Anomaly.nc $DIR/CFSR_TX90p-Anomaly-final.nc
+###################CFSR_TXn.nc#############
+cdo timmean -selyear,1981/2010 $DIR1/CFSR_TXn.nc $DIR2/CFSR_TXn-climatology-1981-2010.nc
+cdo sub $DIR1/CFSR_TXn.nc $DIR2/CFSR_TXn-climatology-1981-2010.nc CFSR_TXn-Anomaly.nc
+cdo setreftime,1981-01-01,00:00:00,hours CFSR_TXn-Anomaly.nc $DIR/CFSR_TXn-Anomaly-final.nc
+###################CFSR_TXx.nc#############
+cdo timmean -selyear,1981/2010 $DIR1/CFSR_TXx.nc $DIR2/CFSR_TXx-climatology-1981-2010.nc
+cdo sub $DIR1/CFSR_TXx.nc $DIR2/CFSR_TXx-climatology-1981-2010.nc CFSR_TXx-Anomaly.nc
+cdo setreftime,1981-01-01,00:00:00,hours CFSR_TXx-Anomaly.nc $DIR/CFSR_TXx-Anomaly-final.nc $DIR/
+###################CFSR_WSDI1981-2019.nc#############
+cdo timmean -selyear,1981/2010 $DIR1/CFSR_WSDI1981-2019.nc $DIR2/CFSR_WSDI-climatology-1981-2010.nc
+cdo sub $DIR1/CFSR_WSDI1981-2019.nc $DIR2/CFSR_WSDI-climatology-1981-2010.nc CFSR_WSDI-Anomaly.nc
+cdo setreftime,1981-01-01,00:00:00,hours CFSR_WSDI-Anomaly.nc $DIR/CFSR_WSDI-Anomaly-final.nc
+###################ERA5__TNn.nc#############
+cdo timmean -selyear,1981/2010 $DIR1/ERA5__TNn.nc $DIR2/ERA5_TNn-climatology-1981-2010.nc
+cdo sub $DIR1/ERA5__TNn.nc $DIR2/ERA5_TNn-climatology-1981-2010.nc ERA5_TNn-Anomaly.nc
+cdo setreftime,1981-01-01,00:00:00,hours ERA5_TNn-Anomaly.nc $DIR/ERA5_TNn-Anomaly-final.nc
+###################ERA5__TNx.nc#############
+cdo timmean -selyear,1981/2010 $DIR1/ERA5__TNx.nc $DIR2/ERA5_TNx-climatology-1981-2010.nc
+cdo sub $DIR1/ERA5__TNx.nc $DIR2/ERA5_TNx-climatology-1981-2010.nc ERA5_TNx-Anomaly.nc
+cdo setreftime,1981-01-01,00:00:00,hours ERA5_TNx-Anomaly.nc $DIR/ERA5_TNx-Anomaly-final.nc
+###################ERA5_CSDI1981-2019.nc#############
+cdo timmean -selyear,1981/2010 $DIR1/ERA5_CSDI1981-2019.nc $DIR2/ERA5_CSDI-climatology-1981-2010.nc
+cdo sub $DIR1/ERA5_CSDI1981-2019.nc $DIR2/ERA5_CSDI-climatology-1981-2010.nc ERA5_CSDI-Anomaly.nc
+cdo setreftime,1981-01-01,00:00:00,hours ERA5_CSDI-Anomaly.nc $DIR/ERA5_CSDI-Anomaly-final.nc
+###################ERA5_SU1981-2019.nc#############
+cdo timmean -selyear,1981/2010 $DIR1/ERA5_SU1981-2019.nc $DIR2/ERA5_SU-climatology-1981-2010.nc
+cdo sub $DIR1/ERA5_SU1981-2019.nc $DIR2/ERA5_SU-climatology-1981-2010.nc ERA5_SU-Anomaly.nc
+cdo setreftime,1981-01-01,00:00:00,hours ERA5_SU-Anomaly.nc $DIR/ERA5_SU-Anomaly-final.nc
+###################ERA5_TN10p1981-2019.nc#############
+cdo timmean -selyear,1981/2010 $DIR1/ERA5_TN10p1981-2019.nc $DIR2/ERA5_TN10p-climatology-1981-2010.nc
+cdo sub $DIR1/ERA5_TN10p1981-2019.nc $DIR2/ERA5_TN10p-climatology-1981-2010.nc ERA5_TN10p-Anomaly.nc
+cdo setreftime,1981-01-01,00:00:00,hours ERA5_TN10p-Anomaly.nc $DIR/ERA5_TN10p-Anomaly-final.nc
+###################ERA5_TN90p1981-2019.nc#############
+cdo timmean -selyear,1981/2010 $DIR1/ERA5_TN90p1981-2019.nc $DIR2/ERA5_TN90p-climatology-1981-2010.nc
+cdo sub $DIR1/ERA5_TN90p1981-2019.nc $DIR2/ERA5_TN90p-climatology-1981-2010.nc ERA5_TN90p-Anomaly.nc
+cdo setreftime,1981-01-01,00:00:00,hours ERA5_TN90p-Anomaly.nc $DIR/ERA5_TN90p-Anomaly-final.nc
+###################ERA5_TX10p1981-2019.nc#############
+cdo timmean -selyear,1981/2010 $DIR1/ERA5_TX10p1981-2019.nc $DIR2/ERA5_TX10p-climatology-1981-2010.nc
+cdo sub $DIR1/ERA5_TX10p1981-2019.nc $DIR2/ERA5_TX10p-climatology-1981-2010.nc ERA5_TX10p-Anomaly.nc
+cdo setreftime,1981-01-01,00:00:00,hours ERA5_TX10p-Anomaly.nc $DIR/ERA5_TX10p-Anomaly-final.nc
+###################ERA5_TX90p1981-2019.nc#############
+cdo timmean -selyear,1981/2010 $DIR1/ERA5_TX90p1981-2019.nc $DIR2/ERA5_TX90p-climatology-1981-2010.nc
+cdo sub $DIR1/ERA5_TX90p1981-2019.nc $DIR2/ERA5_TX90p-climatology-1981-2010.nc ERA5_TX90p-Anomaly.nc
+cdo setreftime,1981-01-01,00:00:00,hours ERA5_TX90p-Anomaly.nc $DIR/ERA5_TX90p-Anomaly-final.nc
+###################ERA5_TXn.nc#############
+cdo timmean -selyear,1981/2010 $DIR1/ERA5_TXn.nc $DIR2/ERA5_TXn-climatology-1981-2010.nc
+cdo sub $DIR1/ERA5_TXn.nc $DIR2/ERA5_TXn-climatology-1981-2010.nc ERA5_TXn-Anomaly.nc
+cdo setreftime,1981-01-01,00:00:00,hours ERA5_TXn-Anomaly.nc $DIR/ERA5_TXn-Anomaly-final.nc
+###################ERA5_TXx.nc#############
+cdo timmean -selyear,1981/2010 $DIR1/ERA5_TXx.nc $DIR2/ERA5_TXx-climatology-1981-2010.nc
+cdo sub $DIR1/ERA5_TXx.nc $DIR2/ERA5_TXx-climatology-1981-2010.nc ERA5_TXx-Anomaly.nc
+cdo setreftime,1981-01-01,00:00:00,hours ERA5_TXx-Anomaly.nc $DIR/ERA5_TXx-Anomaly-final.nc
+###################ERA5_WSDI1981-2019.nc#############
+cdo timmean -selyear,1981/2010 $DIR1/ERA5_WSDI1981-2019.nc $DIR2/ERA5_WSDI-climatology-1981-2010.nc
+cdo sub $DIR1/ERA5_WSDI1981-2019.nc $DIR2/ERA5_WSDI-climatology-1981-2010.nc ERA5_WSDI-Anomaly.nc
+cdo setreftime,1981-01-01,00:00:00,hours ERA5_WSDI-Anomaly.nc $DIR/ERA5_WSDI-Anomaly-final.nc
+###################Power_CSDI1981-2019.nc#############
+cdo timmean -selyear,1981/2010 $DIR1/Power_CSDI1981-2019.nc $DIR2/Power_CSDI-climatology-1981-2010.nc
+cdo sub $DIR1/Power_CSDI1981-2019.nc $DIR2/Power_CSDI-climatology-1981-2010.nc Power_CSDI-Anomaly.nc
+cdo setreftime,1981-01-01,00:00:00,hours Power_CSDI-Anomaly.nc $DIR/Power_CSDI-Anomaly-final.nc
+###################Power_SU1981-2019.nc#############
+cdo timmean -selyear,1981/2010 $DIR1/Power_SU1981-2019.nc $DIR2/Power_SU-climatology-1981-2010.nc
+cdo sub $DIR1/Power_SU1981-2019.nc $DIR2/Power_SU-climatology-1981-2010.nc Power_SU-Anomaly.nc
+cdo setreftime,1981-01-01,00:00:00,hours Power_SU-Anomaly.nc $DIR/Power_SU-Anomaly-final.nc
+###################Power_TN10p1981-2019.nc#############
+cdo timmean -selyear,1981/2010 $DIR1/Power_TN10p1981-2019.nc $DIR2/Power_TN10p-climatology-1981-2010.nc
+cdo sub $DIR1/Power_TN10p1981-2019.nc $DIR2/Power_TN10p-climatology-1981-2010.nc Power_TN10p-Anomaly.nc
+cdo setreftime,1981-01-01,00:00:00,hours Power_TN10p-Anomaly.nc $DIR/Power_TN10p-Anomaly-final.nc
+###################Power_TN90p1981-2019.nc#############
+cdo timmean -selyear,1981/2010 $DIR1/Power_TN90p1981-2019.nc $DIR2/Power_TN90p-climatology-1981-2010.nc
+cdo sub $DIR1/Power_TN90p1981-2019.nc $DIR2/Power_TN90p-climatology-1981-2010.nc Power_TN90p-Anomaly.nc
+cdo setreftime,1981-01-01,00:00:00,hours Power_TN90p-Anomaly.nc $DIR/Power_TN90p-Anomaly-final.nc
+###################Power_TNn.nc#############
+cdo timmean -selyear,1981/2010 $DIR1/Power_TNn.nc $DIR2/Power_TNn-climatology-1981-2010.nc
+cdo sub $DIR1/Power_TNn.nc $DIR2/Power_TNn-climatology-1981-2010.nc Power_TNn-Anomaly.nc
+cdo setreftime,1981-01-01,00:00:00,hours Power_TNn-Anomaly.nc $DIR/Power_TNn-Anomaly-final.nc
+###################Power_TNx.nc#############
+cdo timmean -selyear,1981/2010 $DIR1/Power_TNx.nc $DIR2/Power_TNx-climatology-1981-2010.nc
+cdo sub $DIR1/Power_TNx.nc $DIR2/Power_TNx-climatology-1981-2010.nc Power_TNx-Anomaly.nc
+cdo setreftime,1981-01-01,00:00:00,hours Power_TNx-Anomaly.nc $DIR/Power_TNx-Anomaly-final.nc
+###################Power_TX10p1981-2019.nc#############
+cdo timmean -selyear,1981/2010 $DIR1/Power_TX10p1981-2019.nc $DIR2/Power_TX10p-climatology-1981-2010.nc
+cdo sub $DIR1/Power_TX10p1981-2019.nc $DIR2/Power_TX10p-climatology-1981-2010.nc Power_TX10p-Anomaly.nc
+cdo setreftime,1981-01-01,00:00:00,hours Power_TX10p-Anomaly.nc $DIR/Power_TX10p-Anomaly-final.nc
+###################Power_TX90p1981-2019.nc#############
+cdo timmean -selyear,1981/2010 $DIR1/Power_TX90p1981-2019.nc $DIR2/Power_TX90p-climatology-1981-2010.nc
+cdo sub $DIR1/Power_TX90p1981-2019.nc $DIR2/Power_TX90p-climatology-1981-2010.nc Power_TX90p-Anomaly.nc
+cdo setreftime,1981-01-01,00:00:00,hours Power_TX90p-Anomaly.nc $DIR/Power_TX90p-Anomaly-final.nc
+###################Power_TXn.nc#############
+cdo timmean -selyear,1981/2010 $DIR1/Power_TXn.nc $DIR2/Power_TXn-climatology-1981-2010.nc
+cdo sub $DIR1/Power_TXn.nc $DIR2/Power_TXn-climatology-1981-2010.nc Power_TXn-Anomaly.nc
+cdo setreftime,1981-01-01,00:00:00,hours Power_TXn-Anomaly.nc $DIR/Power_TXn-Anomaly-final.nc
+###################Power_TXx.nc#############
+cdo timmean -selyear,1981/2010 $DIR1/Power_TXx.nc $DIR2/Power_TXx-climatology-1981-2010.nc
+cdo sub $DIR1/Power_TXx.nc $DIR2/Power_TXx-climatology-1981-2010.nc Power_TXx-Anomaly.nc
+cdo setreftime,1981-01-01,00:00:00,hours Power_TXx-Anomaly.nc $DIR/Power_TXx-Anomaly-final.nc
+###################Power_WSDI1981-2019.nc#############
+cdo timmean -selyear,1981/2010 $DIR1/Power_WSDI1981-2019.nc $DIR2/Power_WSDI-climatology-1981-2010.nc
+cdo sub $DIR1/Power_WSDI1981-2019.nc $DIR2/Power_WSDI-climatology-1981-2010.nc Power_WSDI-Anomaly.nc
+cdo setreftime,1981-01-01,00:00:00,hours Power_WSDI-Anomaly.nc $DIR/Power_WSDI-Anomaly-final.nc
+###################End#############
