@@ -1,0 +1,73 @@
+##################################################
+###############  Directory #######################
+mkdir C:/cygwin64/home/dell/Climatology1981-2019
+export DIR=C:/cygwin64/home/dell/Climatology1981-2019
+export DIR1=C:/cygwin64/home/dell/CDO-11-Indices-33
+#################################################
+###################CFSR_CSDI1981-2019#############
+cdo timmean $DIR1/CFSR_CSDI1981-2019.nc $DIR/CFSR_CSDI-climatology1981-2019.nc
+###################CFSR_SU1981-2019.nc#############
+cdo timmean $DIR1/CFSR_SU1981-2019.nc $DIR/CFSR_SU-climatology1981-2019.nc
+###################CFSR_TN10p1981-2019.nc#############
+cdo timmean $DIR1/CFSR_TN10p1981-2019.nc $DIR/CFSR_TN10p-climatology1981-2019.nc
+###################CFSR_TN90p1981-2019.nc#############
+cdo timmean $DIR1/CFSR_TN90p1981-2019.nc $DIR/CFSR_TN90p-climatology1981-2019.nc
+###################CFSR_TNn.nc#############
+cdo timmean $DIR1/CFSR_TNn.nc $DIR/CFSR_TNn-climatology1981-2019.nc
+###################CFSR_TNx.nc#############
+cdo timmean $DIR1/CFSR_TNx.nc $DIR/CFSR_TNx-climatology1981-2019.nc
+###################CFSR_TX10p1981-2019.nc#############
+cdo timmean $DIR1/CFSR_TX10p1981-2019.nc $DIR/CFSR_TX10p-climatology1981-2019.nc
+###################CFSR_TX90p1981-2019.nc#############
+cdo timmean $DIR1/CFSR_TX90p1981-2019.nc $DIR/CFSR_TX90p-climatology1981-2019.nc
+###################CFSR_TXn.nc#############
+cdo timmean $DIR1/CFSR_TXn.nc $DIR/CFSR_TXn-climatology1981-2019.nc
+###################CFSR_TXx.nc#############
+cdo timmean $DIR1/CFSR_TXx.nc $DIR/CFSR_TXx-climatology1981-2019.nc
+###################CFSR_WSDI1981-2019.nc#############
+cdo timmean $DIR1/CFSR_WSDI1981-2019.nc $DIR/CFSR_WSDI-climatology1981-2019.nc
+###################ERA5__TNn.nc#############
+cdo timmean $DIR1/ERA5__TNn.nc $DIR/ERA5_TNn-climatology1981-2019.nc
+###################ERA5__TNx.nc#############
+cdo timmean $DIR1/ERA5__TNx.nc $DIR/ERA5_TNx-climatology1981-2019.nc
+###################ERA5_CSDI1981-2019.nc#############
+cdo timmean $DIR1/ERA5_CSDI1981-2019.nc $DIR/ERA5_CSDI-climatology1981-2019.nc
+###################ERA5_SU1981-2019.nc#############
+cdo timmean $DIR1/ERA5_SU1981-2019.nc $DIR/ERA5_SU-climatology1981-2019.nc
+###################ERA5_TN10p1981-2019.nc#############
+cdo timmean $DIR1/ERA5_TN10p1981-2019.nc $DIR/ERA5_TN10p-climatology1981-2019.nc
+###################ERA5_TN90p1981-2019.nc#############
+cdo timmean $DIR1/ERA5_TN90p1981-2019.nc $DIR/ERA5_TN90p-climatology1981-2019.nc
+###################ERA5_TX10p1981-2019.nc#############
+cdo timmean $DIR1/ERA5_TX10p1981-2019.nc $DIR/ERA5_TX10p-climatology1981-2019.nc
+###################ERA5_TX90p1981-2019.nc#############
+cdo timmean $DIR1/ERA5_TX90p1981-2019.nc $DIR/ERA5_TX90p-climatology1981-2019.nc
+###################ERA5_TXn.nc#############
+cdo timmean $DIR1/ERA5_TXn.nc $DIR/ERA5_TXn-climatology1981-2019.nc
+###################ERA5_TXx.nc#############
+cdo timmean $DIR1/ERA5_TXx.nc $DIR/ERA5_TXx-climatology1981-2019.nc
+###################ERA5_WSDI1981-2019.nc#############
+cdo timmean $DIR1/ERA5_WSDI1981-2019.nc $DIR/ERA5_WSDI-climatology1981-2019.nc
+###################Power_CSDI1981-2019.nc#############
+cdo timmean $DIR1/Power_CSDI1981-2019.nc $DIR/Power_CSDI-climatology1981-2019.nc
+###################Power_SU1981-2019.nc#############
+cdo timmean $DIR1/Power_SU1981-2019.nc $DIR/Power_SU-climatology1981-2019.nc
+###################Power_TN10p1981-2019.nc#############
+cdo timmean $DIR1/Power_TN10p1981-2019.nc $DIR/Power_TN10p-climatology1981-2019.nc
+###################Power_TN90p1981-2019.nc#############
+cdo timmean $DIR1/Power_TN90p1981-2019.nc $DIR/Power_TN90p-climatology1981-2019.nc
+###################Power_TNn.nc#############
+cdo timmean $DIR1/Power_TNn.nc $DIR/Power_TNn-climatology1981-2019.nc
+###################Power_TNx.nc#############
+cdo timmean $DIR1/Power_TNx.nc $DIR/Power_TNx-climatology1981-2019.nc
+###################Power_TX10p1981-2019.nc#############
+cdo timmean $DIR1/Power_TX10p1981-2019.nc $DIR/Power_TX10p-climatology1981-2019.nc
+###################Power_TX90p1981-2019.nc#############
+cdo timmean $DIR1/Power_TX90p1981-2019.nc $DIR/Power_TX90p-climatology1981-2019.nc
+###################Power_TXn.nc#############
+cdo timmean $DIR1/Power_TXn.nc $DIR/Power_TXn-climatology1981-2019.nc
+###################Power_TXx.nc#############
+cdo timmean $DIR1/Power_TXx.nc $DIR/Power_TXx-climatology1981-2019.nc
+###################Power_WSDI1981-2019.nc#############
+cdo timmean $DIR1/Power_WSDI1981-2019.nc $DIR/Power_WSDI-climatology1981-2019.nc
+###################End#############
