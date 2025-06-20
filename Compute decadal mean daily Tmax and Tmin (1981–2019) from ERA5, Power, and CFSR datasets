@@ -1,0 +1,39 @@
+##################################################      
+############### Directory #######################    
+mkdir C:/cygwin64/home/dell/Decadal_Tmax-Tmin
+export DIR=C:/cygwin64/home/dell/Decadal_Tmax-Tmin     
+#############################################################      
+#############################################################      
+##############    The Decadal Mean     ################ 
+###################   CERA5_Tmin_daily1981-2019    #############
+cdo -timmean -selyear,1981/1990 CERA5_Tmin_daily1981-2019.nc $DIR/ERA5_Tmin_decade1981-1990.nc  
+cdo -timmean -selyear,1991/2000 CERA5_Tmin_daily1981-2019.nc $DIR/ERA5_Tmin_decade1991-2000.nc  
+cdo -timmean -selyear,2001/2010 CERA5_Tmin_daily1981-2019.nc $DIR/ERA5_Tmin_decade2001-2010.nc  
+cdo -timmean -selyear,2011/2019 CERA5_Tmin_daily1981-2019.nc $DIR/ERA5_Tmin_decade2011-2019.nc  
+###################     CERA5_Tmax_daily1981-2019     #############      
+cdo -timmean -selyear,1981/1990 CERA5_Tmax_daily1981-2019.nc $DIR/ERA5_Tmax_decade1981-1990.nc  
+cdo -timmean -selyear,1991/2000 CERA5_Tmax_daily1981-2019.nc $DIR/ERA5_Tmax_decade1991-2000.nc  
+cdo -timmean -selyear,2001/2010 CERA5_Tmax_daily1981-2019.nc $DIR/ERA5_Tmax_decade2001-2010.nc  
+cdo -timmean -selyear,2011/2019 CERA5_Tmax_daily1981-2019.nc $DIR/ERA5_Tmax_decade2011-2019.nc 
+###################   CPower_Tmin_daily1981-2019.nc    #############      
+cdo -timmean -selyear,1981/1990 CPower_Tmin_daily1981-2019.nc $DIR/Power_Tmin_decade1981-1990.nc  
+cdo -timmean -selyear,1991/2000 CPower_Tmin_daily1981-2019.nc $DIR/Power_Tmin_decade1991-2000.nc  
+cdo -timmean -selyear,2001/2010 CPower_Tmin_daily1981-2019.nc $DIR/Power_Tmin_decade2001-2010.nc  
+cdo -timmean -selyear,2011/2019 CPower_Tmin_daily1981-2019.nc $DIR/Power_Tmin_decade2011-2019.nc  
+###################     CPower_Tmax_daily1981-2019     #############      
+cdo -timmean -selyear,1981/1990 CPower_Tmax_daily1981-2019.nc $DIR/Power_Tmax_decade1981-1990.nc  
+cdo -timmean -selyear,1991/2000 CPower_Tmax_daily1981-2019.nc $DIR/Power_Tmax_decade1991-2000.nc  
+cdo -timmean -selyear,2001/2010 CPower_Tmax_daily1981-2019.nc $DIR/Power_Tmax_decade2001-2010.nc  
+cdo -timmean -selyear,2011/2019 CPower_Tmax_daily1981-2019.nc $DIR/Power_Tmax_decade2011-2019.nc  
+###################   CCFSR_Tmin_daily1981-2019   c#############      
+cdo -timmean -selyear,1981/1990 CCFSR_Tmin_daily1981-2019.nc $DIR/CFSR_Tmin_decade1981-1990.nc  
+cdo -timmean -selyear,1991/2000 CCFSR_Tmin_daily1981-2019.nc $DIR/CFSR_Tmin_decade1991-2000.nc  
+cdo -timmean -selyear,2001/2010 CCFSR_Tmin_daily1981-2019.nc $DIR/CFSR_Tmin_decade2001-2010.nc  
+cdo -timmean -selyear,2011/2019 CCFSR_Tmin_daily1981-2019.nc $DIR/CFSR_Tmin_decade2011-2019.nc  
+###################    CCFSR_Tmax_daily1981-2019     ############      
+cdo -timmean -selyear,1981/1990 CCFSR_Tmax_daily1981-2019.nc $DIR/CFSR_Tmax_decade1981-1990.nc  
+cdo -timmean -selyear,1991/2000 CCFSR_Tmax_daily1981-2019.nc $DIR/CFSR_Tmax_decade1991-2000.nc  
+cdo -timmean -selyear,2001/2010 CCFSR_Tmax_daily1981-2019.nc $DIR/CFSR_Tmax_decade2001-2010.nc  
+cdo -timmean -selyear,2011/2019 CCFSR_Tmax_daily1981-2019.nc $DIR/CFSR_Tmax_decade2011-2019.nc 
+###############################################################################################################################   
+
