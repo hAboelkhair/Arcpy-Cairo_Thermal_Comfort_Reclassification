@@ -1,0 +1,68 @@
+##################################################   
+############### Directory #######################  
+mkdir C:/cygwin64/home/dell/Decadal_Trend  
+export DIR=C:/cygwin64/home/dell/Decadal_Trend   
+#############################################################   
+#############################################################   
+##############  The Decadal Mean   ################ 
+###################  ERA5__TNn  #############
+cdo -selyear,1981/1990 ERA5__TNn.nc $DIR/ERA5_TNn_decade1981-1990.nc 
+cdo -selyear,1991/2000 ERA5__TNn.nc $DIR/ERA5_TNn_decade1991-2000.nc 
+cdo -selyear,2001/2010 ERA5__TNn.nc $DIR/ERA5_TNn_decade2001-2010.nc 
+cdo -selyear,2011/2019 ERA5__TNn.nc $DIR/ERA5_TNn_decade2011-2019.nc 
+###################   ERA5__TNx.nc   #############   
+cdo -selyear,1981/1990 ERA5__TNx.nc $DIR/ERA5_TNx_decade1981-1990.nc 
+cdo -selyear,1991/2000 ERA5__TNx.nc $DIR/ERA5_TNx_decade1991-2000.nc 
+cdo -selyear,2001/2010 ERA5__TNx.nc $DIR/ERA5_TNx_decade2001-2010.nc 
+cdo -selyear,2011/2019 ERA5__TNx.nc $DIR/ERA5_TNx_decade2011-2019.nc 
+###################  ERA5_TXn  #############
+cdo -selyear,1981/1990 ERA5_TXn.nc $DIR/ERA5_TXn_decade1981-1990.nc 
+cdo -selyear,1991/2000 ERA5_TXn.nc $DIR/ERA5_TXn_decade1991-2000.nc 
+cdo -selyear,2001/2010 ERA5_TXn.nc $DIR/ERA5_TXn_decade2001-2010.nc 
+cdo -selyear,2011/2019 ERA5_TXn.nc $DIR/ERA5_TXn_decade2011-2019.nc 
+###################   ERA5_TXx.nc   #############   
+cdo -selyear,1981/1990 ERA5_TXx.nc $DIR/ERA5_TXx_decade1981-1990.nc 
+cdo -selyear,1991/2000 ERA5_TXx.nc $DIR/ERA5_TXx_decade1991-2000.nc 
+cdo -selyear,2001/2010 ERA5_TXx.nc $DIR/ERA5_TXx_decade2001-2010.nc 
+cdo -selyear,2011/2019 ERA5_TXx.nc $DIR/ERA5_TXx_decade2011-2019.nc 
+###################  Power_TNn  #############   
+cdo -selyear,1981/1990 Power_TNn.nc $DIR/Power_TNn_decade1981-1990.nc 
+cdo -selyear,1991/2000 Power_TNn.nc $DIR/Power_TNn_decade1991-2000.nc 
+cdo -selyear,2001/2010 Power_TNn.nc $DIR/Power_TNn_decade2001-2010.nc 
+cdo -selyear,2011/2019 Power_TNn.nc $DIR/Power_TNn_decade2011-2019.nc 
+###################   Power_TNx   #############   
+cdo -selyear,1981/1990 Power_TNx.nc $DIR/Power_TNx_decade1981-1990.nc 
+cdo -selyear,1991/2000 Power_TNx.nc $DIR/Power_TNx_decade1991-2000.nc 
+cdo -selyear,2001/2010 Power_TNx.nc $DIR/Power_TNx_decade2001-2010.nc 
+cdo -selyear,2011/2019 Power_TNx.nc $DIR/Power_TNx_decade2011-2019.nc 
+###################  Power_TXn  #############   
+cdo -selyear,1981/1990 Power_TXn.nc $DIR/Power_TXn_decade1981-1990.nc 
+cdo -selyear,1991/2000 Power_TXn.nc $DIR/Power_TXn_decade1991-2000.nc 
+cdo -selyear,2001/2010 Power_TXn.nc $DIR/Power_TXn_decade2001-2010.nc 
+cdo -selyear,2011/2019 Power_TXn.nc $DIR/Power_TXn_decade2011-2019.nc 
+###################   Power_TXx   #############   
+cdo -selyear,1981/1990 Power_TXx.nc $DIR/Power_TXx_decade1981-1990.nc 
+cdo -selyear,1991/2000 Power_TXx.nc $DIR/Power_TXx_decade1991-2000.nc 
+cdo -selyear,2001/2010 Power_TXx.nc $DIR/Power_TXx_decade2001-2010.nc 
+cdo -selyear,2011/2019 Power_TXx.nc $DIR/Power_TXx_decade2011-2019.nc 
+###################  CFSR_TNn  c#############   
+cdo -selyear,1981/1990 CFSR_TNn.nc $DIR/CFSR_TNn_decade1981-1990.nc 
+cdo -selyear,1991/2000 CFSR_TNn.nc $DIR/CFSR_TNn_decade1991-2000.nc 
+cdo -selyear,2001/2010 CFSR_TNn.nc $DIR/CFSR_TNn_decade2001-2010.nc 
+cdo -selyear,2011/2019 CFSR_TNn.nc $DIR/CFSR_TNn_decade2011-2019.nc 
+ ###################  CFSR_TNx   ############   
+cdo -selyear,1981/1990 CFSR_TNx.nc $DIR/CFSR_TNx_decade1981-1990.nc 
+cdo -selyear,1991/2000 CFSR_TNx.nc $DIR/CFSR_TNx_decade1991-2000.nc 
+cdo -selyear,2001/2010 CFSR_TNx.nc $DIR/CFSR_TNx_decade2001-2010.nc 
+cdo -selyear,2011/2019 CFSR_TNx.nc $DIR/CFSR_TNx_decade2011-2019.nc 
+###################  CFSR_TXn  c#############   
+cdo -selyear,1981/1990 CFSR_TXn.nc $DIR/CFSR_TXn_decade1981-1990.nc 
+cdo -selyear,1991/2000 CFSR_TXn.nc $DIR/CFSR_TXn_decade1991-2000.nc 
+cdo -selyear,2001/2010 CFSR_TXn.nc $DIR/CFSR_TXn_decade2001-2010.nc 
+cdo -selyear,2011/2019 CFSR_TXn.nc $DIR/CFSR_TXn_decade2011-2019.nc 
+###################  CFSR_TXx   ############   
+cdo -selyear,1981/1990 CFSR_TXx.nc $DIR/CFSR_TXx_decade1981-1990.nc 
+cdo -selyear,1991/2000 CFSR_TXx.nc $DIR/CFSR_TXx_decade1991-2000.nc 
+cdo -selyear,2001/2010 CFSR_TXx.nc $DIR/CFSR_TXx_decade2001-2010.nc 
+cdo -selyear,2011/2019 CFSR_TXx.nc $DIR/CFSR_TXx_decade2011-2019.nc 
+###############################################################################################################################  
