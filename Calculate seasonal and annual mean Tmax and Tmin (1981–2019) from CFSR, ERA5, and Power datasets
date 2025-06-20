@@ -1,0 +1,41 @@
+######To compute the mean over all input timesteps use:######################
+######cdo timmean ifile ofile#######
+######Seasonally###########
+#######seasons STRING Comma separated list of seasons (DJF, MAM, JJA, SON)#########
+#######CFSR_Tmax_daily1981-2019.nc###############
+cdo -f nc -yseasavg -select,season=DJF CFSR_Tmax_daily1981-2019.nc CFSR_Tmax_winter.nc
+cdo -f nc -yseasavg -select,season=MAM CFSR_Tmax_daily1981-2019.nc CFSR_Tmax_spring.nc
+cdo -f nc -yseasavg -select,season=JJA CFSR_Tmax_daily1981-2019.nc CFSR_Tmax_summer.nc
+cdo -f nc -yseasavg -select,season=SON CFSR_Tmax_daily1981-2019.nc CFSR_Tmax_Autumn.nc
+cdo timmean CFSR_Tmax_daily1981-2019.nc CFSR_Tmax_annually.nc
+#######CFSR_Tmin_daily1981-2019.nc##################
+cdo -f nc -yseasavg -select,season=DJF CFSR_Tmin_daily1981-2019.nc CFSR_Tmin_winter.nc
+cdo -f nc -yseasavg -select,season=MAM CFSR_Tmin_daily1981-2019.nc CFSR_Tmin_spring.nc
+cdo -f nc -yseasavg -select,season=JJA CFSR_Tmin_daily1981-2019.nc CFSR_Tmin_summer.nc
+cdo -f nc -yseasavg -select,season=SON CFSR_Tmin_daily1981-2019.nc CFSR_Tmin_Autumn.nc
+cdo timmean CFSR_Tmin_daily1981-2019.nc CFSR_Tmin_annually.nc
+#######ERA5_Tmax_daily1981-2019.nc###############
+cdo -f nc -yseasavg -select,season=DJF ERA5_Tmax_daily1981-2019.nc ERA5_Tmax_winter.nc
+cdo -f nc -yseasavg -select,season=MAM ERA5_Tmax_daily1981-2019.nc ERA5_Tmax_spring.nc
+cdo -f nc -yseasavg -select,season=JJA ERA5_Tmax_daily1981-2019.nc ERA5_Tmax_summer.nc
+cdo -f nc -yseasavg -select,season=SON ERA5_Tmax_daily1981-2019.nc ERA5_Tmax_Autumn.nc
+cdo timmean ERA5_Tmax_daily1981-2019.nc ERA5_Tmax_annually.nc
+#########ERA5_Tmin_daily1981-2019.nc###########
+cdo -f nc -yseasavg -select,season=DJF ERA5_Tmin_daily1981-2019.nc ERA5_Tmin_winter.nc
+cdo -f nc -yseasavg -select,season=MAM ERA5_Tmin_daily1981-2019.nc ERA5_Tmin_spring.nc
+cdo -f nc -yseasavg -select,season=JJA ERA5_Tmin_daily1981-2019.nc ERA5_Tmin_summer.nc
+cdo -f nc -yseasavg -select,season=SON ERA5_Tmin_daily1981-2019.nc ERA5_Tmin_Autumn.nc
+cdo timmean ERA5_Tmin_daily1981-2019.nc ERA5_Tmin_annually.nc
+###########Power_Tmax_daily1981-2019.nc#############
+cdo -f nc -yseasavg -select,season=DJF Power_Tmax_daily1981-2019.nc POWER_Tmax_winter.nc
+cdo -f nc -yseasavg -select,season=MAM Power_Tmax_daily1981-2019.nc POWER_Tmax_spring.nc
+cdo -f nc -yseasavg -select,season=JJA Power_Tmax_daily1981-2019.nc POWER_Tmax_summer.nc
+cdo -f nc -yseasavg -select,season=SON Power_Tmax_daily1981-2019.nc POWER_Tmax_Autumn.nc
+cdo timmean Power_Tmax_daily1981-2019.nc POWER_Tmax_annually.nc
+#########Power_Tmin_daily1981-2019.nc#############
+cdo -f nc -yseasavg -select,season=DJF Power_Tmin_daily1981-2019.nc POWER_Tmin_winter.nc
+cdo -f nc -yseasavg -select,season=MAM Power_Tmin_daily1981-2019.nc POWER_Tmin_spring.nc
+cdo -f nc -yseasavg -select,season=JJA Power_Tmin_daily1981-2019.nc POWER_Tmin_summer.nc
+cdo -f nc -yseasavg -select,season=SON Power_Tmin_daily1981-2019.nc POWER_Tmin_Autumn.nc
+cdo timmean Power_Tmin_daily1981-2019.nc POWER_Tmin_annually.nc
+
