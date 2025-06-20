@@ -1,0 +1,1077 @@
+##################################################
+###############  Directory #######################
+mkdir C:/cygwin64/home/dell/CDO-11-Indices-33
+export DIR=C:/cygwin64/home/dell/CDO-11-Indices-33
+#################################################
+########################################################################
+cdo selvar,T_MIN_L103_Pd CFSR_Tmin_daily1981-2019.nc CFSR_Tmin_new_daily1981-2019.nc
+cdo chname,T_MIN_L103_Pd,t2min CFSR_Tmin_new_daily1981-2019.nc CFSR_Tmin_final_daily1981-2019.nc
+cdo selvar,T_MAX_L103_Pd CFSR_Tmax_daily1981-2019.nc CFSR_Tmax_new_daily1981-2019.nc
+cdo chname,T_MAX_L103_Pd,t2max CFSR_Tmax_new_daily1981-2019.nc CFSR_Tmax_final_daily1981-2019.nc
+################# change unit (kelvin to celsius) #################
+cdo addc,-273.15 CFSR_Tmax_final_daily1981-2019.nc CCFSR_Tmax_daily1981-2019.nc
+cdo addc,-273.15 Power_Tmax_daily1981-2019.nc CPower_Tmax_daily1981-2019.nc
+cdo addc,-273.15 ERA5_Tmax_daily1981-2019.nc CERA5_Tmax_daily1981-2019.nc
+cdo addc,-273.15 CFSR_Tmin_final_daily1981-2019.nc CCFSR_Tmin_daily1981-2019.nc
+cdo addc,-273.15 Power_Tmin_daily1981-2019.nc CPower_Tmin_daily1981-2019.nc
+cdo addc,-273.15 ERA5_Tmin_daily1981-2019.nc CERA5_Tmin_daily1981-2019.nc
+########################################################################
+################# Monthly maximum value of daily maximum temperature (TXx) #################
+cdo yearmax CCFSR_Tmax_daily1981-2019.nc $DIR/CFSR_TXx.nc
+cdo yearmax CPower_Tmax_daily1981-2019.nc $DIR/Power_TXx.nc
+cdo yearmax CERA5_Tmax_daily1981-2019.nc  $DIR/ERA5_TXx.nc
+########################################################################
+################# Monthly minimum value of daily maximum temperature ( TXn) ###################
+cdo yearmin CCFSR_Tmax_daily1981-2019.nc $DIR/CFSR_TXn.nc
+cdo yearmin CPower_Tmax_daily1981-2019.nc $DIR/Power_TXn.nc
+cdo yearmin CERA5_Tmax_daily1981-2019.nc  $DIR/ERA5_TXn.nc
+########################################################################
+################# Monthly maximum value of daily minimum temperature (TNx) ################
+cdo yearmax CCFSR_Tmin_daily1981-2019.nc $DIR/CFSR_TNx.nc
+cdo yearmax CPower_Tmin_daily1981-2019.nc $DIR/Power_TNx.nc
+cdo yearmax CERA5_Tmin_daily1981-2019.nc  $DIR/ERA5__TNx.nc
+########################################################################
+################# Monthly minimum value of daily minimum temperature (TNn)  ################
+cdo yearmin CCFSR_Tmin_daily1981-2019.nc $DIR/CFSR_TNn.nc
+cdo yearmin CPower_Tmin_daily1981-2019.nc $DIR/Power_TNn.nc
+cdo yearmin CERA5_Tmin_daily1981-2019.nc  $DIR/ERA5__TNn.nc
+########################################################################
+################# Summer days index: annual number of days where daily maximum temperature is >25 C (SU) ##################
+### ====   SU CFSR ==== #####
+cdo splityear CCFSR_Tmax_daily1981-2019.nc CFSR_Tmax_
+cdo eca_csu CFSR_Tmax_1981.nc CFSR_SU_1981.nc
+cdo eca_csu CFSR_Tmax_1982.nc CFSR_SU_1982.nc
+cdo eca_csu CFSR_Tmax_1983.nc CFSR_SU_1983.nc
+cdo eca_csu CFSR_Tmax_1984.nc CFSR_SU_1984.nc
+cdo eca_csu CFSR_Tmax_1985.nc CFSR_SU_1985.nc
+cdo eca_csu CFSR_Tmax_1986.nc CFSR_SU_1986.nc
+cdo eca_csu CFSR_Tmax_1987.nc CFSR_SU_1987.nc
+cdo eca_csu CFSR_Tmax_1988.nc CFSR_SU_1988.nc
+cdo eca_csu CFSR_Tmax_1989.nc CFSR_SU_1989.nc
+cdo eca_csu CFSR_Tmax_1990.nc CFSR_SU_1990.nc
+cdo eca_csu CFSR_Tmax_1991.nc CFSR_SU_1991.nc
+cdo eca_csu CFSR_Tmax_1992.nc CFSR_SU_1992.nc
+cdo eca_csu CFSR_Tmax_1993.nc CFSR_SU_1993.nc
+cdo eca_csu CFSR_Tmax_1994.nc CFSR_SU_1994.nc
+cdo eca_csu CFSR_Tmax_1995.nc CFSR_SU_1995.nc
+cdo eca_csu CFSR_Tmax_1996.nc CFSR_SU_1996.nc
+cdo eca_csu CFSR_Tmax_1997.nc CFSR_SU_1997.nc
+cdo eca_csu CFSR_Tmax_1998.nc CFSR_SU_1998.nc
+cdo eca_csu CFSR_Tmax_1999.nc CFSR_SU_1999.nc
+cdo eca_csu CFSR_Tmax_2000.nc CFSR_SU_2000.nc
+cdo eca_csu CFSR_Tmax_2001.nc CFSR_SU_2001.nc
+cdo eca_csu CFSR_Tmax_2002.nc CFSR_SU_2002.nc
+cdo eca_csu CFSR_Tmax_2003.nc CFSR_SU_2003.nc
+cdo eca_csu CFSR_Tmax_2004.nc CFSR_SU_2004.nc
+cdo eca_csu CFSR_Tmax_2005.nc CFSR_SU_2006.nc
+cdo eca_csu CFSR_Tmax_2007.nc CFSR_SU_2007.nc
+cdo eca_csu CFSR_Tmax_2008.nc CFSR_SU_2008.nc
+cdo eca_csu CFSR_Tmax_2009.nc CFSR_SU_2009.nc
+cdo eca_csu CFSR_Tmax_2010.nc CFSR_SU_2010.nc
+cdo eca_csu CFSR_Tmax_2011.nc CFSR_SU_2011.nc
+cdo eca_csu CFSR_Tmax_2012.nc CFSR_SU_2012.nc
+cdo eca_csu CFSR_Tmax_2013.nc CFSR_SU_2013.nc
+cdo eca_csu CFSR_Tmax_2014.nc CFSR_SU_2014.nc
+cdo eca_csu CFSR_Tmax_2015.nc CFSR_SU_2015.nc
+cdo eca_csu CFSR_Tmax_2016.nc CFSR_SU_2016.nc
+cdo eca_csu CFSR_Tmax_2017.nc CFSR_SU_2017.nc
+cdo eca_csu CFSR_Tmax_2018.nc CFSR_SU_2018.nc
+cdo eca_csu CFSR_Tmax_2019.nc CFSR_SU_2019.nc
+cdo mergetime CFSR_SU_1981.nc CFSR_SU_1982.nc CFSR_SU_1983.nc CFSR_SU_1984.nc CFSR_SU_1985.nc CFSR_SU_1986.nc CFSR_SU_1987.nc CFSR_SU_1988.nc CFSR_SU_1989.nc CFSR_SU_1990.nc CFSR_SU_1991.nc CFSR_SU_1992.nc CFSR_SU_1993.nc CFSR_SU81-1993.nc
+cdo mergetime CFSR_SU_1994.nc CFSR_SU_1995.nc CFSR_SU_1996.nc CFSR_SU_1997.nc CFSR_SU_1998.nc CFSR_SU_1999.nc CFSR_SU_2000.nc CFSR_SU_2001.nc CFSR_SU_2002.nc CFSR_SU_2003.nc CFSR_SU_2004.nc CFSR_SU_2006.nc CFSR_SU_2007.nc CFSR_SU_2008.nc CFSR_SU94-2008.nc
+cdo mergetime CFSR_SU_2009.nc CFSR_SU_2010.nc CFSR_SU_2011.nc CFSR_SU_2012.nc CFSR_SU_2013.nc CFSR_SU_2014.nc CFSR_SU_2015.nc CFSR_SU2009-2015.nc
+cdo mergetime CFSR_SU_2016.nc CFSR_SU_2017.nc CFSR_SU_2018.nc CFSR_SU_2019.nc CFSR_SU2016-2019.nc
+cdo mergetime CFSR_SU81-1993.nc CFSR_SU94-2008.nc CFSR_SU2009-2015.nc CFSR_SU2016-2019.nc $DIR/CFSR_SU1981-2019.nc
+### ====   SU Power ==== #####
+cdo splityear CPower_Tmax_daily1981-2019.nc Power_Tmax_
+cdo eca_csu Power_Tmax_1981.nc Power_SU_1981.nc
+cdo eca_csu Power_Tmax_1982.nc Power_SU_1982.nc
+cdo eca_csu Power_Tmax_1983.nc Power_SU_1983.nc
+cdo eca_csu Power_Tmax_1984.nc Power_SU_1984.nc
+cdo eca_csu Power_Tmax_1985.nc Power_SU_1985.nc
+cdo eca_csu Power_Tmax_1986.nc Power_SU_1986.nc
+cdo eca_csu Power_Tmax_1987.nc Power_SU_1987.nc
+cdo eca_csu Power_Tmax_1988.nc Power_SU_1988.nc
+cdo eca_csu Power_Tmax_1989.nc Power_SU_1989.nc
+cdo eca_csu Power_Tmax_1990.nc Power_SU_1990.nc
+cdo eca_csu Power_Tmax_1991.nc Power_SU_1991.nc
+cdo eca_csu Power_Tmax_1992.nc Power_SU_1992.nc
+cdo eca_csu Power_Tmax_1993.nc Power_SU_1993.nc
+cdo eca_csu Power_Tmax_1994.nc Power_SU_1994.nc
+cdo eca_csu Power_Tmax_1995.nc Power_SU_1995.nc
+cdo eca_csu Power_Tmax_1996.nc Power_SU_1996.nc
+cdo eca_csu Power_Tmax_1997.nc Power_SU_1997.nc
+cdo eca_csu Power_Tmax_1998.nc Power_SU_1998.nc
+cdo eca_csu Power_Tmax_1999.nc Power_SU_1999.nc
+cdo eca_csu Power_Tmax_2000.nc Power_SU_2000.nc
+cdo eca_csu Power_Tmax_2001.nc Power_SU_2001.nc
+cdo eca_csu Power_Tmax_2002.nc Power_SU_2002.nc
+cdo eca_csu Power_Tmax_2003.nc Power_SU_2003.nc
+cdo eca_csu Power_Tmax_2004.nc Power_SU_2004.nc
+cdo eca_csu Power_Tmax_2005.nc Power_SU_2006.nc
+cdo eca_csu Power_Tmax_2007.nc Power_SU_2007.nc
+cdo eca_csu Power_Tmax_2008.nc Power_SU_2008.nc
+cdo eca_csu Power_Tmax_2009.nc Power_SU_2009.nc
+cdo eca_csu Power_Tmax_2010.nc Power_SU_2010.nc
+cdo eca_csu Power_Tmax_2011.nc Power_SU_2011.nc
+cdo eca_csu Power_Tmax_2012.nc Power_SU_2012.nc
+cdo eca_csu Power_Tmax_2013.nc Power_SU_2013.nc
+cdo eca_csu Power_Tmax_2014.nc Power_SU_2014.nc
+cdo eca_csu Power_Tmax_2015.nc Power_SU_2015.nc
+cdo eca_csu Power_Tmax_2016.nc Power_SU_2016.nc
+cdo eca_csu Power_Tmax_2017.nc Power_SU_2017.nc
+cdo eca_csu Power_Tmax_2018.nc Power_SU_2018.nc
+cdo eca_csu Power_Tmax_2019.nc Power_SU_2019.nc
+cdo mergetime Power_SU_1981.nc Power_SU_1982.nc Power_SU_1983.nc Power_SU_1984.nc Power_SU_1985.nc Power_SU_1986.nc Power_SU_1987.nc Power_SU_1988.nc Power_SU_1989.nc Power_SU_1990.nc Power_SU1981-1990.nc
+cdo mergetime Power_SU_1991.nc Power_SU_1992.nc Power_SU_1993.nc Power_SU_1994.nc Power_SU_1995.nc Power_SU_1996.nc Power_SU_1997.nc Power_SU_1998.nc Power_SU_1999.nc Power_SU_2000.nc Power_SU1991-2000.nc
+cdo mergetime Power_SU_2001.nc Power_SU_2002.nc Power_SU_2003.nc Power_SU_2004.nc Power_SU_2006.nc Power_SU_2007.nc Power_SU_2008.nc Power_SU_2009.nc Power_SU_2010.nc Power_SU_2011.nc Power_SU2001-2011.nc
+cdo mergetime Power_SU_2012.nc Power_SU_2013.nc Power_SU_2014.nc Power_SU_2015.nc Power_SU_2016.nc Power_SU_2017.nc Power_SU_2018.nc Power_SU_2019.nc Power_SU2012-2019.nc
+cdo mergetime Power_SU1981-1990.nc Power_SU1991-2000.nc Power_SU2001-2011.nc Power_SU2012-2019.nc $DIR/Power_SU1981-2019.nc
+### ====   SU ERA5 ==== #####
+cdo splityear CERA5_Tmax_daily1981-2019.nc ERA5_Tmax_
+cdo eca_csu ERA5_Tmax_1981.nc ERA5_SU_1981.nc
+cdo eca_csu ERA5_Tmax_1982.nc ERA5_SU_1982.nc
+cdo eca_csu ERA5_Tmax_1983.nc ERA5_SU_1983.nc
+cdo eca_csu ERA5_Tmax_1984.nc ERA5_SU_1984.nc
+cdo eca_csu ERA5_Tmax_1985.nc ERA5_SU_1985.nc
+cdo eca_csu ERA5_Tmax_1986.nc ERA5_SU_1986.nc
+cdo eca_csu ERA5_Tmax_1987.nc ERA5_SU_1987.nc
+cdo eca_csu ERA5_Tmax_1988.nc ERA5_SU_1988.nc
+cdo eca_csu ERA5_Tmax_1989.nc ERA5_SU_1989.nc
+cdo eca_csu ERA5_Tmax_1990.nc ERA5_SU_1990.nc
+cdo eca_csu ERA5_Tmax_1991.nc ERA5_SU_1991.nc
+cdo eca_csu ERA5_Tmax_1992.nc ERA5_SU_1992.nc
+cdo eca_csu ERA5_Tmax_1993.nc ERA5_SU_1993.nc
+cdo eca_csu ERA5_Tmax_1994.nc ERA5_SU_1994.nc
+cdo eca_csu ERA5_Tmax_1995.nc ERA5_SU_1995.nc
+cdo eca_csu ERA5_Tmax_1996.nc ERA5_SU_1996.nc
+cdo eca_csu ERA5_Tmax_1997.nc ERA5_SU_1997.nc
+cdo eca_csu ERA5_Tmax_1998.nc ERA5_SU_1998.nc
+cdo eca_csu ERA5_Tmax_1999.nc ERA5_SU_1999.nc
+cdo eca_csu ERA5_Tmax_2000.nc ERA5_SU_2000.nc
+cdo eca_csu ERA5_Tmax_2001.nc ERA5_SU_2001.nc
+cdo eca_csu ERA5_Tmax_2002.nc ERA5_SU_2002.nc
+cdo eca_csu ERA5_Tmax_2003.nc ERA5_SU_2003.nc
+cdo eca_csu ERA5_Tmax_2004.nc ERA5_SU_2004.nc
+cdo eca_csu ERA5_Tmax_2005.nc ERA5_SU_2006.nc
+cdo eca_csu ERA5_Tmax_2007.nc ERA5_SU_2007.nc
+cdo eca_csu ERA5_Tmax_2008.nc ERA5_SU_2008.nc
+cdo eca_csu ERA5_Tmax_2009.nc ERA5_SU_2009.nc
+cdo eca_csu ERA5_Tmax_2010.nc ERA5_SU_2010.nc
+cdo eca_csu ERA5_Tmax_2011.nc ERA5_SU_2011.nc
+cdo eca_csu ERA5_Tmax_2012.nc ERA5_SU_2012.nc
+cdo eca_csu ERA5_Tmax_2013.nc ERA5_SU_2013.nc
+cdo eca_csu ERA5_Tmax_2014.nc ERA5_SU_2014.nc
+cdo eca_csu ERA5_Tmax_2015.nc ERA5_SU_2015.nc
+cdo eca_csu ERA5_Tmax_2016.nc ERA5_SU_2016.nc
+cdo eca_csu ERA5_Tmax_2017.nc ERA5_SU_2017.nc
+cdo eca_csu ERA5_Tmax_2018.nc ERA5_SU_2018.nc
+cdo eca_csu ERA5_Tmax_2019.nc ERA5_SU_2019.nc
+cdo mergetime ERA5_SU_1981.nc ERA5_SU_1982.nc ERA5_SU_1983.nc ERA5_SU_1984.nc ERA5_SU_1985.nc ERA5_SU_1986.nc ERA5_SU_1987.nc ERA5_SU_1988.nc ERA5_SU_1989.nc ERA5_SU_1990.nc ERA5_SU1981-1990.nc
+cdo mergetime ERA5_SU_1991.nc ERA5_SU_1992.nc ERA5_SU_1993.nc ERA5_SU_1994.nc ERA5_SU_1995.nc ERA5_SU_1996.nc ERA5_SU_1997.nc ERA5_SU_1998.nc ERA5_SU_1999.nc ERA5_SU_2000.nc ERA5_SU1991-2000.nc
+cdo mergetime ERA5_SU_2001.nc ERA5_SU_2002.nc ERA5_SU_2003.nc ERA5_SU_2004.nc ERA5_SU_2006.nc ERA5_SU_2007.nc ERA5_SU_2008.nc ERA5_SU_2009.nc ERA5_SU_2010.nc ERA5_SU_2011.nc ERA5_SU2001-2011.nc
+cdo mergetime ERA5_SU_2012.nc ERA5_SU_2013.nc ERA5_SU_2014.nc ERA5_SU_2015.nc ERA5_SU_2016.nc ERA5_SU_2017.nc ERA5_SU_2018.nc ERA5_SU_2019.nc ERA5_SU2012-2019.nc
+cdo mergetime ERA5_SU1981-1990.nc ERA5_SU1991-2000.nc ERA5_SU2001-2011.nc ERA5_SU2012-2019.nc $DIR/ERA5_SU1981-2019.nc
+########################################################################
+################# Warm spell days index: annual number of days, in interval of six consecutive days, where daily maximum temperature is >90th percentile of base period (WSDI) ##################
+cdo -selyear,1981/2010 CERA5_Tmax_daily1981-2019.nc ERA5_Tmax-daybase-1981-2010.nc
+cdo timpctl,90 ERA5_Tmax-daybase-1981-2010.nc -timmin CERA5_Tmax_daily1981-2019.nc -timmax CERA5_Tmax_daily1981-2019.nc ERA5_Tmax_90_Pctl90.nc
+cdo -add ERA5_Tmax_90_Pctl90.nc -sub CERA5_Tmax_daily1981-2019.nc CERA5_Tmax_daily1981-2019.nc ERA5_Tmax_90.nc
+#cdo splityear CERA5_Tmax_daily1981-2019.nc ERA5_Tmax_
+cdo splityear ERA5_Tmax_90.nc ERA5_Tmax_90_
+cdo eca_hwfi ERA5_Tmax_1981.nc ERA5_Tmax_90_1981.nc ERA5_WSDI_1981.nc
+cdo eca_hwfi ERA5_Tmax_1982.nc ERA5_Tmax_90_1982.nc ERA5_WSDI_1982.nc
+cdo eca_hwfi ERA5_Tmax_1983.nc ERA5_Tmax_90_1983.nc ERA5_WSDI_1983.nc
+cdo eca_hwfi ERA5_Tmax_1984.nc ERA5_Tmax_90_1984.nc ERA5_WSDI_1984.nc
+cdo eca_hwfi ERA5_Tmax_1985.nc ERA5_Tmax_90_1985.nc ERA5_WSDI_1985.nc
+cdo eca_hwfi ERA5_Tmax_1986.nc ERA5_Tmax_90_1986.nc ERA5_WSDI_1986.nc
+cdo eca_hwfi ERA5_Tmax_1987.nc ERA5_Tmax_90_1987.nc ERA5_WSDI_1987.nc
+cdo eca_hwfi ERA5_Tmax_1988.nc ERA5_Tmax_90_1988.nc ERA5_WSDI_1988.nc
+cdo eca_hwfi ERA5_Tmax_1989.nc ERA5_Tmax_90_1989.nc ERA5_WSDI_1989.nc
+cdo eca_hwfi ERA5_Tmax_1990.nc ERA5_Tmax_90_1990.nc ERA5_WSDI_1990.nc
+cdo eca_hwfi ERA5_Tmax_1991.nc ERA5_Tmax_90_1991.nc ERA5_WSDI_1991.nc
+cdo eca_hwfi ERA5_Tmax_1992.nc ERA5_Tmax_90_1992.nc ERA5_WSDI_1992.nc
+cdo eca_hwfi ERA5_Tmax_1993.nc ERA5_Tmax_90_1993.nc ERA5_WSDI_1993.nc
+cdo eca_hwfi ERA5_Tmax_1994.nc ERA5_Tmax_90_1994.nc ERA5_WSDI_1994.nc
+cdo eca_hwfi ERA5_Tmax_1995.nc ERA5_Tmax_90_1995.nc ERA5_WSDI_1995.nc
+cdo eca_hwfi ERA5_Tmax_1996.nc ERA5_Tmax_90_1996.nc ERA5_WSDI_1996.nc
+cdo eca_hwfi ERA5_Tmax_1997.nc ERA5_Tmax_90_1997.nc ERA5_WSDI_1997.nc
+cdo eca_hwfi ERA5_Tmax_1998.nc ERA5_Tmax_90_1998.nc ERA5_WSDI_1998.nc
+cdo eca_hwfi ERA5_Tmax_1999.nc ERA5_Tmax_90_1999.nc ERA5_WSDI_1999.nc
+cdo eca_hwfi ERA5_Tmax_2000.nc ERA5_Tmax_90_2000.nc ERA5_WSDI_2000.nc
+cdo eca_hwfi ERA5_Tmax_2001.nc ERA5_Tmax_90_2001.nc ERA5_WSDI_2001.nc
+cdo eca_hwfi ERA5_Tmax_2002.nc ERA5_Tmax_90_2002.nc ERA5_WSDI_2002.nc
+cdo eca_hwfi ERA5_Tmax_2003.nc ERA5_Tmax_90_2003.nc ERA5_WSDI_2003.nc
+cdo eca_hwfi ERA5_Tmax_2004.nc ERA5_Tmax_90_2004.nc ERA5_WSDI_2004.nc
+cdo eca_hwfi ERA5_Tmax_2005.nc ERA5_Tmax_90_2005.nc ERA5_WSDI_2005.nc
+cdo eca_hwfi ERA5_Tmax_2006.nc ERA5_Tmax_90_2006.nc ERA5_WSDI_2006.nc
+cdo eca_hwfi ERA5_Tmax_2007.nc ERA5_Tmax_90_2007.nc ERA5_WSDI_2007.nc
+cdo eca_hwfi ERA5_Tmax_2008.nc ERA5_Tmax_90_2008.nc ERA5_WSDI_2008.nc
+cdo eca_hwfi ERA5_Tmax_2009.nc ERA5_Tmax_90_2009.nc ERA5_WSDI_2009.nc
+cdo eca_hwfi ERA5_Tmax_2010.nc ERA5_Tmax_90_2010.nc ERA5_WSDI_2010.nc
+cdo eca_hwfi ERA5_Tmax_2011.nc ERA5_Tmax_90_2011.nc ERA5_WSDI_2011.nc
+cdo eca_hwfi ERA5_Tmax_2012.nc ERA5_Tmax_90_2012.nc ERA5_WSDI_2012.nc
+cdo eca_hwfi ERA5_Tmax_2013.nc ERA5_Tmax_90_2013.nc ERA5_WSDI_2013.nc
+cdo eca_hwfi ERA5_Tmax_2014.nc ERA5_Tmax_90_2014.nc ERA5_WSDI_2014.nc
+cdo eca_hwfi ERA5_Tmax_2015.nc ERA5_Tmax_90_2015.nc ERA5_WSDI_2015.nc
+cdo eca_hwfi ERA5_Tmax_2016.nc ERA5_Tmax_90_2016.nc ERA5_WSDI_2016.nc
+cdo eca_hwfi ERA5_Tmax_2017.nc ERA5_Tmax_90_2017.nc ERA5_WSDI_2017.nc
+cdo eca_hwfi ERA5_Tmax_2018.nc ERA5_Tmax_90_2018.nc ERA5_WSDI_2018.nc
+cdo eca_hwfi ERA5_Tmax_2019.nc ERA5_Tmax_90_2019.nc ERA5_WSDI_2019.nc
+cdo mergetime ERA5_WSDI_1981.nc ERA5_WSDI_1982.nc ERA5_WSDI_1983.nc ERA5_WSDI_1984.nc ERA5_WSDI_1985.nc ERA5_WSDI_1986.nc ERA5_WSDI_1987.nc ERA5_WSDI_1988.nc ERA5_WSDI_1989.nc ERA5_WSDI1981-1989.nc
+cdo mergetime ERA5_WSDI_1990.nc ERA5_WSDI_1991.nc ERA5_WSDI_1992.nc ERA5_WSDI_1993.nc ERA5_WSDI_1994.nc ERA5_WSDI_1995.nc ERA5_WSDI_1996.nc ERA5_WSDI_1997.nc ERA5_WSDI_1998.nc ERA5_WSDI1990-1998.nc
+cdo mergetime ERA5_WSDI_1999.nc ERA5_WSDI_2000.nc ERA5_WSDI_2001.nc ERA5_WSDI_2002.nc ERA5_WSDI_2003.nc ERA5_WSDI_2004.nc ERA5_WSDI_2005.nc ERA5_WSDI_2006.nc ERA5_WSDI_2007.nc ERA5_WSDI1999-2007.nc
+cdo mergetime ERA5_WSDI_2008.nc ERA5_WSDI_2009.nc ERA5_WSDI_2010.nc ERA5_WSDI_2011.nc ERA5_WSDI_2012.nc ERA5_WSDI_2013.nc ERA5_WSDI_2014.nc ERA5_WSDI_2015.nc ERA5_WSDI_2016.nc ERA5_WSDI2008-2016.nc          
+cdo mergetime ERA5_WSDI_2017.nc ERA5_WSDI_2018.nc ERA5_WSDI_2019.nc ERA5_WSDI2017-2019.nc
+cdo mergetime ERA5_WSDI1981-1989.nc ERA5_WSDI1990-1998.nc ERA5_WSDI1999-2007.nc ERA5_WSDI2008-2016.nc ERA5_WSDI2017-2019.nc $DIR/ERA5_WSDI1981-2019.nc
+############### WSDI Power ######################
+cdo -selyear,1981/2010 CPower_Tmax_daily1981-2019.nc Power_Tmax-daybase-1981-2010.nc
+cdo timpctl,90 Power_Tmax-daybase-1981-2010.nc -timmin CPower_Tmax_daily1981-2019.nc -timmax CPower_Tmax_daily1981-2019.nc Power_Tmax_90_Pctl90.nc
+cdo -add Power_Tmax_90_Pctl90.nc -sub CPower_Tmax_daily1981-2019.nc CPower_Tmax_daily1981-2019.nc Power_Tmax_90.nc
+#cdo splityear CPower_Tmax_daily1981-2019.nc Power_Tmax_
+cdo splityear Power_Tmax_90.nc Power_Tmax_90_
+cdo eca_hwfi Power_Tmax_1981.nc Power_Tmax_90_1981.nc Power_WSDI_1981.nc
+cdo eca_hwfi Power_Tmax_1982.nc Power_Tmax_90_1982.nc Power_WSDI_1982.nc
+cdo eca_hwfi Power_Tmax_1983.nc Power_Tmax_90_1983.nc Power_WSDI_1983.nc
+cdo eca_hwfi Power_Tmax_1984.nc Power_Tmax_90_1984.nc Power_WSDI_1984.nc
+cdo eca_hwfi Power_Tmax_1985.nc Power_Tmax_90_1985.nc Power_WSDI_1985.nc
+cdo eca_hwfi Power_Tmax_1986.nc Power_Tmax_90_1986.nc Power_WSDI_1986.nc
+cdo eca_hwfi Power_Tmax_1987.nc Power_Tmax_90_1987.nc Power_WSDI_1987.nc
+cdo eca_hwfi Power_Tmax_1988.nc Power_Tmax_90_1988.nc Power_WSDI_1988.nc
+cdo eca_hwfi Power_Tmax_1989.nc Power_Tmax_90_1989.nc Power_WSDI_1989.nc
+cdo eca_hwfi Power_Tmax_1990.nc Power_Tmax_90_1990.nc Power_WSDI_1990.nc
+cdo eca_hwfi Power_Tmax_1991.nc Power_Tmax_90_1991.nc Power_WSDI_1991.nc
+cdo eca_hwfi Power_Tmax_1992.nc Power_Tmax_90_1992.nc Power_WSDI_1992.nc
+cdo eca_hwfi Power_Tmax_1993.nc Power_Tmax_90_1993.nc Power_WSDI_1993.nc
+cdo eca_hwfi Power_Tmax_1994.nc Power_Tmax_90_1994.nc Power_WSDI_1994.nc
+cdo eca_hwfi Power_Tmax_1995.nc Power_Tmax_90_1995.nc Power_WSDI_1995.nc
+cdo eca_hwfi Power_Tmax_1996.nc Power_Tmax_90_1996.nc Power_WSDI_1996.nc
+cdo eca_hwfi Power_Tmax_1997.nc Power_Tmax_90_1997.nc Power_WSDI_1997.nc
+cdo eca_hwfi Power_Tmax_1998.nc Power_Tmax_90_1998.nc Power_WSDI_1998.nc
+cdo eca_hwfi Power_Tmax_1999.nc Power_Tmax_90_1999.nc Power_WSDI_1999.nc
+cdo eca_hwfi Power_Tmax_2000.nc Power_Tmax_90_2000.nc Power_WSDI_2000.nc
+cdo eca_hwfi Power_Tmax_2001.nc Power_Tmax_90_2001.nc Power_WSDI_2001.nc
+cdo eca_hwfi Power_Tmax_2002.nc Power_Tmax_90_2002.nc Power_WSDI_2002.nc
+cdo eca_hwfi Power_Tmax_2003.nc Power_Tmax_90_2003.nc Power_WSDI_2003.nc
+cdo eca_hwfi Power_Tmax_2004.nc Power_Tmax_90_2004.nc Power_WSDI_2004.nc
+cdo eca_hwfi Power_Tmax_2005.nc Power_Tmax_90_2005.nc Power_WSDI_2005.nc
+cdo eca_hwfi Power_Tmax_2006.nc Power_Tmax_90_2006.nc Power_WSDI_2006.nc
+cdo eca_hwfi Power_Tmax_2007.nc Power_Tmax_90_2007.nc Power_WSDI_2007.nc
+cdo eca_hwfi Power_Tmax_2008.nc Power_Tmax_90_2008.nc Power_WSDI_2008.nc
+cdo eca_hwfi Power_Tmax_2009.nc Power_Tmax_90_2009.nc Power_WSDI_2009.nc
+cdo eca_hwfi Power_Tmax_2010.nc Power_Tmax_90_2010.nc Power_WSDI_2010.nc
+cdo eca_hwfi Power_Tmax_2011.nc Power_Tmax_90_2011.nc Power_WSDI_2011.nc
+cdo eca_hwfi Power_Tmax_2012.nc Power_Tmax_90_2012.nc Power_WSDI_2012.nc
+cdo eca_hwfi Power_Tmax_2013.nc Power_Tmax_90_2013.nc Power_WSDI_2013.nc
+cdo eca_hwfi Power_Tmax_2014.nc Power_Tmax_90_2014.nc Power_WSDI_2014.nc
+cdo eca_hwfi Power_Tmax_2015.nc Power_Tmax_90_2015.nc Power_WSDI_2015.nc
+cdo eca_hwfi Power_Tmax_2016.nc Power_Tmax_90_2016.nc Power_WSDI_2016.nc
+cdo eca_hwfi Power_Tmax_2017.nc Power_Tmax_90_2017.nc Power_WSDI_2017.nc
+cdo eca_hwfi Power_Tmax_2018.nc Power_Tmax_90_2018.nc Power_WSDI_2018.nc
+cdo eca_hwfi Power_Tmax_2019.nc Power_Tmax_90_2019.nc Power_WSDI_2019.nc
+cdo mergetime Power_WSDI_1981.nc Power_WSDI_1982.nc Power_WSDI_1983.nc Power_WSDI_1984.nc Power_WSDI_1985.nc Power_WSDI_1986.nc Power_WSDI_1987.nc Power_WSDI_1988.nc Power_WSDI_1989.nc Power_WSDI1981-1989.nc
+cdo mergetime Power_WSDI_1990.nc Power_WSDI_1991.nc Power_WSDI_1992.nc Power_WSDI_1993.nc Power_WSDI_1994.nc Power_WSDI_1995.nc Power_WSDI_1996.nc Power_WSDI_1997.nc Power_WSDI_1998.nc Power_WSDI1990-1998.nc
+cdo mergetime Power_WSDI_1999.nc Power_WSDI_2000.nc Power_WSDI_2001.nc Power_WSDI_2002.nc Power_WSDI_2003.nc Power_WSDI_2004.nc Power_WSDI_2005.nc Power_WSDI_2006.nc Power_WSDI_2007.nc Power_WSDI1999-2007.nc
+cdo mergetime Power_WSDI_2008.nc Power_WSDI_2009.nc Power_WSDI_2010.nc Power_WSDI_2011.nc Power_WSDI_2012.nc Power_WSDI_2013.nc Power_WSDI_2014.nc Power_WSDI_2015.nc Power_WSDI_2016.nc Power_WSDI2008-2016.nc          
+cdo mergetime Power_WSDI_2017.nc Power_WSDI_2018.nc Power_WSDI_2019.nc Power_WSDI2017-2019.nc
+cdo mergetime Power_WSDI1981-1989.nc Power_WSDI1990-1998.nc Power_WSDI1999-2007.nc Power_WSDI2008-2016.nc Power_WSDI2017-2019.nc $DIR/Power_WSDI1981-2019.nc
+############### WSDI CFSR ############################################
+cdo -selyear,1981/2010 CCFSR_Tmax_daily1981-2019.nc  CFSR_Tmax-daybase-1981-2010.nc
+cdo timpctl,90 CFSR_Tmax-daybase-1981-2010.nc -timmin CCFSR_Tmax_daily1981-2019.nc -timmax CCFSR_Tmax_daily1981-2019.nc CFSR_Tmax_90_Pctl90.nc
+cdo -add CFSR_Tmax_90_Pctl90.nc -sub CCFSR_Tmax_daily1981-2019.nc CCFSR_Tmax_daily1981-2019.nc CFSR_Tmax_90.nc
+#cdo splityear CCFSR_Tmax_daily1981-2019.nc CFSR_Tmax_#####################
+cdo splityear CFSR_Tmax_90.nc CFSR_Tmax_90_ 
+cdo eca_hwfi CFSR_Tmax_1981.nc CFSR_Tmax_90_1981.nc CFSR_WSDI_1981.nc
+cdo eca_hwfi CFSR_Tmax_1982.nc CFSR_Tmax_90_1982.nc CFSR_WSDI_1982.nc
+cdo eca_hwfi CFSR_Tmax_1983.nc CFSR_Tmax_90_1983.nc CFSR_WSDI_1983.nc
+cdo eca_hwfi CFSR_Tmax_1984.nc CFSR_Tmax_90_1984.nc CFSR_WSDI_1984.nc
+cdo eca_hwfi CFSR_Tmax_1985.nc CFSR_Tmax_90_1985.nc CFSR_WSDI_1985.nc
+cdo eca_hwfi CFSR_Tmax_1986.nc CFSR_Tmax_90_1986.nc CFSR_WSDI_1986.nc
+cdo eca_hwfi CFSR_Tmax_1987.nc CFSR_Tmax_90_1987.nc CFSR_WSDI_1987.nc
+cdo eca_hwfi CFSR_Tmax_1988.nc CFSR_Tmax_90_1988.nc CFSR_WSDI_1988.nc
+cdo eca_hwfi CFSR_Tmax_1989.nc CFSR_Tmax_90_1989.nc CFSR_WSDI_1989.nc
+cdo eca_hwfi CFSR_Tmax_1990.nc CFSR_Tmax_90_1990.nc CFSR_WSDI_1990.nc
+cdo eca_hwfi CFSR_Tmax_1991.nc CFSR_Tmax_90_1991.nc CFSR_WSDI_1991.nc
+cdo eca_hwfi CFSR_Tmax_1992.nc CFSR_Tmax_90_1992.nc CFSR_WSDI_1992.nc
+cdo eca_hwfi CFSR_Tmax_1993.nc CFSR_Tmax_90_1993.nc CFSR_WSDI_1993.nc
+cdo eca_hwfi CFSR_Tmax_1994.nc CFSR_Tmax_90_1994.nc CFSR_WSDI_1994.nc
+cdo eca_hwfi CFSR_Tmax_1995.nc CFSR_Tmax_90_1995.nc CFSR_WSDI_1995.nc
+cdo eca_hwfi CFSR_Tmax_1996.nc CFSR_Tmax_90_1996.nc CFSR_WSDI_1996.nc
+cdo eca_hwfi CFSR_Tmax_1997.nc CFSR_Tmax_90_1997.nc CFSR_WSDI_1997.nc
+cdo eca_hwfi CFSR_Tmax_1998.nc CFSR_Tmax_90_1998.nc CFSR_WSDI_1998.nc
+cdo eca_hwfi CFSR_Tmax_1999.nc CFSR_Tmax_90_1999.nc CFSR_WSDI_1999.nc
+cdo eca_hwfi CFSR_Tmax_2000.nc CFSR_Tmax_90_2000.nc CFSR_WSDI_2000.nc
+cdo eca_hwfi CFSR_Tmax_2001.nc CFSR_Tmax_90_2001.nc CFSR_WSDI_2001.nc
+cdo eca_hwfi CFSR_Tmax_2002.nc CFSR_Tmax_90_2002.nc CFSR_WSDI_2002.nc
+cdo eca_hwfi CFSR_Tmax_2003.nc CFSR_Tmax_90_2003.nc CFSR_WSDI_2003.nc
+cdo eca_hwfi CFSR_Tmax_2004.nc CFSR_Tmax_90_2004.nc CFSR_WSDI_2004.nc
+cdo eca_hwfi CFSR_Tmax_2005.nc CFSR_Tmax_90_2005.nc CFSR_WSDI_2005.nc
+cdo eca_hwfi CFSR_Tmax_2006.nc CFSR_Tmax_90_2006.nc CFSR_WSDI_2006.nc
+cdo eca_hwfi CFSR_Tmax_2007.nc CFSR_Tmax_90_2007.nc CFSR_WSDI_2007.nc
+cdo eca_hwfi CFSR_Tmax_2008.nc CFSR_Tmax_90_2008.nc CFSR_WSDI_2008.nc
+cdo eca_hwfi CFSR_Tmax_2009.nc CFSR_Tmax_90_2009.nc CFSR_WSDI_2009.nc
+cdo eca_hwfi CFSR_Tmax_2010.nc CFSR_Tmax_90_2010.nc CFSR_WSDI_2010.nc
+cdo eca_hwfi CFSR_Tmax_2011.nc CFSR_Tmax_90_2011.nc CFSR_WSDI_2011.nc
+cdo eca_hwfi CFSR_Tmax_2012.nc CFSR_Tmax_90_2012.nc CFSR_WSDI_2012.nc
+cdo eca_hwfi CFSR_Tmax_2013.nc CFSR_Tmax_90_2013.nc CFSR_WSDI_2013.nc
+cdo eca_hwfi CFSR_Tmax_2014.nc CFSR_Tmax_90_2014.nc CFSR_WSDI_2014.nc
+cdo eca_hwfi CFSR_Tmax_2015.nc CFSR_Tmax_90_2015.nc CFSR_WSDI_2015.nc
+cdo eca_hwfi CFSR_Tmax_2016.nc CFSR_Tmax_90_2016.nc CFSR_WSDI_2016.nc
+cdo eca_hwfi CFSR_Tmax_2017.nc CFSR_Tmax_90_2017.nc CFSR_WSDI_2017.nc
+cdo eca_hwfi CFSR_Tmax_2018.nc CFSR_Tmax_90_2018.nc CFSR_WSDI_2018.nc
+cdo eca_hwfi CFSR_Tmax_2019.nc CFSR_Tmax_90_2019.nc CFSR_WSDI_2019.nc
+cdo mergetime CFSR_WSDI_1981.nc CFSR_WSDI_1982.nc CFSR_WSDI_1983.nc CFSR_WSDI_1984.nc CFSR_WSDI_1985.nc CFSR_WSDI_1986.nc CFSR_WSDI_1987.nc CFSR_WSDI_1988.nc CFSR_WSDI_1989.nc CFSR_WSDI1981-1989.nc
+cdo mergetime CFSR_WSDI_1990.nc CFSR_WSDI_1991.nc CFSR_WSDI_1992.nc CFSR_WSDI_1993.nc CFSR_WSDI_1994.nc CFSR_WSDI_1995.nc CFSR_WSDI_1996.nc CFSR_WSDI_1997.nc CFSR_WSDI_1998.nc CFSR_WSDI1990-1998.nc
+cdo mergetime CFSR_WSDI_1999.nc CFSR_WSDI_2000.nc CFSR_WSDI_2001.nc CFSR_WSDI_2002.nc CFSR_WSDI_2003.nc CFSR_WSDI_2004.nc CFSR_WSDI_2005.nc CFSR_WSDI_2006.nc CFSR_WSDI_2007.nc CFSR_WSDI1999-2007.nc
+cdo mergetime CFSR_WSDI_2008.nc CFSR_WSDI_2009.nc CFSR_WSDI_2010.nc CFSR_WSDI_2011.nc CFSR_WSDI_2012.nc CFSR_WSDI_2013.nc CFSR_WSDI_2014.nc CFSR_WSDI_2015.nc CFSR_WSDI_2016.nc CFSR_WSDI2008-2016.nc          
+cdo mergetime CFSR_WSDI_2017.nc CFSR_WSDI_2018.nc CFSR_WSDI_2019.nc CFSR_WSDI2017-2019.nc
+cdo mergetime CFSR_WSDI1981-1989.nc CFSR_WSDI1990-1998.nc CFSR_WSDI1999-2007.nc CFSR_WSDI2008-2016.nc CFSR_WSDI2017-2019.nc $DIR/CFSR_WSDI1981-2019.nc
+#################################################################
+################# Cold spell days index: annual number of days, in interval of six consecutive days, where daily minimum temperature is <10th percentile of base period (CSDI)################
+#### ERA5 CSDI #########
+cdo -selyear,1981/2010 CERA5_Tmin_daily1981-2019.nc ERA5_Tmin-daybase-1981-2010.nc
+cdo timpctl,90 ERA5_Tmin-daybase-1981-2010.nc -timmin CERA5_Tmin_daily1981-2019.nc -timmax CERA5_Tmin_daily1981-2019.nc ERA5_Tmin_90_Pctl90.nc
+cdo -add ERA5_Tmin_90_Pctl90.nc -sub CERA5_Tmin_daily1981-2019.nc CERA5_Tmin_daily1981-2019.nc ERA5_Tmin_90.nc
+cdo splityear CERA5_Tmin_daily1981-2019.nc ERA5_Tmin_
+cdo splityear ERA5_Tmin_90.nc ERA5_Tmin_90_
+cdo eca_cwfi ERA5_Tmin_1981.nc ERA5_Tmin_90_1981.nc ERA5_CSDI_1981.nc
+cdo eca_cwfi ERA5_Tmin_1982.nc ERA5_Tmin_90_1982.nc ERA5_CSDI_1982.nc
+cdo eca_cwfi ERA5_Tmin_1983.nc ERA5_Tmin_90_1983.nc ERA5_CSDI_1983.nc
+cdo eca_cwfi ERA5_Tmin_1984.nc ERA5_Tmin_90_1984.nc ERA5_CSDI_1984.nc
+cdo eca_cwfi ERA5_Tmin_1985.nc ERA5_Tmin_90_1985.nc ERA5_CSDI_1985.nc
+cdo eca_cwfi ERA5_Tmin_1986.nc ERA5_Tmin_90_1986.nc ERA5_CSDI_1986.nc
+cdo eca_cwfi ERA5_Tmin_1987.nc ERA5_Tmin_90_1987.nc ERA5_CSDI_1987.nc
+cdo eca_cwfi ERA5_Tmin_1988.nc ERA5_Tmin_90_1988.nc ERA5_CSDI_1988.nc
+cdo eca_cwfi ERA5_Tmin_1989.nc ERA5_Tmin_90_1989.nc ERA5_CSDI_1989.nc
+cdo eca_cwfi ERA5_Tmin_1990.nc ERA5_Tmin_90_1990.nc ERA5_CSDI_1990.nc
+cdo eca_cwfi ERA5_Tmin_1991.nc ERA5_Tmin_90_1991.nc ERA5_CSDI_1991.nc
+cdo eca_cwfi ERA5_Tmin_1992.nc ERA5_Tmin_90_1992.nc ERA5_CSDI_1992.nc
+cdo eca_cwfi ERA5_Tmin_1993.nc ERA5_Tmin_90_1993.nc ERA5_CSDI_1993.nc
+cdo eca_cwfi ERA5_Tmin_1994.nc ERA5_Tmin_90_1994.nc ERA5_CSDI_1994.nc
+cdo eca_cwfi ERA5_Tmin_1995.nc ERA5_Tmin_90_1995.nc ERA5_CSDI_1995.nc
+cdo eca_cwfi ERA5_Tmin_1996.nc ERA5_Tmin_90_1996.nc ERA5_CSDI_1996.nc
+cdo eca_cwfi ERA5_Tmin_1997.nc ERA5_Tmin_90_1997.nc ERA5_CSDI_1997.nc
+cdo eca_cwfi ERA5_Tmin_1998.nc ERA5_Tmin_90_1998.nc ERA5_CSDI_1998.nc
+cdo eca_cwfi ERA5_Tmin_1999.nc ERA5_Tmin_90_1999.nc ERA5_CSDI_1999.nc
+cdo eca_cwfi ERA5_Tmin_2000.nc ERA5_Tmin_90_2000.nc ERA5_CSDI_2000.nc
+cdo eca_cwfi ERA5_Tmin_2001.nc ERA5_Tmin_90_2001.nc ERA5_CSDI_2001.nc
+cdo eca_cwfi ERA5_Tmin_2002.nc ERA5_Tmin_90_2002.nc ERA5_CSDI_2002.nc
+cdo eca_cwfi ERA5_Tmin_2003.nc ERA5_Tmin_90_2003.nc ERA5_CSDI_2003.nc
+cdo eca_cwfi ERA5_Tmin_2004.nc ERA5_Tmin_90_2004.nc ERA5_CSDI_2004.nc
+cdo eca_cwfi ERA5_Tmin_2005.nc ERA5_Tmin_90_2005.nc ERA5_CSDI_2005.nc
+cdo eca_cwfi ERA5_Tmin_2006.nc ERA5_Tmin_90_2006.nc ERA5_CSDI_2006.nc
+cdo eca_cwfi ERA5_Tmin_2007.nc ERA5_Tmin_90_2007.nc ERA5_CSDI_2007.nc
+cdo eca_cwfi ERA5_Tmin_2008.nc ERA5_Tmin_90_2008.nc ERA5_CSDI_2008.nc
+cdo eca_cwfi ERA5_Tmin_2009.nc ERA5_Tmin_90_2009.nc ERA5_CSDI_2009.nc
+cdo eca_cwfi ERA5_Tmin_2010.nc ERA5_Tmin_90_2010.nc ERA5_CSDI_2010.nc
+cdo eca_cwfi ERA5_Tmin_2011.nc ERA5_Tmin_90_2011.nc ERA5_CSDI_2011.nc
+cdo eca_cwfi ERA5_Tmin_2012.nc ERA5_Tmin_90_2012.nc ERA5_CSDI_2012.nc
+cdo eca_cwfi ERA5_Tmin_2013.nc ERA5_Tmin_90_2013.nc ERA5_CSDI_2013.nc
+cdo eca_cwfi ERA5_Tmin_2014.nc ERA5_Tmin_90_2014.nc ERA5_CSDI_2014.nc
+cdo eca_cwfi ERA5_Tmin_2015.nc ERA5_Tmin_90_2015.nc ERA5_CSDI_2015.nc
+cdo eca_cwfi ERA5_Tmin_2016.nc ERA5_Tmin_90_2016.nc ERA5_CSDI_2016.nc
+cdo eca_cwfi ERA5_Tmin_2017.nc ERA5_Tmin_90_2017.nc ERA5_CSDI_2017.nc
+cdo eca_cwfi ERA5_Tmin_2018.nc ERA5_Tmin_90_2018.nc ERA5_CSDI_2018.nc
+cdo eca_cwfi ERA5_Tmin_2019.nc ERA5_Tmin_90_2019.nc ERA5_CSDI_2019.nc
+cdo mergetime ERA5_CSDI_1981.nc ERA5_CSDI_1982.nc ERA5_CSDI_1983.nc ERA5_CSDI_1984.nc ERA5_CSDI_1985.nc ERA5_CSDI_1986.nc ERA5_CSDI_1987.nc ERA5_CSDI_1988.nc ERA5_CSDI_1989.nc ERA5_CSDI1981-1989.nc
+cdo mergetime ERA5_CSDI_1990.nc ERA5_CSDI_1991.nc ERA5_CSDI_1992.nc ERA5_CSDI_1993.nc ERA5_CSDI_1994.nc ERA5_CSDI_1995.nc ERA5_CSDI_1996.nc ERA5_CSDI_1997.nc ERA5_CSDI_1998.nc ERA5_CSDI1990-1998.nc
+cdo mergetime ERA5_CSDI_1999.nc ERA5_CSDI_2000.nc ERA5_CSDI_2001.nc ERA5_CSDI_2002.nc ERA5_CSDI_2003.nc ERA5_CSDI_2004.nc ERA5_CSDI_2005.nc ERA5_CSDI_2006.nc ERA5_CSDI_2007.nc ERA5_CSDI1999-2007.nc
+cdo mergetime ERA5_CSDI_2008.nc ERA5_CSDI_2009.nc ERA5_CSDI_2010.nc ERA5_CSDI_2011.nc ERA5_CSDI_2012.nc ERA5_CSDI_2013.nc ERA5_CSDI_2014.nc ERA5_CSDI_2015.nc ERA5_CSDI_2016.nc ERA5_CSDI2008-2016.nc          
+cdo mergetime ERA5_CSDI_2017.nc ERA5_CSDI_2018.nc ERA5_CSDI_2019.nc ERA5_CSDI2017-2019.nc
+cdo mergetime ERA5_CSDI1981-1989.nc ERA5_CSDI1990-1998.nc ERA5_CSDI1999-2007.nc ERA5_CSDI2008-2016.nc ERA5_CSDI2017-2019.nc $DIR/ERA5_CSDI1981-2019.nc
+############# Power CSDI ################
+cdo -selyear,1981/2010 CPower_Tmin_daily1981-2019.nc Power_Tmin-daybase-1981-2010.nc
+cdo timpctl,90 Power_Tmin-daybase-1981-2010.nc -timmin CPower_Tmin_daily1981-2019.nc -timmax CPower_Tmin_daily1981-2019.nc Power_Tmin_90_Pctl90.nc
+cdo -add Power_Tmin_90_Pctl90.nc -sub CPower_Tmin_daily1981-2019.nc CPower_Tmin_daily1981-2019.nc Power_Tmin_90.nc
+cdo splityear CPower_Tmin_daily1981-2019.nc Power_Tmin_
+cdo splityear Power_Tmin_90.nc Power_Tmin_90_
+cdo eca_cwfi Power_Tmin_1981.nc Power_Tmin_90_1981.nc Power_CSDI_1981.nc
+cdo eca_cwfi Power_Tmin_1982.nc Power_Tmin_90_1982.nc Power_CSDI_1982.nc
+cdo eca_cwfi Power_Tmin_1983.nc Power_Tmin_90_1983.nc Power_CSDI_1983.nc
+cdo eca_cwfi Power_Tmin_1984.nc Power_Tmin_90_1984.nc Power_CSDI_1984.nc
+cdo eca_cwfi Power_Tmin_1985.nc Power_Tmin_90_1985.nc Power_CSDI_1985.nc
+cdo eca_cwfi Power_Tmin_1986.nc Power_Tmin_90_1986.nc Power_CSDI_1986.nc
+cdo eca_cwfi Power_Tmin_1987.nc Power_Tmin_90_1987.nc Power_CSDI_1987.nc
+cdo eca_cwfi Power_Tmin_1988.nc Power_Tmin_90_1988.nc Power_CSDI_1988.nc
+cdo eca_cwfi Power_Tmin_1989.nc Power_Tmin_90_1989.nc Power_CSDI_1989.nc
+cdo eca_cwfi Power_Tmin_1990.nc Power_Tmin_90_1990.nc Power_CSDI_1990.nc
+cdo eca_cwfi Power_Tmin_1991.nc Power_Tmin_90_1991.nc Power_CSDI_1991.nc
+cdo eca_cwfi Power_Tmin_1992.nc Power_Tmin_90_1992.nc Power_CSDI_1992.nc
+cdo eca_cwfi Power_Tmin_1993.nc Power_Tmin_90_1993.nc Power_CSDI_1993.nc
+cdo eca_cwfi Power_Tmin_1994.nc Power_Tmin_90_1994.nc Power_CSDI_1994.nc
+cdo eca_cwfi Power_Tmin_1995.nc Power_Tmin_90_1995.nc Power_CSDI_1995.nc
+cdo eca_cwfi Power_Tmin_1996.nc Power_Tmin_90_1996.nc Power_CSDI_1996.nc
+cdo eca_cwfi Power_Tmin_1997.nc Power_Tmin_90_1997.nc Power_CSDI_1997.nc
+cdo eca_cwfi Power_Tmin_1998.nc Power_Tmin_90_1998.nc Power_CSDI_1998.nc
+cdo eca_cwfi Power_Tmin_1999.nc Power_Tmin_90_1999.nc Power_CSDI_1999.nc
+cdo eca_cwfi Power_Tmin_2000.nc Power_Tmin_90_2000.nc Power_CSDI_2000.nc
+cdo eca_cwfi Power_Tmin_2001.nc Power_Tmin_90_2001.nc Power_CSDI_2001.nc
+cdo eca_cwfi Power_Tmin_2002.nc Power_Tmin_90_2002.nc Power_CSDI_2002.nc
+cdo eca_cwfi Power_Tmin_2003.nc Power_Tmin_90_2003.nc Power_CSDI_2003.nc
+cdo eca_cwfi Power_Tmin_2004.nc Power_Tmin_90_2004.nc Power_CSDI_2004.nc
+cdo eca_cwfi Power_Tmin_2005.nc Power_Tmin_90_2005.nc Power_CSDI_2005.nc
+cdo eca_cwfi Power_Tmin_2006.nc Power_Tmin_90_2006.nc Power_CSDI_2006.nc
+cdo eca_cwfi Power_Tmin_2007.nc Power_Tmin_90_2007.nc Power_CSDI_2007.nc
+cdo eca_cwfi Power_Tmin_2008.nc Power_Tmin_90_2008.nc Power_CSDI_2008.nc
+cdo eca_cwfi Power_Tmin_2009.nc Power_Tmin_90_2009.nc Power_CSDI_2009.nc
+cdo eca_cwfi Power_Tmin_2010.nc Power_Tmin_90_2010.nc Power_CSDI_2010.nc
+cdo eca_cwfi Power_Tmin_2011.nc Power_Tmin_90_2011.nc Power_CSDI_2011.nc
+cdo eca_cwfi Power_Tmin_2012.nc Power_Tmin_90_2012.nc Power_CSDI_2012.nc
+cdo eca_cwfi Power_Tmin_2013.nc Power_Tmin_90_2013.nc Power_CSDI_2013.nc
+cdo eca_cwfi Power_Tmin_2014.nc Power_Tmin_90_2014.nc Power_CSDI_2014.nc
+cdo eca_cwfi Power_Tmin_2015.nc Power_Tmin_90_2015.nc Power_CSDI_2015.nc
+cdo eca_cwfi Power_Tmin_2016.nc Power_Tmin_90_2016.nc Power_CSDI_2016.nc
+cdo eca_cwfi Power_Tmin_2017.nc Power_Tmin_90_2017.nc Power_CSDI_2017.nc
+cdo eca_cwfi Power_Tmin_2018.nc Power_Tmin_90_2018.nc Power_CSDI_2018.nc
+cdo eca_cwfi Power_Tmin_2019.nc Power_Tmin_90_2019.nc Power_CSDI_2019.nc
+cdo mergetime Power_CSDI_1981.nc Power_CSDI_1982.nc Power_CSDI_1983.nc Power_CSDI_1984.nc Power_CSDI_1985.nc Power_CSDI_1986.nc Power_CSDI_1987.nc Power_CSDI_1988.nc Power_CSDI_1989.nc Power_CSDI1981-1989.nc
+cdo mergetime Power_CSDI_1990.nc Power_CSDI_1991.nc Power_CSDI_1992.nc Power_CSDI_1993.nc Power_CSDI_1994.nc Power_CSDI_1995.nc Power_CSDI_1996.nc Power_CSDI_1997.nc Power_CSDI_1998.nc Power_CSDI1990-1998.nc
+cdo mergetime Power_CSDI_1999.nc Power_CSDI_2000.nc Power_CSDI_2001.nc Power_CSDI_2002.nc Power_CSDI_2003.nc Power_CSDI_2004.nc Power_CSDI_2005.nc Power_CSDI_2006.nc Power_CSDI_2007.nc Power_CSDI1999-2007.nc
+cdo mergetime Power_CSDI_2008.nc Power_CSDI_2009.nc Power_CSDI_2010.nc Power_CSDI_2011.nc Power_CSDI_2012.nc Power_CSDI_2013.nc Power_CSDI_2014.nc Power_CSDI_2015.nc Power_CSDI_2016.nc Power_CSDI2008-2016.nc          
+cdo mergetime Power_CSDI_2017.nc Power_CSDI_2018.nc Power_CSDI_2019.nc Power_CSDI2017-2019.nc
+cdo mergetime Power_CSDI1981-1989.nc Power_CSDI1990-1998.nc Power_CSDI1999-2007.nc Power_CSDI2008-2016.nc Power_CSDI2017-2019.nc $DIR/Power_CSDI1981-2019.nc
+########## CFSR CSDI ##############
+cdo -selyear,1981/2010 CCFSR_Tmin_daily1981-2019.nc CFSR_Tmin-daybase-1981-2010.nc
+cdo timpctl,90 CFSR_Tmin-daybase-1981-2010.nc -timmin CCFSR_Tmin_daily1981-2019.nc -timmax CCFSR_Tmin_daily1981-2019.nc CFSR_Tmin_90_Pctl90.nc
+cdo -add CFSR_Tmin_90_Pctl90.nc -sub CCFSR_Tmin_daily1981-2019.nc CCFSR_Tmin_daily1981-2019.nc CFSR_Tmin_90.nc
+cdo splityear CCFSR_Tmin_daily1981-2019.nc CFSR_Tmin_
+cdo splityear CFSR_Tmin_90.nc CFSR_Tmin_90_ 
+cdo eca_cwfi CFSR_Tmin_1981.nc CFSR_Tmin_90_1981.nc CFSR_CSDI_1981.nc
+cdo eca_cwfi CFSR_Tmin_1982.nc CFSR_Tmin_90_1982.nc CFSR_CSDI_1982.nc
+cdo eca_cwfi CFSR_Tmin_1983.nc CFSR_Tmin_90_1983.nc CFSR_CSDI_1983.nc
+cdo eca_cwfi CFSR_Tmin_1984.nc CFSR_Tmin_90_1984.nc CFSR_CSDI_1984.nc
+cdo eca_cwfi CFSR_Tmin_1985.nc CFSR_Tmin_90_1985.nc CFSR_CSDI_1985.nc
+cdo eca_cwfi CFSR_Tmin_1986.nc CFSR_Tmin_90_1986.nc CFSR_CSDI_1986.nc
+cdo eca_cwfi CFSR_Tmin_1987.nc CFSR_Tmin_90_1987.nc CFSR_CSDI_1987.nc
+cdo eca_cwfi CFSR_Tmin_1988.nc CFSR_Tmin_90_1988.nc CFSR_CSDI_1988.nc
+cdo eca_cwfi CFSR_Tmin_1989.nc CFSR_Tmin_90_1989.nc CFSR_CSDI_1989.nc
+cdo eca_cwfi CFSR_Tmin_1990.nc CFSR_Tmin_90_1990.nc CFSR_CSDI_1990.nc
+cdo eca_cwfi CFSR_Tmin_1991.nc CFSR_Tmin_90_1991.nc CFSR_CSDI_1991.nc
+cdo eca_cwfi CFSR_Tmin_1992.nc CFSR_Tmin_90_1992.nc CFSR_CSDI_1992.nc
+cdo eca_cwfi CFSR_Tmin_1993.nc CFSR_Tmin_90_1993.nc CFSR_CSDI_1993.nc
+cdo eca_cwfi CFSR_Tmin_1994.nc CFSR_Tmin_90_1994.nc CFSR_CSDI_1994.nc
+cdo eca_cwfi CFSR_Tmin_1995.nc CFSR_Tmin_90_1995.nc CFSR_CSDI_1995.nc
+cdo eca_cwfi CFSR_Tmin_1996.nc CFSR_Tmin_90_1996.nc CFSR_CSDI_1996.nc
+cdo eca_cwfi CFSR_Tmin_1997.nc CFSR_Tmin_90_1997.nc CFSR_CSDI_1997.nc
+cdo eca_cwfi CFSR_Tmin_1998.nc CFSR_Tmin_90_1998.nc CFSR_CSDI_1998.nc
+cdo eca_cwfi CFSR_Tmin_1999.nc CFSR_Tmin_90_1999.nc CFSR_CSDI_1999.nc
+cdo eca_cwfi CFSR_Tmin_2000.nc CFSR_Tmin_90_2000.nc CFSR_CSDI_2000.nc
+cdo eca_cwfi CFSR_Tmin_2001.nc CFSR_Tmin_90_2001.nc CFSR_CSDI_2001.nc
+cdo eca_cwfi CFSR_Tmin_2002.nc CFSR_Tmin_90_2002.nc CFSR_CSDI_2002.nc
+cdo eca_cwfi CFSR_Tmin_2003.nc CFSR_Tmin_90_2003.nc CFSR_CSDI_2003.nc
+cdo eca_cwfi CFSR_Tmin_2004.nc CFSR_Tmin_90_2004.nc CFSR_CSDI_2004.nc
+cdo eca_cwfi CFSR_Tmin_2005.nc CFSR_Tmin_90_2005.nc CFSR_CSDI_2005.nc
+cdo eca_cwfi CFSR_Tmin_2006.nc CFSR_Tmin_90_2006.nc CFSR_CSDI_2006.nc
+cdo eca_cwfi CFSR_Tmin_2007.nc CFSR_Tmin_90_2007.nc CFSR_CSDI_2007.nc
+cdo eca_cwfi CFSR_Tmin_2008.nc CFSR_Tmin_90_2008.nc CFSR_CSDI_2008.nc
+cdo eca_cwfi CFSR_Tmin_2009.nc CFSR_Tmin_90_2009.nc CFSR_CSDI_2009.nc
+cdo eca_cwfi CFSR_Tmin_2010.nc CFSR_Tmin_90_2010.nc CFSR_CSDI_2010.nc
+cdo eca_cwfi CFSR_Tmin_2011.nc CFSR_Tmin_90_2011.nc CFSR_CSDI_2011.nc
+cdo eca_cwfi CFSR_Tmin_2012.nc CFSR_Tmin_90_2012.nc CFSR_CSDI_2012.nc
+cdo eca_cwfi CFSR_Tmin_2013.nc CFSR_Tmin_90_2013.nc CFSR_CSDI_2013.nc
+cdo eca_cwfi CFSR_Tmin_2014.nc CFSR_Tmin_90_2014.nc CFSR_CSDI_2014.nc
+cdo eca_cwfi CFSR_Tmin_2015.nc CFSR_Tmin_90_2015.nc CFSR_CSDI_2015.nc
+cdo eca_cwfi CFSR_Tmin_2016.nc CFSR_Tmin_90_2016.nc CFSR_CSDI_2016.nc
+cdo eca_cwfi CFSR_Tmin_2017.nc CFSR_Tmin_90_2017.nc CFSR_CSDI_2017.nc
+cdo eca_cwfi CFSR_Tmin_2018.nc CFSR_Tmin_90_2018.nc CFSR_CSDI_2018.nc
+cdo eca_cwfi CFSR_Tmin_2019.nc CFSR_Tmin_90_2019.nc CFSR_CSDI_2019.nc
+cdo mergetime CFSR_CSDI_1981.nc CFSR_CSDI_1982.nc CFSR_CSDI_1983.nc CFSR_CSDI_1984.nc CFSR_CSDI_1985.nc CFSR_CSDI_1986.nc CFSR_CSDI_1987.nc CFSR_CSDI_1988.nc CFSR_CSDI_1989.nc CFSR_CSDI1981-1989.nc
+cdo mergetime CFSR_CSDI_1990.nc CFSR_CSDI_1991.nc CFSR_CSDI_1992.nc CFSR_CSDI_1993.nc CFSR_CSDI_1994.nc CFSR_CSDI_1995.nc CFSR_CSDI_1996.nc CFSR_CSDI_1997.nc CFSR_CSDI_1998.nc CFSR_CSDI1990-1998.nc
+cdo mergetime CFSR_CSDI_1999.nc CFSR_CSDI_2000.nc CFSR_CSDI_2001.nc CFSR_CSDI_2002.nc CFSR_CSDI_2003.nc CFSR_CSDI_2004.nc CFSR_CSDI_2005.nc CFSR_CSDI_2006.nc CFSR_CSDI_2007.nc CFSR_CSDI1999-2007.nc
+cdo mergetime CFSR_CSDI_2008.nc CFSR_CSDI_2009.nc CFSR_CSDI_2010.nc CFSR_CSDI_2011.nc CFSR_CSDI_2012.nc CFSR_CSDI_2013.nc CFSR_CSDI_2014.nc CFSR_CSDI_2015.nc CFSR_CSDI_2016.nc CFSR_CSDI2008-2016.nc          
+cdo mergetime CFSR_CSDI_2017.nc CFSR_CSDI_2018.nc CFSR_CSDI_2019.nc CFSR_CSDI2017-2019.nc
+cdo mergetime CFSR_CSDI1981-1989.nc CFSR_CSDI1990-1998.nc CFSR_CSDI1999-2007.nc CFSR_CSDI2008-2016.nc CFSR_CSDI2017-2019.nc $DIR/CFSR_CSDI1981-2019.nc
+########################################################################
+################# Warm days: percentage of days where daily maximum temperature is >90th percentile of base period (TX90p)   ################
+############### ERA5 TX90p ####################
+cdo eca_tg90p ERA5_Tmax_1981.nc ERA5_Tmax_90_1981.nc ERA5_TX90p_1981.nc
+cdo eca_tg90p ERA5_Tmax_1982.nc ERA5_Tmax_90_1982.nc ERA5_TX90p_1982.nc
+cdo eca_tg90p ERA5_Tmax_1983.nc ERA5_Tmax_90_1983.nc ERA5_TX90p_1983.nc
+cdo eca_tg90p ERA5_Tmax_1984.nc ERA5_Tmax_90_1984.nc ERA5_TX90p_1984.nc
+cdo eca_tg90p ERA5_Tmax_1985.nc ERA5_Tmax_90_1985.nc ERA5_TX90p_1985.nc
+cdo eca_tg90p ERA5_Tmax_1986.nc ERA5_Tmax_90_1986.nc ERA5_TX90p_1986.nc
+cdo eca_tg90p ERA5_Tmax_1987.nc ERA5_Tmax_90_1987.nc ERA5_TX90p_1987.nc
+cdo eca_tg90p ERA5_Tmax_1988.nc ERA5_Tmax_90_1988.nc ERA5_TX90p_1988.nc
+cdo eca_tg90p ERA5_Tmax_1989.nc ERA5_Tmax_90_1989.nc ERA5_TX90p_1989.nc
+cdo eca_tg90p ERA5_Tmax_1990.nc ERA5_Tmax_90_1990.nc ERA5_TX90p_1990.nc
+cdo eca_tg90p ERA5_Tmax_1991.nc ERA5_Tmax_90_1991.nc ERA5_TX90p_1991.nc
+cdo eca_tg90p ERA5_Tmax_1992.nc ERA5_Tmax_90_1992.nc ERA5_TX90p_1992.nc
+cdo eca_tg90p ERA5_Tmax_1993.nc ERA5_Tmax_90_1993.nc ERA5_TX90p_1993.nc
+cdo eca_tg90p ERA5_Tmax_1994.nc ERA5_Tmax_90_1994.nc ERA5_TX90p_1994.nc
+cdo eca_tg90p ERA5_Tmax_1995.nc ERA5_Tmax_90_1995.nc ERA5_TX90p_1995.nc
+cdo eca_tg90p ERA5_Tmax_1996.nc ERA5_Tmax_90_1996.nc ERA5_TX90p_1996.nc
+cdo eca_tg90p ERA5_Tmax_1997.nc ERA5_Tmax_90_1997.nc ERA5_TX90p_1997.nc
+cdo eca_tg90p ERA5_Tmax_1998.nc ERA5_Tmax_90_1998.nc ERA5_TX90p_1998.nc
+cdo eca_tg90p ERA5_Tmax_1999.nc ERA5_Tmax_90_1999.nc ERA5_TX90p_1999.nc
+cdo eca_tg90p ERA5_Tmax_2000.nc ERA5_Tmax_90_2000.nc ERA5_TX90p_2000.nc
+cdo eca_tg90p ERA5_Tmax_2001.nc ERA5_Tmax_90_2001.nc ERA5_TX90p_2001.nc
+cdo eca_tg90p ERA5_Tmax_2002.nc ERA5_Tmax_90_2002.nc ERA5_TX90p_2002.nc
+cdo eca_tg90p ERA5_Tmax_2003.nc ERA5_Tmax_90_2003.nc ERA5_TX90p_2003.nc
+cdo eca_tg90p ERA5_Tmax_2004.nc ERA5_Tmax_90_2004.nc ERA5_TX90p_2004.nc
+cdo eca_tg90p ERA5_Tmax_2005.nc ERA5_Tmax_90_2005.nc ERA5_TX90p_2005.nc
+cdo eca_tg90p ERA5_Tmax_2006.nc ERA5_Tmax_90_2006.nc ERA5_TX90p_2006.nc
+cdo eca_tg90p ERA5_Tmax_2007.nc ERA5_Tmax_90_2007.nc ERA5_TX90p_2007.nc
+cdo eca_tg90p ERA5_Tmax_2008.nc ERA5_Tmax_90_2008.nc ERA5_TX90p_2008.nc
+cdo eca_tg90p ERA5_Tmax_2009.nc ERA5_Tmax_90_2009.nc ERA5_TX90p_2009.nc
+cdo eca_tg90p ERA5_Tmax_2010.nc ERA5_Tmax_90_2010.nc ERA5_TX90p_2010.nc
+cdo eca_tg90p ERA5_Tmax_2011.nc ERA5_Tmax_90_2011.nc ERA5_TX90p_2011.nc
+cdo eca_tg90p ERA5_Tmax_2012.nc ERA5_Tmax_90_2012.nc ERA5_TX90p_2012.nc
+cdo eca_tg90p ERA5_Tmax_2013.nc ERA5_Tmax_90_2013.nc ERA5_TX90p_2013.nc
+cdo eca_tg90p ERA5_Tmax_2014.nc ERA5_Tmax_90_2014.nc ERA5_TX90p_2014.nc
+cdo eca_tg90p ERA5_Tmax_2015.nc ERA5_Tmax_90_2015.nc ERA5_TX90p_2015.nc
+cdo eca_tg90p ERA5_Tmax_2016.nc ERA5_Tmax_90_2016.nc ERA5_TX90p_2016.nc
+cdo eca_tg90p ERA5_Tmax_2017.nc ERA5_Tmax_90_2017.nc ERA5_TX90p_2017.nc
+cdo eca_tg90p ERA5_Tmax_2018.nc ERA5_Tmax_90_2018.nc ERA5_TX90p_2018.nc
+cdo eca_tg90p ERA5_Tmax_2019.nc ERA5_Tmax_90_2019.nc ERA5_TX90p_2019.nc
+cdo mergetime ERA5_TX90p_1981.nc ERA5_TX90p_1982.nc ERA5_TX90p_1983.nc ERA5_TX90p_1984.nc ERA5_TX90p_1985.nc ERA5_TX90p_1986.nc ERA5_TX90p_1987.nc ERA5_TX90p_1988.nc ERA5_TX90p_1989.nc ERA5_TX90p1981-1989.nc
+cdo mergetime ERA5_TX90p_1990.nc ERA5_TX90p_1991.nc ERA5_TX90p_1992.nc ERA5_TX90p_1993.nc ERA5_TX90p_1994.nc ERA5_TX90p_1995.nc ERA5_TX90p_1996.nc ERA5_TX90p_1997.nc ERA5_TX90p_1998.nc ERA5_TX90p1990-1998.nc
+cdo mergetime ERA5_TX90p_1999.nc ERA5_TX90p_2000.nc ERA5_TX90p_2001.nc ERA5_TX90p_2002.nc ERA5_TX90p_2003.nc ERA5_TX90p_2004.nc ERA5_TX90p_2005.nc ERA5_TX90p_2006.nc ERA5_TX90p_2007.nc ERA5_TX90p1999-2007.nc
+cdo mergetime ERA5_TX90p_2008.nc ERA5_TX90p_2009.nc ERA5_TX90p_2010.nc ERA5_TX90p_2011.nc ERA5_TX90p_2012.nc ERA5_TX90p_2013.nc ERA5_TX90p_2014.nc ERA5_TX90p_2015.nc ERA5_TX90p_2016.nc ERA5_TX90p2008-2016.nc          
+cdo mergetime ERA5_TX90p_2017.nc ERA5_TX90p_2018.nc ERA5_TX90p_2019.nc ERA5_TX90p2017-2019.nc
+cdo mergetime ERA5_TX90p1981-1989.nc ERA5_TX90p1990-1998.nc ERA5_TX90p1999-2007.nc ERA5_TX90p2008-2016.nc ERA5_TX90p2017-2019.nc $DIR/ERA5_TX90p1981-2019.nc
+################# Power TX90p #####################
+cdo eca_tg90p Power_Tmax_1981.nc Power_Tmax_90_1981.nc Power_TX90p_1981.nc
+cdo eca_tg90p Power_Tmax_1982.nc Power_Tmax_90_1982.nc Power_TX90p_1982.nc
+cdo eca_tg90p Power_Tmax_1983.nc Power_Tmax_90_1983.nc Power_TX90p_1983.nc
+cdo eca_tg90p Power_Tmax_1984.nc Power_Tmax_90_1984.nc Power_TX90p_1984.nc
+cdo eca_tg90p Power_Tmax_1985.nc Power_Tmax_90_1985.nc Power_TX90p_1985.nc
+cdo eca_tg90p Power_Tmax_1986.nc Power_Tmax_90_1986.nc Power_TX90p_1986.nc
+cdo eca_tg90p Power_Tmax_1987.nc Power_Tmax_90_1987.nc Power_TX90p_1987.nc
+cdo eca_tg90p Power_Tmax_1988.nc Power_Tmax_90_1988.nc Power_TX90p_1988.nc
+cdo eca_tg90p Power_Tmax_1989.nc Power_Tmax_90_1989.nc Power_TX90p_1989.nc
+cdo eca_tg90p Power_Tmax_1990.nc Power_Tmax_90_1990.nc Power_TX90p_1990.nc
+cdo eca_tg90p Power_Tmax_1991.nc Power_Tmax_90_1991.nc Power_TX90p_1991.nc
+cdo eca_tg90p Power_Tmax_1992.nc Power_Tmax_90_1992.nc Power_TX90p_1992.nc
+cdo eca_tg90p Power_Tmax_1993.nc Power_Tmax_90_1993.nc Power_TX90p_1993.nc
+cdo eca_tg90p Power_Tmax_1994.nc Power_Tmax_90_1994.nc Power_TX90p_1994.nc
+cdo eca_tg90p Power_Tmax_1995.nc Power_Tmax_90_1995.nc Power_TX90p_1995.nc
+cdo eca_tg90p Power_Tmax_1996.nc Power_Tmax_90_1996.nc Power_TX90p_1996.nc
+cdo eca_tg90p Power_Tmax_1997.nc Power_Tmax_90_1997.nc Power_TX90p_1997.nc
+cdo eca_tg90p Power_Tmax_1998.nc Power_Tmax_90_1998.nc Power_TX90p_1998.nc
+cdo eca_tg90p Power_Tmax_1999.nc Power_Tmax_90_1999.nc Power_TX90p_1999.nc
+cdo eca_tg90p Power_Tmax_2000.nc Power_Tmax_90_2000.nc Power_TX90p_2000.nc
+cdo eca_tg90p Power_Tmax_2001.nc Power_Tmax_90_2001.nc Power_TX90p_2001.nc
+cdo eca_tg90p Power_Tmax_2002.nc Power_Tmax_90_2002.nc Power_TX90p_2002.nc
+cdo eca_tg90p Power_Tmax_2003.nc Power_Tmax_90_2003.nc Power_TX90p_2003.nc
+cdo eca_tg90p Power_Tmax_2004.nc Power_Tmax_90_2004.nc Power_TX90p_2004.nc
+cdo eca_tg90p Power_Tmax_2005.nc Power_Tmax_90_2005.nc Power_TX90p_2005.nc
+cdo eca_tg90p Power_Tmax_2006.nc Power_Tmax_90_2006.nc Power_TX90p_2006.nc
+cdo eca_tg90p Power_Tmax_2007.nc Power_Tmax_90_2007.nc Power_TX90p_2007.nc
+cdo eca_tg90p Power_Tmax_2008.nc Power_Tmax_90_2008.nc Power_TX90p_2008.nc
+cdo eca_tg90p Power_Tmax_2009.nc Power_Tmax_90_2009.nc Power_TX90p_2009.nc
+cdo eca_tg90p Power_Tmax_2010.nc Power_Tmax_90_2010.nc Power_TX90p_2010.nc
+cdo eca_tg90p Power_Tmax_2011.nc Power_Tmax_90_2011.nc Power_TX90p_2011.nc
+cdo eca_tg90p Power_Tmax_2012.nc Power_Tmax_90_2012.nc Power_TX90p_2012.nc
+cdo eca_tg90p Power_Tmax_2013.nc Power_Tmax_90_2013.nc Power_TX90p_2013.nc
+cdo eca_tg90p Power_Tmax_2014.nc Power_Tmax_90_2014.nc Power_TX90p_2014.nc
+cdo eca_tg90p Power_Tmax_2015.nc Power_Tmax_90_2015.nc Power_TX90p_2015.nc
+cdo eca_tg90p Power_Tmax_2016.nc Power_Tmax_90_2016.nc Power_TX90p_2016.nc
+cdo eca_tg90p Power_Tmax_2017.nc Power_Tmax_90_2017.nc Power_TX90p_2017.nc
+cdo eca_tg90p Power_Tmax_2018.nc Power_Tmax_90_2018.nc Power_TX90p_2018.nc
+cdo eca_tg90p Power_Tmax_2019.nc Power_Tmax_90_2019.nc Power_TX90p_2019.nc
+cdo mergetime Power_TX90p_1981.nc Power_TX90p_1982.nc Power_TX90p_1983.nc Power_TX90p_1984.nc Power_TX90p_1985.nc Power_TX90p_1986.nc Power_TX90p_1987.nc Power_TX90p_1988.nc Power_TX90p_1989.nc Power_TX90p1981-1989.nc
+cdo mergetime Power_TX90p_1990.nc Power_TX90p_1991.nc Power_TX90p_1992.nc Power_TX90p_1993.nc Power_TX90p_1994.nc Power_TX90p_1995.nc Power_TX90p_1996.nc Power_TX90p_1997.nc Power_TX90p_1998.nc Power_TX90p1990-1998.nc
+cdo mergetime Power_TX90p_1999.nc Power_TX90p_2000.nc Power_TX90p_2001.nc Power_TX90p_2002.nc Power_TX90p_2003.nc Power_TX90p_2004.nc Power_TX90p_2005.nc Power_TX90p_2006.nc Power_TX90p_2007.nc Power_TX90p1999-2007.nc
+cdo mergetime Power_TX90p_2008.nc Power_TX90p_2009.nc Power_TX90p_2010.nc Power_TX90p_2011.nc Power_TX90p_2012.nc Power_TX90p_2013.nc Power_TX90p_2014.nc Power_TX90p_2015.nc Power_TX90p_2016.nc Power_TX90p2008-2016.nc          
+cdo mergetime Power_TX90p_2017.nc Power_TX90p_2018.nc Power_TX90p_2019.nc Power_TX90p2017-2019.nc
+cdo mergetime Power_TX90p1981-1989.nc Power_TX90p1990-1998.nc Power_TX90p1999-2007.nc Power_TX90p2008-2016.nc Power_TX90p2017-2019.nc $DIR/Power_TX90p1981-2019.nc
+################# CFSR TX90p #####################
+############### CFSR TX90p ####################
+cdo eca_tg90p CFSR_Tmax_1981.nc CFSR_Tmax_90_1981.nc CFSR_TX90p_1981.nc
+cdo eca_tg90p CFSR_Tmax_1982.nc CFSR_Tmax_90_1982.nc CFSR_TX90p_1982.nc
+cdo eca_tg90p CFSR_Tmax_1983.nc CFSR_Tmax_90_1983.nc CFSR_TX90p_1983.nc
+cdo eca_tg90p CFSR_Tmax_1984.nc CFSR_Tmax_90_1984.nc CFSR_TX90p_1984.nc
+cdo eca_tg90p CFSR_Tmax_1985.nc CFSR_Tmax_90_1985.nc CFSR_TX90p_1985.nc
+cdo eca_tg90p CFSR_Tmax_1986.nc CFSR_Tmax_90_1986.nc CFSR_TX90p_1986.nc
+cdo eca_tg90p CFSR_Tmax_1987.nc CFSR_Tmax_90_1987.nc CFSR_TX90p_1987.nc
+cdo eca_tg90p CFSR_Tmax_1988.nc CFSR_Tmax_90_1988.nc CFSR_TX90p_1988.nc
+cdo eca_tg90p CFSR_Tmax_1989.nc CFSR_Tmax_90_1989.nc CFSR_TX90p_1989.nc
+cdo eca_tg90p CFSR_Tmax_1990.nc CFSR_Tmax_90_1990.nc CFSR_TX90p_1990.nc
+cdo eca_tg90p CFSR_Tmax_1991.nc CFSR_Tmax_90_1991.nc CFSR_TX90p_1991.nc
+cdo eca_tg90p CFSR_Tmax_1992.nc CFSR_Tmax_90_1992.nc CFSR_TX90p_1992.nc
+cdo eca_tg90p CFSR_Tmax_1993.nc CFSR_Tmax_90_1993.nc CFSR_TX90p_1993.nc
+cdo eca_tg90p CFSR_Tmax_1994.nc CFSR_Tmax_90_1994.nc CFSR_TX90p_1994.nc
+cdo eca_tg90p CFSR_Tmax_1995.nc CFSR_Tmax_90_1995.nc CFSR_TX90p_1995.nc
+cdo eca_tg90p CFSR_Tmax_1996.nc CFSR_Tmax_90_1996.nc CFSR_TX90p_1996.nc
+cdo eca_tg90p CFSR_Tmax_1997.nc CFSR_Tmax_90_1997.nc CFSR_TX90p_1997.nc
+cdo eca_tg90p CFSR_Tmax_1998.nc CFSR_Tmax_90_1998.nc CFSR_TX90p_1998.nc
+cdo eca_tg90p CFSR_Tmax_1999.nc CFSR_Tmax_90_1999.nc CFSR_TX90p_1999.nc
+cdo eca_tg90p CFSR_Tmax_2000.nc CFSR_Tmax_90_2000.nc CFSR_TX90p_2000.nc
+cdo eca_tg90p CFSR_Tmax_2001.nc CFSR_Tmax_90_2001.nc CFSR_TX90p_2001.nc
+cdo eca_tg90p CFSR_Tmax_2002.nc CFSR_Tmax_90_2002.nc CFSR_TX90p_2002.nc
+cdo eca_tg90p CFSR_Tmax_2003.nc CFSR_Tmax_90_2003.nc CFSR_TX90p_2003.nc
+cdo eca_tg90p CFSR_Tmax_2004.nc CFSR_Tmax_90_2004.nc CFSR_TX90p_2004.nc
+cdo eca_tg90p CFSR_Tmax_2005.nc CFSR_Tmax_90_2005.nc CFSR_TX90p_2005.nc
+cdo eca_tg90p CFSR_Tmax_2006.nc CFSR_Tmax_90_2006.nc CFSR_TX90p_2006.nc
+cdo eca_tg90p CFSR_Tmax_2007.nc CFSR_Tmax_90_2007.nc CFSR_TX90p_2007.nc
+cdo eca_tg90p CFSR_Tmax_2008.nc CFSR_Tmax_90_2008.nc CFSR_TX90p_2008.nc
+cdo eca_tg90p CFSR_Tmax_2009.nc CFSR_Tmax_90_2009.nc CFSR_TX90p_2009.nc
+cdo eca_tg90p CFSR_Tmax_2010.nc CFSR_Tmax_90_2010.nc CFSR_TX90p_2010.nc
+cdo eca_tg90p CFSR_Tmax_2011.nc CFSR_Tmax_90_2011.nc CFSR_TX90p_2011.nc
+cdo eca_tg90p CFSR_Tmax_2012.nc CFSR_Tmax_90_2012.nc CFSR_TX90p_2012.nc
+cdo eca_tg90p CFSR_Tmax_2013.nc CFSR_Tmax_90_2013.nc CFSR_TX90p_2013.nc
+cdo eca_tg90p CFSR_Tmax_2014.nc CFSR_Tmax_90_2014.nc CFSR_TX90p_2014.nc
+cdo eca_tg90p CFSR_Tmax_2015.nc CFSR_Tmax_90_2015.nc CFSR_TX90p_2015.nc
+cdo eca_tg90p CFSR_Tmax_2016.nc CFSR_Tmax_90_2016.nc CFSR_TX90p_2016.nc
+cdo eca_tg90p CFSR_Tmax_2017.nc CFSR_Tmax_90_2017.nc CFSR_TX90p_2017.nc
+cdo eca_tg90p CFSR_Tmax_2018.nc CFSR_Tmax_90_2018.nc CFSR_TX90p_2018.nc
+cdo eca_tg90p CFSR_Tmax_2019.nc CFSR_Tmax_90_2019.nc CFSR_TX90p_2019.nc
+cdo mergetime CFSR_TX90p_1981.nc CFSR_TX90p_1982.nc CFSR_TX90p_1983.nc CFSR_TX90p_1984.nc CFSR_TX90p_1985.nc CFSR_TX90p_1986.nc CFSR_TX90p_1987.nc CFSR_TX90p_1988.nc CFSR_TX90p_1989.nc CFSR_TX90p1981-1989.nc
+cdo mergetime CFSR_TX90p_1990.nc CFSR_TX90p_1991.nc CFSR_TX90p_1992.nc CFSR_TX90p_1993.nc CFSR_TX90p_1994.nc CFSR_TX90p_1995.nc CFSR_TX90p_1996.nc CFSR_TX90p_1997.nc CFSR_TX90p_1998.nc CFSR_TX90p1990-1998.nc
+cdo mergetime CFSR_TX90p_1999.nc CFSR_TX90p_2000.nc CFSR_TX90p_2001.nc CFSR_TX90p_2002.nc CFSR_TX90p_2003.nc CFSR_TX90p_2004.nc CFSR_TX90p_2005.nc CFSR_TX90p_2006.nc CFSR_TX90p_2007.nc CFSR_TX90p1999-2007.nc
+cdo mergetime CFSR_TX90p_2008.nc CFSR_TX90p_2009.nc CFSR_TX90p_2010.nc CFSR_TX90p_2011.nc CFSR_TX90p_2012.nc CFSR_TX90p_2013.nc CFSR_TX90p_2014.nc CFSR_TX90p_2015.nc CFSR_TX90p_2016.nc CFSR_TX90p2008-2016.nc          
+cdo mergetime CFSR_TX90p_2017.nc CFSR_TX90p_2018.nc CFSR_TX90p_2019.nc CFSR_TX90p2017-2019.nc
+cdo mergetime CFSR_TX90p1981-1989.nc CFSR_TX90p1990-1998.nc CFSR_TX90p1999-2007.nc CFSR_TX90p2008-2016.nc CFSR_TX90p2017-2019.nc $DIR/CFSR_TX90p1981-2019.nc
+########################################################################
+################# Cold days: percentage of days where daily maximum temperature is <10th percentile of base period (TX10p)  ##################
+########### ERA5 TX10p ######################
+#cdo -selyear,1981/2010 CERA5_Tmax_daily1981-2019.nc ERA5_Tmax-daybase-1981-2010.nc
+cdo timpctl,10 ERA5_Tmax-daybase-1981-2010.nc -timmin CERA5_Tmax_daily1981-2019.nc -timmax CERA5_Tmax_daily1981-2019.nc ERA5_Tmax_10_Pctl10.nc
+cdo -add ERA5_Tmax_10_Pctl10.nc -sub CERA5_Tmax_daily1981-2019.nc CERA5_Tmax_daily1981-2019.nc ERA5_Tmax_10.nc
+#cdo splityear CERA5_Tmax_daily1981-2019.nc ERA5_Tmax_
+cdo splityear ERA5_Tmax_10.nc ERA5_Tmax_10_
+cdo eca_tg10p ERA5_Tmax_1981.nc ERA5_Tmax_10_1981.nc ERA5_TX10p_1981.nc
+cdo eca_tg10p ERA5_Tmax_1982.nc ERA5_Tmax_10_1982.nc ERA5_TX10p_1982.nc
+cdo eca_tg10p ERA5_Tmax_1983.nc ERA5_Tmax_10_1983.nc ERA5_TX10p_1983.nc
+cdo eca_tg10p ERA5_Tmax_1984.nc ERA5_Tmax_10_1984.nc ERA5_TX10p_1984.nc
+cdo eca_tg10p ERA5_Tmax_1985.nc ERA5_Tmax_10_1985.nc ERA5_TX10p_1985.nc
+cdo eca_tg10p ERA5_Tmax_1986.nc ERA5_Tmax_90_1986.nc ERA5_TX10p_1986.nc
+cdo eca_tg10p ERA5_Tmax_1987.nc ERA5_Tmax_10_1987.nc ERA5_TX10p_1987.nc
+cdo eca_tg10p ERA5_Tmax_1988.nc ERA5_Tmax_10_1988.nc ERA5_TX10p_1988.nc
+cdo eca_tg10p ERA5_Tmax_1989.nc ERA5_Tmax_10_1989.nc ERA5_TX10p_1989.nc
+cdo eca_tg10p ERA5_Tmax_1990.nc ERA5_Tmax_10_1990.nc ERA5_TX10p_1990.nc
+cdo eca_tg10p ERA5_Tmax_1991.nc ERA5_Tmax_10_1991.nc ERA5_TX10p_1991.nc
+cdo eca_tg10p ERA5_Tmax_1992.nc ERA5_Tmax_10_1992.nc ERA5_TX10p_1992.nc
+cdo eca_tg10p ERA5_Tmax_1993.nc ERA5_Tmax_10_1993.nc ERA5_TX10p_1993.nc
+cdo eca_tg10p ERA5_Tmax_1994.nc ERA5_Tmax_10_1994.nc ERA5_TX10p_1994.nc
+cdo eca_tg10p ERA5_Tmax_1995.nc ERA5_Tmax_10_1995.nc ERA5_TX10p_1995.nc
+cdo eca_tg10p ERA5_Tmax_1996.nc ERA5_Tmax_10_1996.nc ERA5_TX10p_1996.nc
+cdo eca_tg10p ERA5_Tmax_1997.nc ERA5_Tmax_10_1997.nc ERA5_TX10p_1997.nc
+cdo eca_tg10p ERA5_Tmax_1998.nc ERA5_Tmax_10_1998.nc ERA5_TX10p_1998.nc
+cdo eca_tg10p ERA5_Tmax_1999.nc ERA5_Tmax_10_1999.nc ERA5_TX10p_1999.nc
+cdo eca_tg10p ERA5_Tmax_2000.nc ERA5_Tmax_10_2000.nc ERA5_TX10p_2000.nc
+cdo eca_tg10p ERA5_Tmax_2001.nc ERA5_Tmax_10_2001.nc ERA5_TX10p_2001.nc
+cdo eca_tg10p ERA5_Tmax_2002.nc ERA5_Tmax_10_2002.nc ERA5_TX10p_2002.nc
+cdo eca_tg10p ERA5_Tmax_2003.nc ERA5_Tmax_10_2003.nc ERA5_TX10p_2003.nc
+cdo eca_tg10p ERA5_Tmax_2004.nc ERA5_Tmax_10_2004.nc ERA5_TX10p_2004.nc
+cdo eca_tg10p ERA5_Tmax_2005.nc ERA5_Tmax_10_2005.nc ERA5_TX10p_2005.nc
+cdo eca_tg10p ERA5_Tmax_2006.nc ERA5_Tmax_10_2006.nc ERA5_TX10p_2006.nc
+cdo eca_tg10p ERA5_Tmax_2007.nc ERA5_Tmax_10_2007.nc ERA5_TX10p_2007.nc
+cdo eca_tg10p ERA5_Tmax_2008.nc ERA5_Tmax_10_2008.nc ERA5_TX10p_2008.nc
+cdo eca_tg10p ERA5_Tmax_2009.nc ERA5_Tmax_10_2009.nc ERA5_TX10p_2009.nc
+cdo eca_tg10p ERA5_Tmax_2010.nc ERA5_Tmax_10_2010.nc ERA5_TX10p_2010.nc
+cdo eca_tg10p ERA5_Tmax_2011.nc ERA5_Tmax_10_2011.nc ERA5_TX10p_2011.nc
+cdo eca_tg10p ERA5_Tmax_2012.nc ERA5_Tmax_10_2012.nc ERA5_TX10p_2012.nc
+cdo eca_tg10p ERA5_Tmax_2013.nc ERA5_Tmax_10_2013.nc ERA5_TX10p_2013.nc
+cdo eca_tg10p ERA5_Tmax_2014.nc ERA5_Tmax_10_2014.nc ERA5_TX10p_2014.nc
+cdo eca_tg10p ERA5_Tmax_2015.nc ERA5_Tmax_10_2015.nc ERA5_TX10p_2015.nc
+cdo eca_tg10p ERA5_Tmax_2016.nc ERA5_Tmax_10_2016.nc ERA5_TX10p_2016.nc
+cdo eca_tg10p ERA5_Tmax_2017.nc ERA5_Tmax_10_2017.nc ERA5_TX10p_2017.nc
+cdo eca_tg10p ERA5_Tmax_2018.nc ERA5_Tmax_10_2018.nc ERA5_TX10p_2018.nc
+cdo eca_tg10p ERA5_Tmax_2019.nc ERA5_Tmax_10_2019.nc ERA5_TX10p_2019.nc
+cdo mergetime ERA5_TX10p_1981.nc ERA5_TX10p_1982.nc ERA5_TX10p_1983.nc ERA5_TX10p_1984.nc ERA5_TX10p_1985.nc ERA5_TX10p_1986.nc ERA5_TX10p_1987.nc ERA5_TX10p_1988.nc ERA5_TX10p_1989.nc ERA5_TX10p1981-1989.nc
+cdo mergetime ERA5_TX10p_1990.nc ERA5_TX10p_1991.nc ERA5_TX10p_1992.nc ERA5_TX10p_1993.nc ERA5_TX10p_1994.nc ERA5_TX10p_1995.nc ERA5_TX10p_1996.nc ERA5_TX10p_1997.nc ERA5_TX10p_1998.nc ERA5_TX10p1990-1998.nc
+cdo mergetime ERA5_TX10p_1999.nc ERA5_TX10p_2000.nc ERA5_TX10p_2001.nc ERA5_TX10p_2002.nc ERA5_TX10p_2003.nc ERA5_TX10p_2004.nc ERA5_TX10p_2005.nc ERA5_TX10p_2006.nc ERA5_TX10p_2007.nc ERA5_TX10p1999-2007.nc
+cdo mergetime ERA5_TX10p_2008.nc ERA5_TX10p_2009.nc ERA5_TX10p_2010.nc ERA5_TX10p_2011.nc ERA5_TX10p_2012.nc ERA5_TX10p_2013.nc ERA5_TX10p_2014.nc ERA5_TX10p_2015.nc ERA5_TX10p_2016.nc ERA5_TX10p2008-2016.nc          
+cdo mergetime ERA5_TX10p_2017.nc ERA5_TX10p_2018.nc ERA5_TX10p_2019.nc ERA5_TX10p2017-2019.nc
+cdo mergetime ERA5_TX10p1981-1989.nc ERA5_TX10p1990-1998.nc ERA5_TX10p1999-2007.nc ERA5_TX10p2008-2016.nc ERA5_TX10p2017-2019.nc $DIR/ERA5_TX10p1981-2019.nc
+############# Power TX10p ###########
+#cdo -selyear,1981/2010 CPower_Tmax_daily1981-2019.nc Power_Tmax-daybase-1981-2010.nc
+cdo timpctl,10 Power_Tmax-daybase-1981-2010.nc -timmin CPower_Tmax_daily1981-2019.nc -timmax CPower_Tmax_daily1981-2019.nc Power_Tmax_10_Pctl10.nc
+cdo -add Power_Tmax_10_Pctl10.nc -sub CPower_Tmax_daily1981-2019.nc CPower_Tmax_daily1981-2019.nc Power_Tmax_10.nc
+#cdo splityear CPower_Tmax_daily1981-2019.nc Power_Tmax_
+cdo splityear Power_Tmax_10.nc Power_Tmax_10_
+cdo eca_tg10p Power_Tmax_1981.nc Power_Tmax_10_1981.nc Power_TX10p_1981.nc
+cdo eca_tg10p Power_Tmax_1982.nc Power_Tmax_10_1982.nc Power_TX10p_1982.nc
+cdo eca_tg10p Power_Tmax_1983.nc Power_Tmax_10_1983.nc Power_TX10p_1983.nc
+cdo eca_tg10p Power_Tmax_1984.nc Power_Tmax_10_1984.nc Power_TX10p_1984.nc
+cdo eca_tg10p Power_Tmax_1985.nc Power_Tmax_10_1985.nc Power_TX10p_1985.nc
+cdo eca_tg10p Power_Tmax_1986.nc Power_Tmax_10_1986.nc Power_TX10p_1986.nc
+cdo eca_tg10p Power_Tmax_1987.nc Power_Tmax_10_1987.nc Power_TX10p_1987.nc
+cdo eca_tg10p Power_Tmax_1988.nc Power_Tmax_10_1988.nc Power_TX10p_1988.nc
+cdo eca_tg10p Power_Tmax_1989.nc Power_Tmax_10_1989.nc Power_TX10p_1989.nc
+cdo eca_tg10p Power_Tmax_1990.nc Power_Tmax_10_1990.nc Power_TX10p_1990.nc
+cdo eca_tg10p Power_Tmax_1991.nc Power_Tmax_10_1991.nc Power_TX10p_1991.nc
+cdo eca_tg10p Power_Tmax_1992.nc Power_Tmax_10_1992.nc Power_TX10p_1992.nc
+cdo eca_tg10p Power_Tmax_1993.nc Power_Tmax_10_1993.nc Power_TX10p_1993.nc
+cdo eca_tg10p Power_Tmax_1994.nc Power_Tmax_10_1994.nc Power_TX10p_1994.nc
+cdo eca_tg10p Power_Tmax_1995.nc Power_Tmax_10_1995.nc Power_TX10p_1995.nc
+cdo eca_tg10p Power_Tmax_1996.nc Power_Tmax_10_1996.nc Power_TX10p_1996.nc
+cdo eca_tg10p Power_Tmax_1997.nc Power_Tmax_10_1997.nc Power_TX10p_1997.nc
+cdo eca_tg10p Power_Tmax_1998.nc Power_Tmax_10_1998.nc Power_TX10p_1998.nc
+cdo eca_tg10p Power_Tmax_1999.nc Power_Tmax_10_1999.nc Power_TX10p_1999.nc
+cdo eca_tg10p Power_Tmax_2000.nc Power_Tmax_10_2000.nc Power_TX10p_2000.nc
+cdo eca_tg10p Power_Tmax_2001.nc Power_Tmax_10_2001.nc Power_TX10p_2001.nc
+cdo eca_tg10p Power_Tmax_2002.nc Power_Tmax_10_2002.nc Power_TX10p_2002.nc
+cdo eca_tg10p Power_Tmax_2003.nc Power_Tmax_10_2003.nc Power_TX10p_2003.nc
+cdo eca_tg10p Power_Tmax_2004.nc Power_Tmax_10_2004.nc Power_TX10p_2004.nc
+cdo eca_tg10p Power_Tmax_2005.nc Power_Tmax_10_2005.nc Power_TX10p_2005.nc
+cdo eca_tg10p Power_Tmax_2006.nc Power_Tmax_10_2006.nc Power_TX10p_2006.nc
+cdo eca_tg10p Power_Tmax_2007.nc Power_Tmax_10_2007.nc Power_TX10p_2007.nc
+cdo eca_tg10p Power_Tmax_2008.nc Power_Tmax_10_2008.nc Power_TX10p_2008.nc
+cdo eca_tg10p Power_Tmax_2009.nc Power_Tmax_10_2009.nc Power_TX10p_2009.nc
+cdo eca_tg10p Power_Tmax_2010.nc Power_Tmax_10_2010.nc Power_TX10p_2010.nc
+cdo eca_tg10p Power_Tmax_2011.nc Power_Tmax_10_2011.nc Power_TX10p_2011.nc
+cdo eca_tg10p Power_Tmax_2012.nc Power_Tmax_10_2012.nc Power_TX10p_2012.nc
+cdo eca_tg10p Power_Tmax_2013.nc Power_Tmax_10_2013.nc Power_TX10p_2013.nc
+cdo eca_tg10p Power_Tmax_2014.nc Power_Tmax_10_2014.nc Power_TX10p_2014.nc
+cdo eca_tg10p Power_Tmax_2015.nc Power_Tmax_10_2015.nc Power_TX10p_2015.nc
+cdo eca_tg10p Power_Tmax_2016.nc Power_Tmax_10_2016.nc Power_TX10p_2016.nc
+cdo eca_tg10p Power_Tmax_2017.nc Power_Tmax_10_2017.nc Power_TX10p_2017.nc
+cdo eca_tg10p Power_Tmax_2018.nc Power_Tmax_10_2018.nc Power_TX10p_2018.nc
+cdo eca_tg10p Power_Tmax_2019.nc Power_Tmax_10_2019.nc Power_TX10p_2019.nc
+cdo mergetime Power_TX10p_1981.nc Power_TX10p_1982.nc Power_TX10p_1983.nc Power_TX10p_1984.nc Power_TX10p_1985.nc Power_TX10p_1986.nc Power_TX10p_1987.nc Power_TX10p_1988.nc Power_TX10p_1989.nc Power_TX10p1981-1989.nc
+cdo mergetime Power_TX10p_1990.nc Power_TX10p_1991.nc Power_TX10p_1992.nc Power_TX10p_1993.nc Power_TX10p_1994.nc Power_TX10p_1995.nc Power_TX10p_1996.nc Power_TX10p_1997.nc Power_TX10p_1998.nc Power_TX10p1990-1998.nc
+cdo mergetime Power_TX10p_1999.nc Power_TX10p_2000.nc Power_TX10p_2001.nc Power_TX10p_2002.nc Power_TX10p_2003.nc Power_TX10p_2004.nc Power_TX10p_2005.nc Power_TX10p_2006.nc Power_TX10p_2007.nc Power_TX10p1999-2007.nc
+cdo mergetime Power_TX10p_2008.nc Power_TX10p_2009.nc Power_TX10p_2010.nc Power_TX10p_2011.nc Power_TX10p_2012.nc Power_TX10p_2013.nc Power_TX10p_2014.nc Power_TX10p_2015.nc Power_TX10p_2016.nc Power_TX10p2008-2016.nc          
+cdo mergetime Power_TX10p_2017.nc Power_TX10p_2018.nc Power_TX10p_2019.nc Power_TX10p2017-2019.nc
+cdo mergetime Power_TX10p1981-1989.nc Power_TX10p1990-1998.nc Power_TX10p1999-2007.nc Power_TX10p2008-2016.nc Power_TX10p2017-2019.nc $DIR/Power_TX10p1981-2019.nc
+############## CFSR TX10p ############
+#cdo -selyear,1981/2010 CCFSR_Tmax_daily1981-2019.nc CFSR_Tmax-daybase-1981-2010.nc
+cdo timpctl,10 CFSR_Tmax-daybase-1981-2010.nc -timmin CCFSR_Tmax_daily1981-2019.nc -timmax CCFSR_Tmax_daily1981-2019.nc CFSR_Tmax_10_Pctl10.nc
+cdo -add CFSR_Tmax_10_Pctl10.nc -sub CCFSR_Tmax_daily1981-2019.nc CCFSR_Tmax_daily1981-2019.nc CFSR_Tmax_10.nc
+#cdo splityear CCFSR_Tmax_daily1981-2019.nc CFSR_Tmax_
+cdo splityear CFSR_Tmax_10.nc CFSR_Tmax_10_
+cdo eca_tg10p CFSR_Tmax_1981.nc CFSR_Tmax_10_1981.nc CFSR_TX10p_1981.nc
+cdo eca_tg10p CFSR_Tmax_1982.nc CFSR_Tmax_10_1982.nc CFSR_TX10p_1982.nc
+cdo eca_tg10p CFSR_Tmax_1983.nc CFSR_Tmax_10_1983.nc CFSR_TX10p_1983.nc
+cdo eca_tg10p CFSR_Tmax_1984.nc CFSR_Tmax_10_1984.nc CFSR_TX10p_1984.nc
+cdo eca_tg10p CFSR_Tmax_1985.nc CFSR_Tmax_10_1985.nc CFSR_TX10p_1985.nc
+cdo eca_tg10p CFSR_Tmax_1986.nc CFSR_Tmax_10_1986.nc CFSR_TX10p_1986.nc
+cdo eca_tg10p CFSR_Tmax_1987.nc CFSR_Tmax_10_1987.nc CFSR_TX10p_1987.nc
+cdo eca_tg10p CFSR_Tmax_1988.nc CFSR_Tmax_10_1988.nc CFSR_TX10p_1988.nc
+cdo eca_tg10p CFSR_Tmax_1989.nc CFSR_Tmax_10_1989.nc CFSR_TX10p_1989.nc
+cdo eca_tg10p CFSR_Tmax_1990.nc CFSR_Tmax_10_1990.nc CFSR_TX10p_1990.nc
+cdo eca_tg10p CFSR_Tmax_1991.nc CFSR_Tmax_10_1991.nc CFSR_TX10p_1991.nc
+cdo eca_tg10p CFSR_Tmax_1992.nc CFSR_Tmax_10_1992.nc CFSR_TX10p_1992.nc
+cdo eca_tg10p CFSR_Tmax_1993.nc CFSR_Tmax_10_1993.nc CFSR_TX10p_1993.nc
+cdo eca_tg10p CFSR_Tmax_1994.nc CFSR_Tmax_10_1994.nc CFSR_TX10p_1994.nc
+cdo eca_tg10p CFSR_Tmax_1995.nc CFSR_Tmax_10_1995.nc CFSR_TX10p_1995.nc
+cdo eca_tg10p CFSR_Tmax_1996.nc CFSR_Tmax_10_1996.nc CFSR_TX10p_1996.nc
+cdo eca_tg10p CFSR_Tmax_1997.nc CFSR_Tmax_10_1997.nc CFSR_TX10p_1997.nc
+cdo eca_tg10p CFSR_Tmax_1998.nc CFSR_Tmax_10_1998.nc CFSR_TX10p_1998.nc
+cdo eca_tg10p CFSR_Tmax_1999.nc CFSR_Tmax_10_1999.nc CFSR_TX10p_1999.nc
+cdo eca_tg10p CFSR_Tmax_2000.nc CFSR_Tmax_10_2000.nc CFSR_TX10p_2000.nc
+cdo eca_tg10p CFSR_Tmax_2001.nc CFSR_Tmax_10_2001.nc CFSR_TX10p_2001.nc
+cdo eca_tg10p CFSR_Tmax_2002.nc CFSR_Tmax_10_2002.nc CFSR_TX10p_2002.nc
+cdo eca_tg10p CFSR_Tmax_2003.nc CFSR_Tmax_10_2003.nc CFSR_TX10p_2003.nc
+cdo eca_tg10p CFSR_Tmax_2004.nc CFSR_Tmax_10_2004.nc CFSR_TX10p_2004.nc
+cdo eca_tg10p CFSR_Tmax_2005.nc CFSR_Tmax_10_2005.nc CFSR_TX10p_2005.nc
+cdo eca_tg10p CFSR_Tmax_2006.nc CFSR_Tmax_10_2006.nc CFSR_TX10p_2006.nc
+cdo eca_tg10p CFSR_Tmax_2007.nc CFSR_Tmax_10_2007.nc CFSR_TX10p_2007.nc
+cdo eca_tg10p CFSR_Tmax_2008.nc CFSR_Tmax_10_2008.nc CFSR_TX10p_2008.nc
+cdo eca_tg10p CFSR_Tmax_2009.nc CFSR_Tmax_10_2009.nc CFSR_TX10p_2009.nc
+cdo eca_tg10p CFSR_Tmax_2010.nc CFSR_Tmax_10_2010.nc CFSR_TX10p_2010.nc
+cdo eca_tg10p CFSR_Tmax_2011.nc CFSR_Tmax_10_2011.nc CFSR_TX10p_2011.nc
+cdo eca_tg10p CFSR_Tmax_2012.nc CFSR_Tmax_10_2012.nc CFSR_TX10p_2012.nc
+cdo eca_tg10p CFSR_Tmax_2013.nc CFSR_Tmax_10_2013.nc CFSR_TX10p_2013.nc
+cdo eca_tg10p CFSR_Tmax_2014.nc CFSR_Tmax_10_2014.nc CFSR_TX10p_2014.nc
+cdo eca_tg10p CFSR_Tmax_2015.nc CFSR_Tmax_10_2015.nc CFSR_TX10p_2015.nc
+cdo eca_tg10p CFSR_Tmax_2016.nc CFSR_Tmax_10_2016.nc CFSR_TX10p_2016.nc
+cdo eca_tg10p CFSR_Tmax_2017.nc CFSR_Tmax_10_2017.nc CFSR_TX10p_2017.nc
+cdo eca_tg10p CFSR_Tmax_2018.nc CFSR_Tmax_10_2018.nc CFSR_TX10p_2018.nc
+cdo eca_tg10p CFSR_Tmax_2019.nc CFSR_Tmax_10_2019.nc CFSR_TX10p_2019.nc
+cdo mergetime CFSR_TX10p_1981.nc CFSR_TX10p_1982.nc CFSR_TX10p_1983.nc CFSR_TX10p_1984.nc CFSR_TX10p_1985.nc CFSR_TX10p_1986.nc CFSR_TX10p_1987.nc CFSR_TX10p_1988.nc CFSR_TX10p_1989.nc CFSR_TX10p1981-1989.nc
+cdo mergetime CFSR_TX10p_1990.nc CFSR_TX10p_1991.nc CFSR_TX10p_1992.nc CFSR_TX10p_1993.nc CFSR_TX10p_1994.nc CFSR_TX10p_1995.nc CFSR_TX10p_1996.nc CFSR_TX10p_1997.nc CFSR_TX10p_1998.nc CFSR_TX10p1990-1998.nc
+cdo mergetime CFSR_TX10p_1999.nc CFSR_TX10p_2000.nc CFSR_TX10p_2001.nc CFSR_TX10p_2002.nc CFSR_TX10p_2003.nc CFSR_TX10p_2004.nc CFSR_TX10p_2005.nc CFSR_TX10p_2006.nc CFSR_TX10p_2007.nc CFSR_TX10p1999-2007.nc
+cdo mergetime CFSR_TX10p_2008.nc CFSR_TX10p_2009.nc CFSR_TX10p_2010.nc CFSR_TX10p_2011.nc CFSR_TX10p_2012.nc CFSR_TX10p_2013.nc CFSR_TX10p_2014.nc CFSR_TX10p_2015.nc CFSR_TX10p_2016.nc CFSR_TX10p2008-2016.nc          
+cdo mergetime CFSR_TX10p_2017.nc CFSR_TX10p_2018.nc CFSR_TX10p_2019.nc CFSR_TX10p2017-2019.nc
+cdo mergetime CFSR_TX10p1981-1989.nc CFSR_TX10p1990-1998.nc CFSR_TX10p1999-2007.nc CFSR_TX10p2008-2016.nc CFSR_TX10p2017-2019.nc $DIR/CFSR_TX10p1981-2019.nc
+########################################################################
+################# Warm nights: percentage of days where daily minimum temperature is >90th percentile of base period  (TN90p)  ##################
+################ ERA5 TN90p #####################
+cdo eca_tn90p ERA5_Tmin_1981.nc ERA5_Tmin_90_1981.nc ERA5_TN90p_1981.nc
+cdo eca_tn90p ERA5_Tmin_1982.nc ERA5_Tmin_90_1982.nc ERA5_TN90p_1982.nc
+cdo eca_tn90p ERA5_Tmin_1983.nc ERA5_Tmin_90_1983.nc ERA5_TN90p_1983.nc
+cdo eca_tn90p ERA5_Tmin_1984.nc ERA5_Tmin_90_1984.nc ERA5_TN90p_1984.nc
+cdo eca_tn90p ERA5_Tmin_1985.nc ERA5_Tmin_90_1985.nc ERA5_TN90p_1985.nc
+cdo eca_tn90p ERA5_Tmin_1986.nc ERA5_Tmin_90_1986.nc ERA5_TN90p_1986.nc
+cdo eca_tn90p ERA5_Tmin_1987.nc ERA5_Tmin_90_1987.nc ERA5_TN90p_1987.nc
+cdo eca_tn90p ERA5_Tmin_1988.nc ERA5_Tmin_90_1988.nc ERA5_TN90p_1988.nc
+cdo eca_tn90p ERA5_Tmin_1989.nc ERA5_Tmin_90_1989.nc ERA5_TN90p_1989.nc
+cdo eca_tn90p ERA5_Tmin_1990.nc ERA5_Tmin_90_1990.nc ERA5_TN90p_1990.nc
+cdo eca_tn90p ERA5_Tmin_1991.nc ERA5_Tmin_90_1991.nc ERA5_TN90p_1991.nc
+cdo eca_tn90p ERA5_Tmin_1992.nc ERA5_Tmin_90_1992.nc ERA5_TN90p_1992.nc
+cdo eca_tn90p ERA5_Tmin_1993.nc ERA5_Tmin_90_1993.nc ERA5_TN90p_1993.nc
+cdo eca_tn90p ERA5_Tmin_1994.nc ERA5_Tmin_90_1994.nc ERA5_TN90p_1994.nc
+cdo eca_tn90p ERA5_Tmin_1995.nc ERA5_Tmin_90_1995.nc ERA5_TN90p_1995.nc
+cdo eca_tn90p ERA5_Tmin_1996.nc ERA5_Tmin_90_1996.nc ERA5_TN90p_1996.nc
+cdo eca_tn90p ERA5_Tmin_1997.nc ERA5_Tmin_90_1997.nc ERA5_TN90p_1997.nc
+cdo eca_tn90p ERA5_Tmin_1998.nc ERA5_Tmin_90_1998.nc ERA5_TN90p_1998.nc
+cdo eca_tn90p ERA5_Tmin_1999.nc ERA5_Tmin_90_1999.nc ERA5_TN90p_1999.nc
+cdo eca_tn90p ERA5_Tmin_2000.nc ERA5_Tmin_90_2000.nc ERA5_TN90p_2000.nc
+cdo eca_tn90p ERA5_Tmin_2001.nc ERA5_Tmin_90_2001.nc ERA5_TN90p_2001.nc
+cdo eca_tn90p ERA5_Tmin_2002.nc ERA5_Tmin_90_2002.nc ERA5_TN90p_2002.nc
+cdo eca_tn90p ERA5_Tmin_2003.nc ERA5_Tmin_90_2003.nc ERA5_TN90p_2003.nc
+cdo eca_tn90p ERA5_Tmin_2004.nc ERA5_Tmin_90_2004.nc ERA5_TN90p_2004.nc
+cdo eca_tn90p ERA5_Tmin_2005.nc ERA5_Tmin_90_2005.nc ERA5_TN90p_2005.nc
+cdo eca_tn90p ERA5_Tmin_2006.nc ERA5_Tmin_90_2006.nc ERA5_TN90p_2006.nc
+cdo eca_tn90p ERA5_Tmin_2007.nc ERA5_Tmin_90_2007.nc ERA5_TN90p_2007.nc
+cdo eca_tn90p ERA5_Tmin_2008.nc ERA5_Tmin_90_2008.nc ERA5_TN90p_2008.nc
+cdo eca_tn90p ERA5_Tmin_2009.nc ERA5_Tmin_90_2009.nc ERA5_TN90p_2009.nc
+cdo eca_tn90p ERA5_Tmin_2010.nc ERA5_Tmin_90_2010.nc ERA5_TN90p_2010.nc
+cdo eca_tn90p ERA5_Tmin_2011.nc ERA5_Tmin_90_2011.nc ERA5_TN90p_2011.nc
+cdo eca_tn90p ERA5_Tmin_2012.nc ERA5_Tmin_90_2012.nc ERA5_TN90p_2012.nc
+cdo eca_tn90p ERA5_Tmin_2013.nc ERA5_Tmin_90_2013.nc ERA5_TN90p_2013.nc
+cdo eca_tn90p ERA5_Tmin_2014.nc ERA5_Tmin_90_2014.nc ERA5_TN90p_2014.nc
+cdo eca_tn90p ERA5_Tmin_2015.nc ERA5_Tmin_90_2015.nc ERA5_TN90p_2015.nc
+cdo eca_tn90p ERA5_Tmin_2016.nc ERA5_Tmin_90_2016.nc ERA5_TN90p_2016.nc
+cdo eca_tn90p ERA5_Tmin_2017.nc ERA5_Tmin_90_2017.nc ERA5_TN90p_2017.nc
+cdo eca_tn90p ERA5_Tmin_2018.nc ERA5_Tmin_90_2018.nc ERA5_TN90p_2018.nc
+cdo eca_tn90p ERA5_Tmin_2019.nc ERA5_Tmin_90_2019.nc ERA5_TN90p_2019.nc
+cdo mergetime ERA5_TN90p_1981.nc ERA5_TN90p_1982.nc ERA5_TN90p_1983.nc ERA5_TN90p_1984.nc ERA5_TN90p_1985.nc ERA5_TN90p_1986.nc ERA5_TN90p_1987.nc ERA5_TN90p_1988.nc ERA5_TN90p_1989.nc ERA5_TN90p1981-1989.nc
+cdo mergetime ERA5_TN90p_1990.nc ERA5_TN90p_1991.nc ERA5_TN90p_1992.nc ERA5_TN90p_1993.nc ERA5_TN90p_1994.nc ERA5_TN90p_1995.nc ERA5_TN90p_1996.nc ERA5_TN90p_1997.nc ERA5_TN90p_1998.nc ERA5_TN90p1990-1998.nc
+cdo mergetime ERA5_TN90p_1999.nc ERA5_TN90p_2000.nc ERA5_TN90p_2001.nc ERA5_TN90p_2002.nc ERA5_TN90p_2003.nc ERA5_TN90p_2004.nc ERA5_TN90p_2005.nc ERA5_TN90p_2006.nc ERA5_TN90p_2007.nc ERA5_TN90p1999-2007.nc
+cdo mergetime ERA5_TN90p_2008.nc ERA5_TN90p_2009.nc ERA5_TN90p_2010.nc ERA5_TN90p_2011.nc ERA5_TN90p_2012.nc ERA5_TN90p_2013.nc ERA5_TN90p_2014.nc ERA5_TN90p_2015.nc ERA5_TN90p_2016.nc ERA5_TN90p2008-2016.nc          
+cdo mergetime ERA5_TN90p_2017.nc ERA5_TN90p_2018.nc ERA5_TN90p_2019.nc ERA5_TN90p2017-2019.nc
+cdo mergetime ERA5_TN90p1981-1989.nc ERA5_TN90p1990-1998.nc ERA5_TN90p1999-2007.nc ERA5_TN90p2008-2016.nc ERA5_TN90p2017-2019.nc $DIR/ERA5_TN90p1981-2019.nc
+########### Power TN90p ##################
+cdo eca_tn90p Power_Tmin_1981.nc Power_Tmin_90_1981.nc Power_TN90p_1981.nc
+cdo eca_tn90p Power_Tmin_1982.nc Power_Tmin_90_1982.nc Power_TN90p_1982.nc
+cdo eca_tn90p Power_Tmin_1983.nc Power_Tmin_90_1983.nc Power_TN90p_1983.nc
+cdo eca_tn90p Power_Tmin_1984.nc Power_Tmin_90_1984.nc Power_TN90p_1984.nc
+cdo eca_tn90p Power_Tmin_1985.nc Power_Tmin_90_1985.nc Power_TN90p_1985.nc
+cdo eca_tn90p Power_Tmin_1986.nc Power_Tmin_90_1986.nc Power_TN90p_1986.nc
+cdo eca_tn90p Power_Tmin_1987.nc Power_Tmin_90_1987.nc Power_TN90p_1987.nc
+cdo eca_tn90p Power_Tmin_1988.nc Power_Tmin_90_1988.nc Power_TN90p_1988.nc
+cdo eca_tn90p Power_Tmin_1989.nc Power_Tmin_90_1989.nc Power_TN90p_1989.nc
+cdo eca_tn90p Power_Tmin_1990.nc Power_Tmin_90_1990.nc Power_TN90p_1990.nc
+cdo eca_tn90p Power_Tmin_1991.nc Power_Tmin_90_1991.nc Power_TN90p_1991.nc
+cdo eca_tn90p Power_Tmin_1992.nc Power_Tmin_90_1992.nc Power_TN90p_1992.nc
+cdo eca_tn90p Power_Tmin_1993.nc Power_Tmin_90_1993.nc Power_TN90p_1993.nc
+cdo eca_tn90p Power_Tmin_1994.nc Power_Tmin_90_1994.nc Power_TN90p_1994.nc
+cdo eca_tn90p Power_Tmin_1995.nc Power_Tmin_90_1995.nc Power_TN90p_1995.nc
+cdo eca_tn90p Power_Tmin_1996.nc Power_Tmin_90_1996.nc Power_TN90p_1996.nc
+cdo eca_tn90p Power_Tmin_1997.nc Power_Tmin_90_1997.nc Power_TN90p_1997.nc
+cdo eca_tn90p Power_Tmin_1998.nc Power_Tmin_90_1998.nc Power_TN90p_1998.nc
+cdo eca_tn90p Power_Tmin_1999.nc Power_Tmin_90_1999.nc Power_TN90p_1999.nc
+cdo eca_tn90p Power_Tmin_2000.nc Power_Tmin_90_2000.nc Power_TN90p_2000.nc
+cdo eca_tn90p Power_Tmin_2001.nc Power_Tmin_90_2001.nc Power_TN90p_2001.nc
+cdo eca_tn90p Power_Tmin_2002.nc Power_Tmin_90_2002.nc Power_TN90p_2002.nc
+cdo eca_tn90p Power_Tmin_2003.nc Power_Tmin_90_2003.nc Power_TN90p_2003.nc
+cdo eca_tn90p Power_Tmin_2004.nc Power_Tmin_90_2004.nc Power_TN90p_2004.nc
+cdo eca_tn90p Power_Tmin_2005.nc Power_Tmin_90_2005.nc Power_TN90p_2005.nc
+cdo eca_tn90p Power_Tmin_2006.nc Power_Tmin_90_2006.nc Power_TN90p_2006.nc
+cdo eca_tn90p Power_Tmin_2007.nc Power_Tmin_90_2007.nc Power_TN90p_2007.nc
+cdo eca_tn90p Power_Tmin_2008.nc Power_Tmin_90_2008.nc Power_TN90p_2008.nc
+cdo eca_tn90p Power_Tmin_2009.nc Power_Tmin_90_2009.nc Power_TN90p_2009.nc
+cdo eca_tn90p Power_Tmin_2010.nc Power_Tmin_90_2010.nc Power_TN90p_2010.nc
+cdo eca_tn90p Power_Tmin_2011.nc Power_Tmin_90_2011.nc Power_TN90p_2011.nc
+cdo eca_tn90p Power_Tmin_2012.nc Power_Tmin_90_2012.nc Power_TN90p_2012.nc
+cdo eca_tn90p Power_Tmin_2013.nc Power_Tmin_90_2013.nc Power_TN90p_2013.nc
+cdo eca_tn90p Power_Tmin_2014.nc Power_Tmin_90_2014.nc Power_TN90p_2014.nc
+cdo eca_tn90p Power_Tmin_2015.nc Power_Tmin_90_2015.nc Power_TN90p_2015.nc
+cdo eca_tn90p Power_Tmin_2016.nc Power_Tmin_90_2016.nc Power_TN90p_2016.nc
+cdo eca_tn90p Power_Tmin_2017.nc Power_Tmin_90_2017.nc Power_TN90p_2017.nc
+cdo eca_tn90p Power_Tmin_2018.nc Power_Tmin_90_2018.nc Power_TN90p_2018.nc
+cdo eca_tn90p Power_Tmin_2019.nc Power_Tmin_90_2019.nc Power_TN90p_2019.nc
+cdo mergetime Power_TN90p_1981.nc Power_TN90p_1982.nc Power_TN90p_1983.nc Power_TN90p_1984.nc Power_TN90p_1985.nc Power_TN90p_1986.nc Power_TN90p_1987.nc Power_TN90p_1988.nc Power_TN90p_1989.nc Power_TN90p1981-1989.nc
+cdo mergetime Power_TN90p_1990.nc Power_TN90p_1991.nc Power_TN90p_1992.nc Power_TN90p_1993.nc Power_TN90p_1994.nc Power_TN90p_1995.nc Power_TN90p_1996.nc Power_TN90p_1997.nc Power_TN90p_1998.nc Power_TN90p1990-1998.nc
+cdo mergetime Power_TN90p_1999.nc Power_TN90p_2000.nc Power_TN90p_2001.nc Power_TN90p_2002.nc Power_TN90p_2003.nc Power_TN90p_2004.nc Power_TN90p_2005.nc Power_TN90p_2006.nc Power_TN90p_2007.nc Power_TN90p1999-2007.nc
+cdo mergetime Power_TN90p_2008.nc Power_TN90p_2009.nc Power_TN90p_2010.nc Power_TN90p_2011.nc Power_TN90p_2012.nc Power_TN90p_2013.nc Power_TN90p_2014.nc Power_TN90p_2015.nc Power_TN90p_2016.nc Power_TN90p2008-2016.nc          
+cdo mergetime Power_TN90p_2017.nc Power_TN90p_2018.nc Power_TN90p_2019.nc Power_TN90p2017-2019.nc
+cdo mergetime Power_TN90p1981-1989.nc Power_TN90p1990-1998.nc Power_TN90p1999-2007.nc Power_TN90p2008-2016.nc Power_TN90p2017-2019.nc $DIR/Power_TN90p1981-2019.nc
+############ CFSR TN90p ##################
+########### CFSR TN90p ##################
+cdo eca_tn90p CFSR_Tmin_1981.nc CFSR_Tmin_90_1981.nc CFSR_TN90p_1981.nc
+cdo eca_tn90p CFSR_Tmin_1982.nc CFSR_Tmin_90_1982.nc CFSR_TN90p_1982.nc
+cdo eca_tn90p CFSR_Tmin_1983.nc CFSR_Tmin_90_1983.nc CFSR_TN90p_1983.nc
+cdo eca_tn90p CFSR_Tmin_1984.nc CFSR_Tmin_90_1984.nc CFSR_TN90p_1984.nc
+cdo eca_tn90p CFSR_Tmin_1985.nc CFSR_Tmin_90_1985.nc CFSR_TN90p_1985.nc
+cdo eca_tn90p CFSR_Tmin_1986.nc CFSR_Tmin_90_1986.nc CFSR_TN90p_1986.nc
+cdo eca_tn90p CFSR_Tmin_1987.nc CFSR_Tmin_90_1987.nc CFSR_TN90p_1987.nc
+cdo eca_tn90p CFSR_Tmin_1988.nc CFSR_Tmin_90_1988.nc CFSR_TN90p_1988.nc
+cdo eca_tn90p CFSR_Tmin_1989.nc CFSR_Tmin_90_1989.nc CFSR_TN90p_1989.nc
+cdo eca_tn90p CFSR_Tmin_1990.nc CFSR_Tmin_90_1990.nc CFSR_TN90p_1990.nc
+cdo eca_tn90p CFSR_Tmin_1991.nc CFSR_Tmin_90_1991.nc CFSR_TN90p_1991.nc
+cdo eca_tn90p CFSR_Tmin_1992.nc CFSR_Tmin_90_1992.nc CFSR_TN90p_1992.nc
+cdo eca_tn90p CFSR_Tmin_1993.nc CFSR_Tmin_90_1993.nc CFSR_TN90p_1993.nc
+cdo eca_tn90p CFSR_Tmin_1994.nc CFSR_Tmin_90_1994.nc CFSR_TN90p_1994.nc
+cdo eca_tn90p CFSR_Tmin_1995.nc CFSR_Tmin_90_1995.nc CFSR_TN90p_1995.nc
+cdo eca_tn90p CFSR_Tmin_1996.nc CFSR_Tmin_90_1996.nc CFSR_TN90p_1996.nc
+cdo eca_tn90p CFSR_Tmin_1997.nc CFSR_Tmin_90_1997.nc CFSR_TN90p_1997.nc
+cdo eca_tn90p CFSR_Tmin_1998.nc CFSR_Tmin_90_1998.nc CFSR_TN90p_1998.nc
+cdo eca_tn90p CFSR_Tmin_1999.nc CFSR_Tmin_90_1999.nc CFSR_TN90p_1999.nc
+cdo eca_tn90p CFSR_Tmin_2000.nc CFSR_Tmin_90_2000.nc CFSR_TN90p_2000.nc
+cdo eca_tn90p CFSR_Tmin_2001.nc CFSR_Tmin_90_2001.nc CFSR_TN90p_2001.nc
+cdo eca_tn90p CFSR_Tmin_2002.nc CFSR_Tmin_90_2002.nc CFSR_TN90p_2002.nc
+cdo eca_tn90p CFSR_Tmin_2003.nc CFSR_Tmin_90_2003.nc CFSR_TN90p_2003.nc
+cdo eca_tn90p CFSR_Tmin_2004.nc CFSR_Tmin_90_2004.nc CFSR_TN90p_2004.nc
+cdo eca_tn90p CFSR_Tmin_2005.nc CFSR_Tmin_90_2005.nc CFSR_TN90p_2005.nc
+cdo eca_tn90p CFSR_Tmin_2006.nc CFSR_Tmin_90_2006.nc CFSR_TN90p_2006.nc
+cdo eca_tn90p CFSR_Tmin_2007.nc CFSR_Tmin_90_2007.nc CFSR_TN90p_2007.nc
+cdo eca_tn90p CFSR_Tmin_2008.nc CFSR_Tmin_90_2008.nc CFSR_TN90p_2008.nc
+cdo eca_tn90p CFSR_Tmin_2009.nc CFSR_Tmin_90_2009.nc CFSR_TN90p_2009.nc
+cdo eca_tn90p CFSR_Tmin_2010.nc CFSR_Tmin_90_2010.nc CFSR_TN90p_2010.nc
+cdo eca_tn90p CFSR_Tmin_2011.nc CFSR_Tmin_90_2011.nc CFSR_TN90p_2011.nc
+cdo eca_tn90p CFSR_Tmin_2012.nc CFSR_Tmin_90_2012.nc CFSR_TN90p_2012.nc
+cdo eca_tn90p CFSR_Tmin_2013.nc CFSR_Tmin_90_2013.nc CFSR_TN90p_2013.nc
+cdo eca_tn90p CFSR_Tmin_2014.nc CFSR_Tmin_90_2014.nc CFSR_TN90p_2014.nc
+cdo eca_tn90p CFSR_Tmin_2015.nc CFSR_Tmin_90_2015.nc CFSR_TN90p_2015.nc
+cdo eca_tn90p CFSR_Tmin_2016.nc CFSR_Tmin_90_2016.nc CFSR_TN90p_2016.nc
+cdo eca_tn90p CFSR_Tmin_2017.nc CFSR_Tmin_90_2017.nc CFSR_TN90p_2017.nc
+cdo eca_tn90p CFSR_Tmin_2018.nc CFSR_Tmin_90_2018.nc CFSR_TN90p_2018.nc
+cdo eca_tn90p CFSR_Tmin_2019.nc CFSR_Tmin_90_2019.nc CFSR_TN90p_2019.nc
+cdo mergetime CFSR_TN90p_1981.nc CFSR_TN90p_1982.nc CFSR_TN90p_1983.nc CFSR_TN90p_1984.nc CFSR_TN90p_1985.nc CFSR_TN90p_1986.nc CFSR_TN90p_1987.nc CFSR_TN90p_1988.nc CFSR_TN90p_1989.nc CFSR_TN90p1981-1989.nc
+cdo mergetime CFSR_TN90p_1990.nc CFSR_TN90p_1991.nc CFSR_TN90p_1992.nc CFSR_TN90p_1993.nc CFSR_TN90p_1994.nc CFSR_TN90p_1995.nc CFSR_TN90p_1996.nc CFSR_TN90p_1997.nc CFSR_TN90p_1998.nc CFSR_TN90p1990-1998.nc
+cdo mergetime CFSR_TN90p_1999.nc CFSR_TN90p_2000.nc CFSR_TN90p_2001.nc CFSR_TN90p_2002.nc CFSR_TN90p_2003.nc CFSR_TN90p_2004.nc CFSR_TN90p_2005.nc CFSR_TN90p_2006.nc CFSR_TN90p_2007.nc CFSR_TN90p1999-2007.nc
+cdo mergetime CFSR_TN90p_2008.nc CFSR_TN90p_2009.nc CFSR_TN90p_2010.nc CFSR_TN90p_2011.nc CFSR_TN90p_2012.nc CFSR_TN90p_2013.nc CFSR_TN90p_2014.nc CFSR_TN90p_2015.nc CFSR_TN90p_2016.nc CFSR_TN90p2008-2016.nc          
+cdo mergetime CFSR_TN90p_2017.nc CFSR_TN90p_2018.nc CFSR_TN90p_2019.nc CFSR_TN90p2017-2019.nc
+cdo mergetime CFSR_TN90p1981-1989.nc CFSR_TN90p1990-1998.nc CFSR_TN90p1999-2007.nc CFSR_TN90p2008-2016.nc CFSR_TN90p2017-2019.nc $DIR/CFSR_TN90p1981-2019.nc
+########################################################################
+################# Cold nights: percentage of days where daily minimum temperature is <10th percentile of base period (TN10p) #################
+############# ERA5 TN10p #################
+#cdo -selyear,1981/2010 CERA5_Tmin_daily1981-2019.nc ERA5_Tmin-daybase-1981-2010.nc
+cdo timpctl,10 ERA5_Tmin-daybase-1981-2010.nc -timmin CERA5_Tmin_daily1981-2019.nc -timmin CERA5_Tmin_daily1981-2019.nc ERA5_Tmin_10_Pctl10.nc
+cdo -add ERA5_Tmin_10_Pctl10.nc -sub CERA5_Tmin_daily1981-2019.nc CERA5_Tmin_daily1981-2019.nc ERA5_Tmin_10.nc
+#cdo splityear CERA5_Tmin_daily1981-2019.nc ERA5_Tmin_
+cdo splityear ERA5_Tmin_10.nc ERA5_Tmin_10_
+cdo eca_tn10p ERA5_Tmin_1981.nc ERA5_Tmin_10_1981.nc ERA5_TN10p_1981.nc
+cdo eca_tn10p ERA5_Tmin_1982.nc ERA5_Tmin_10_1982.nc ERA5_TN10p_1982.nc
+cdo eca_tn10p ERA5_Tmin_1983.nc ERA5_Tmin_10_1983.nc ERA5_TN10p_1983.nc
+cdo eca_tn10p ERA5_Tmin_1984.nc ERA5_Tmin_10_1984.nc ERA5_TN10p_1984.nc
+cdo eca_tn10p ERA5_Tmin_1985.nc ERA5_Tmin_10_1985.nc ERA5_TN10p_1985.nc
+cdo eca_tn10p ERA5_Tmin_1986.nc ERA5_Tmin_10_1986.nc ERA5_TN10p_1986.nc
+cdo eca_tn10p ERA5_Tmin_1987.nc ERA5_Tmin_10_1987.nc ERA5_TN10p_1987.nc
+cdo eca_tn10p ERA5_Tmin_1988.nc ERA5_Tmin_10_1988.nc ERA5_TN10p_1988.nc
+cdo eca_tn10p ERA5_Tmin_1989.nc ERA5_Tmin_10_1989.nc ERA5_TN10p_1989.nc
+cdo eca_tn10p ERA5_Tmin_1990.nc ERA5_Tmin_10_1990.nc ERA5_TN10p_1990.nc
+cdo eca_tn10p ERA5_Tmin_1991.nc ERA5_Tmin_10_1991.nc ERA5_TN10p_1991.nc
+cdo eca_tn10p ERA5_Tmin_1992.nc ERA5_Tmin_10_1992.nc ERA5_TN10p_1992.nc
+cdo eca_tn10p ERA5_Tmin_1993.nc ERA5_Tmin_10_1993.nc ERA5_TN10p_1993.nc
+cdo eca_tn10p ERA5_Tmin_1994.nc ERA5_Tmin_10_1994.nc ERA5_TN10p_1994.nc
+cdo eca_tn10p ERA5_Tmin_1995.nc ERA5_Tmin_10_1995.nc ERA5_TN10p_1995.nc
+cdo eca_tn10p ERA5_Tmin_1996.nc ERA5_Tmin_10_1996.nc ERA5_TN10p_1996.nc
+cdo eca_tn10p ERA5_Tmin_1997.nc ERA5_Tmin_10_1997.nc ERA5_TN10p_1997.nc
+cdo eca_tn10p ERA5_Tmin_1998.nc ERA5_Tmin_10_1998.nc ERA5_TN10p_1998.nc
+cdo eca_tn10p ERA5_Tmin_1999.nc ERA5_Tmin_10_1999.nc ERA5_TN10p_1999.nc
+cdo eca_tn10p ERA5_Tmin_2000.nc ERA5_Tmin_10_2000.nc ERA5_TN10p_2000.nc
+cdo eca_tn10p ERA5_Tmin_2001.nc ERA5_Tmin_10_2001.nc ERA5_TN10p_2001.nc
+cdo eca_tn10p ERA5_Tmin_2002.nc ERA5_Tmin_10_2002.nc ERA5_TN10p_2002.nc
+cdo eca_tn10p ERA5_Tmin_2003.nc ERA5_Tmin_10_2003.nc ERA5_TN10p_2003.nc
+cdo eca_tn10p ERA5_Tmin_2004.nc ERA5_Tmin_10_2004.nc ERA5_TN10p_2004.nc
+cdo eca_tn10p ERA5_Tmin_2005.nc ERA5_Tmin_10_2005.nc ERA5_TN10p_2005.nc
+cdo eca_tn10p ERA5_Tmin_2006.nc ERA5_Tmin_10_2006.nc ERA5_TN10p_2006.nc
+cdo eca_tn10p ERA5_Tmin_2007.nc ERA5_Tmin_10_2007.nc ERA5_TN10p_2007.nc
+cdo eca_tn10p ERA5_Tmin_2008.nc ERA5_Tmin_10_2008.nc ERA5_TN10p_2008.nc
+cdo eca_tn10p ERA5_Tmin_2009.nc ERA5_Tmin_10_2009.nc ERA5_TN10p_2009.nc
+cdo eca_tn10p ERA5_Tmin_2010.nc ERA5_Tmin_10_2010.nc ERA5_TN10p_2010.nc
+cdo eca_tn10p ERA5_Tmin_2011.nc ERA5_Tmin_10_2011.nc ERA5_TN10p_2011.nc
+cdo eca_tn10p ERA5_Tmin_2012.nc ERA5_Tmin_10_2012.nc ERA5_TN10p_2012.nc
+cdo eca_tn10p ERA5_Tmin_2013.nc ERA5_Tmin_10_2013.nc ERA5_TN10p_2013.nc
+cdo eca_tn10p ERA5_Tmin_2014.nc ERA5_Tmin_10_2014.nc ERA5_TN10p_2014.nc
+cdo eca_tn10p ERA5_Tmin_2015.nc ERA5_Tmin_10_2015.nc ERA5_TN10p_2015.nc
+cdo eca_tn10p ERA5_Tmin_2016.nc ERA5_Tmin_10_2016.nc ERA5_TN10p_2016.nc
+cdo eca_tn10p ERA5_Tmin_2017.nc ERA5_Tmin_10_2017.nc ERA5_TN10p_2017.nc
+cdo eca_tn10p ERA5_Tmin_2018.nc ERA5_Tmin_10_2018.nc ERA5_TN10p_2018.nc
+cdo eca_tn10p ERA5_Tmin_2019.nc ERA5_Tmin_10_2019.nc ERA5_TN10p_2019.nc
+cdo mergetime ERA5_TN10p_1981.nc ERA5_TN10p_1982.nc ERA5_TN10p_1983.nc ERA5_TN10p_1984.nc ERA5_TN10p_1985.nc ERA5_TN10p_1986.nc ERA5_TN10p_1987.nc ERA5_TN10p_1988.nc ERA5_TN10p_1989.nc ERA5_TN10p1981-1989.nc
+cdo mergetime ERA5_TN10p_1990.nc ERA5_TN10p_1991.nc ERA5_TN10p_1992.nc ERA5_TN10p_1993.nc ERA5_TN10p_1994.nc ERA5_TN10p_1995.nc ERA5_TN10p_1996.nc ERA5_TN10p_1997.nc ERA5_TN10p_1998.nc ERA5_TN10p1990-1998.nc
+cdo mergetime ERA5_TN10p_1999.nc ERA5_TN10p_2000.nc ERA5_TN10p_2001.nc ERA5_TN10p_2002.nc ERA5_TN10p_2003.nc ERA5_TN10p_2004.nc ERA5_TN10p_2005.nc ERA5_TN10p_2006.nc ERA5_TN10p_2007.nc ERA5_TN10p1999-2007.nc
+cdo mergetime ERA5_TN10p_2008.nc ERA5_TN10p_2009.nc ERA5_TN10p_2010.nc ERA5_TN10p_2011.nc ERA5_TN10p_2012.nc ERA5_TN10p_2013.nc ERA5_TN10p_2014.nc ERA5_TN10p_2015.nc ERA5_TN10p_2016.nc ERA5_TN10p2008-2016.nc          
+cdo mergetime ERA5_TN10p_2017.nc ERA5_TN10p_2018.nc ERA5_TN10p_2019.nc ERA5_TN10p2017-2019.nc
+cdo mergetime ERA5_TN10p1981-1989.nc ERA5_TN10p1990-1998.nc ERA5_TN10p1999-2007.nc ERA5_TN10p2008-2016.nc ERA5_TN10p2017-2019.nc $DIR/ERA5_TN10p1981-2019.nc
+######### Power TN10p ###################
+#cdo -selyear,1981/2010 CPower_Tmin_daily1981-2019.nc Power_Tmin-daybase-1981-2010.nc
+cdo timpctl,10 Power_Tmin-daybase-1981-2010.nc -timmin CPower_Tmin_daily1981-2019.nc -timmin CPower_Tmin_daily1981-2019.nc Power_Tmin_10_Pctl10.nc
+cdo -add Power_Tmin_10_Pctl10.nc -sub CPower_Tmin_daily1981-2019.nc CPower_Tmin_daily1981-2019.nc Power_Tmin_10.nc
+#cdo splityear CPower_Tmin_daily1981-2019.nc Power_Tmin_
+cdo splityear Power_Tmin_10.nc Power_Tmin_10_
+cdo eca_tn10p Power_Tmin_1981.nc Power_Tmin_10_1981.nc Power_TN10p_1981.nc
+cdo eca_tn10p Power_Tmin_1982.nc Power_Tmin_10_1982.nc Power_TN10p_1982.nc
+cdo eca_tn10p Power_Tmin_1983.nc Power_Tmin_10_1983.nc Power_TN10p_1983.nc
+cdo eca_tn10p Power_Tmin_1984.nc Power_Tmin_10_1984.nc Power_TN10p_1984.nc
+cdo eca_tn10p Power_Tmin_1985.nc Power_Tmin_10_1985.nc Power_TN10p_1985.nc
+cdo eca_tn10p Power_Tmin_1986.nc Power_Tmin_10_1986.nc Power_TN10p_1986.nc
+cdo eca_tn10p Power_Tmin_1987.nc Power_Tmin_10_1987.nc Power_TN10p_1987.nc
+cdo eca_tn10p Power_Tmin_1988.nc Power_Tmin_10_1988.nc Power_TN10p_1988.nc
+cdo eca_tn10p Power_Tmin_1989.nc Power_Tmin_10_1989.nc Power_TN10p_1989.nc
+cdo eca_tn10p Power_Tmin_1990.nc Power_Tmin_10_1990.nc Power_TN10p_1990.nc
+cdo eca_tn10p Power_Tmin_1991.nc Power_Tmin_10_1991.nc Power_TN10p_1991.nc
+cdo eca_tn10p Power_Tmin_1992.nc Power_Tmin_10_1992.nc Power_TN10p_1992.nc
+cdo eca_tn10p Power_Tmin_1993.nc Power_Tmin_10_1993.nc Power_TN10p_1993.nc
+cdo eca_tn10p Power_Tmin_1994.nc Power_Tmin_10_1994.nc Power_TN10p_1994.nc
+cdo eca_tn10p Power_Tmin_1995.nc Power_Tmin_10_1995.nc Power_TN10p_1995.nc
+cdo eca_tn10p Power_Tmin_1996.nc Power_Tmin_10_1996.nc Power_TN10p_1996.nc
+cdo eca_tn10p Power_Tmin_1997.nc Power_Tmin_10_1997.nc Power_TN10p_1997.nc
+cdo eca_tn10p Power_Tmin_1998.nc Power_Tmin_10_1998.nc Power_TN10p_1998.nc
+cdo eca_tn10p Power_Tmin_1999.nc Power_Tmin_10_1999.nc Power_TN10p_1999.nc
+cdo eca_tn10p Power_Tmin_2000.nc Power_Tmin_10_2000.nc Power_TN10p_2000.nc
+cdo eca_tn10p Power_Tmin_2001.nc Power_Tmin_10_2001.nc Power_TN10p_2001.nc
+cdo eca_tn10p Power_Tmin_2002.nc Power_Tmin_10_2002.nc Power_TN10p_2002.nc
+cdo eca_tn10p Power_Tmin_2003.nc Power_Tmin_10_2003.nc Power_TN10p_2003.nc
+cdo eca_tn10p Power_Tmin_2004.nc Power_Tmin_10_2004.nc Power_TN10p_2004.nc
+cdo eca_tn10p Power_Tmin_2005.nc Power_Tmin_10_2005.nc Power_TN10p_2005.nc
+cdo eca_tn10p Power_Tmin_2006.nc Power_Tmin_10_2006.nc Power_TN10p_2006.nc
+cdo eca_tn10p Power_Tmin_2007.nc Power_Tmin_10_2007.nc Power_TN10p_2007.nc
+cdo eca_tn10p Power_Tmin_2008.nc Power_Tmin_10_2008.nc Power_TN10p_2008.nc
+cdo eca_tn10p Power_Tmin_2009.nc Power_Tmin_10_2009.nc Power_TN10p_2009.nc
+cdo eca_tn10p Power_Tmin_2010.nc Power_Tmin_10_2010.nc Power_TN10p_2010.nc
+cdo eca_tn10p Power_Tmin_2011.nc Power_Tmin_10_2011.nc Power_TN10p_2011.nc
+cdo eca_tn10p Power_Tmin_2012.nc Power_Tmin_10_2012.nc Power_TN10p_2012.nc
+cdo eca_tn10p Power_Tmin_2013.nc Power_Tmin_10_2013.nc Power_TN10p_2013.nc
+cdo eca_tn10p Power_Tmin_2014.nc Power_Tmin_10_2014.nc Power_TN10p_2014.nc
+cdo eca_tn10p Power_Tmin_2015.nc Power_Tmin_10_2015.nc Power_TN10p_2015.nc
+cdo eca_tn10p Power_Tmin_2016.nc Power_Tmin_10_2016.nc Power_TN10p_2016.nc
+cdo eca_tn10p Power_Tmin_2017.nc Power_Tmin_10_2017.nc Power_TN10p_2017.nc
+cdo eca_tn10p Power_Tmin_2018.nc Power_Tmin_10_2018.nc Power_TN10p_2018.nc
+cdo eca_tn10p Power_Tmin_2019.nc Power_Tmin_10_2019.nc Power_TN10p_2019.nc
+cdo mergetime Power_TN10p_1981.nc Power_TN10p_1982.nc Power_TN10p_1983.nc Power_TN10p_1984.nc Power_TN10p_1985.nc Power_TN10p_1986.nc Power_TN10p_1987.nc Power_TN10p_1988.nc Power_TN10p_1989.nc Power_TN10p1981-1989.nc
+cdo mergetime Power_TN10p_1990.nc Power_TN10p_1991.nc Power_TN10p_1992.nc Power_TN10p_1993.nc Power_TN10p_1994.nc Power_TN10p_1995.nc Power_TN10p_1996.nc Power_TN10p_1997.nc Power_TN10p_1998.nc Power_TN10p1990-1998.nc
+cdo mergetime Power_TN10p_1999.nc Power_TN10p_2000.nc Power_TN10p_2001.nc Power_TN10p_2002.nc Power_TN10p_2003.nc Power_TN10p_2004.nc Power_TN10p_2005.nc Power_TN10p_2006.nc Power_TN10p_2007.nc Power_TN10p1999-2007.nc
+cdo mergetime Power_TN10p_2008.nc Power_TN10p_2009.nc Power_TN10p_2010.nc Power_TN10p_2011.nc Power_TN10p_2012.nc Power_TN10p_2013.nc Power_TN10p_2014.nc Power_TN10p_2015.nc Power_TN10p_2016.nc Power_TN10p2008-2016.nc          
+cdo mergetime Power_TN10p_2017.nc Power_TN10p_2018.nc Power_TN10p_2019.nc Power_TN10p2017-2019.nc
+cdo mergetime Power_TN10p1981-1989.nc Power_TN10p1990-1998.nc Power_TN10p1999-2007.nc Power_TN10p2008-2016.nc Power_TN10p2017-2019.nc $DIR/Power_TN10p1981-2019.nc
+########### CFSR TN10p ############################
+#cdo -selyear,1981/2010 CCFSR_Tmin_daily1981-2019.nc CFSR_Tmin-daybase-1981-2010.nc
+cdo timpctl,10 CFSR_Tmin-daybase-1981-2010.nc -timmin CCFSR_Tmin_daily1981-2019.nc -timmin CCFSR_Tmin_daily1981-2019.nc CFSR_Tmin_10_Pctl10.nc
+cdo -add CFSR_Tmin_10_Pctl10.nc -sub CCFSR_Tmin_daily1981-2019.nc CCFSR_Tmin_daily1981-2019.nc CFSR_Tmin_10.nc
+#cdo splityear CCFSR_Tmin_daily1981-2019.nc CFSR_Tmin_
+cdo splityear CFSR_Tmin_10.nc CFSR_Tmin_10_
+cdo eca_tn10p CFSR_Tmin_1981.nc CFSR_Tmin_10_1981.nc CFSR_TN10p_1981.nc
+cdo eca_tn10p CFSR_Tmin_1982.nc CFSR_Tmin_10_1982.nc CFSR_TN10p_1982.nc
+cdo eca_tn10p CFSR_Tmin_1983.nc CFSR_Tmin_10_1983.nc CFSR_TN10p_1983.nc
+cdo eca_tn10p CFSR_Tmin_1984.nc CFSR_Tmin_10_1984.nc CFSR_TN10p_1984.nc
+cdo eca_tn10p CFSR_Tmin_1985.nc CFSR_Tmin_10_1985.nc CFSR_TN10p_1985.nc
+cdo eca_tn10p CFSR_Tmin_1986.nc CFSR_Tmin_10_1986.nc CFSR_TN10p_1986.nc
+cdo eca_tn10p CFSR_Tmin_1987.nc CFSR_Tmin_10_1987.nc CFSR_TN10p_1987.nc
+cdo eca_tn10p CFSR_Tmin_1988.nc CFSR_Tmin_10_1988.nc CFSR_TN10p_1988.nc
+cdo eca_tn10p CFSR_Tmin_1989.nc CFSR_Tmin_10_1989.nc CFSR_TN10p_1989.nc
+cdo eca_tn10p CFSR_Tmin_1990.nc CFSR_Tmin_10_1990.nc CFSR_TN10p_1990.nc
+cdo eca_tn10p CFSR_Tmin_1991.nc CFSR_Tmin_10_1991.nc CFSR_TN10p_1991.nc
+cdo eca_tn10p CFSR_Tmin_1992.nc CFSR_Tmin_10_1992.nc CFSR_TN10p_1992.nc
+cdo eca_tn10p CFSR_Tmin_1993.nc CFSR_Tmin_10_1993.nc CFSR_TN10p_1993.nc
+cdo eca_tn10p CFSR_Tmin_1994.nc CFSR_Tmin_10_1994.nc CFSR_TN10p_1994.nc
+cdo eca_tn10p CFSR_Tmin_1995.nc CFSR_Tmin_10_1995.nc CFSR_TN10p_1995.nc
+cdo eca_tn10p CFSR_Tmin_1996.nc CFSR_Tmin_10_1996.nc CFSR_TN10p_1996.nc
+cdo eca_tn10p CFSR_Tmin_1997.nc CFSR_Tmin_10_1997.nc CFSR_TN10p_1997.nc
+cdo eca_tn10p CFSR_Tmin_1998.nc CFSR_Tmin_10_1998.nc CFSR_TN10p_1998.nc
+cdo eca_tn10p CFSR_Tmin_1999.nc CFSR_Tmin_10_1999.nc CFSR_TN10p_1999.nc
+cdo eca_tn10p CFSR_Tmin_2000.nc CFSR_Tmin_10_2000.nc CFSR_TN10p_2000.nc
+cdo eca_tn10p CFSR_Tmin_2001.nc CFSR_Tmin_10_2001.nc CFSR_TN10p_2001.nc
+cdo eca_tn10p CFSR_Tmin_2002.nc CFSR_Tmin_10_2002.nc CFSR_TN10p_2002.nc
+cdo eca_tn10p CFSR_Tmin_2003.nc CFSR_Tmin_10_2003.nc CFSR_TN10p_2003.nc
+cdo eca_tn10p CFSR_Tmin_2004.nc CFSR_Tmin_10_2004.nc CFSR_TN10p_2004.nc
+cdo eca_tn10p CFSR_Tmin_2005.nc CFSR_Tmin_10_2005.nc CFSR_TN10p_2005.nc
+cdo eca_tn10p CFSR_Tmin_2006.nc CFSR_Tmin_10_2006.nc CFSR_TN10p_2006.nc
+cdo eca_tn10p CFSR_Tmin_2007.nc CFSR_Tmin_10_2007.nc CFSR_TN10p_2007.nc
+cdo eca_tn10p CFSR_Tmin_2008.nc CFSR_Tmin_10_2008.nc CFSR_TN10p_2008.nc
+cdo eca_tn10p CFSR_Tmin_2009.nc CFSR_Tmin_10_2009.nc CFSR_TN10p_2009.nc
+cdo eca_tn10p CFSR_Tmin_2010.nc CFSR_Tmin_10_2010.nc CFSR_TN10p_2010.nc
+cdo eca_tn10p CFSR_Tmin_2011.nc CFSR_Tmin_10_2011.nc CFSR_TN10p_2011.nc
+cdo eca_tn10p CFSR_Tmin_2012.nc CFSR_Tmin_10_2012.nc CFSR_TN10p_2012.nc
+cdo eca_tn10p CFSR_Tmin_2013.nc CFSR_Tmin_10_2013.nc CFSR_TN10p_2013.nc
+cdo eca_tn10p CFSR_Tmin_2014.nc CFSR_Tmin_10_2014.nc CFSR_TN10p_2014.nc
+cdo eca_tn10p CFSR_Tmin_2015.nc CFSR_Tmin_10_2015.nc CFSR_TN10p_2015.nc
+cdo eca_tn10p CFSR_Tmin_2016.nc CFSR_Tmin_10_2016.nc CFSR_TN10p_2016.nc
+cdo eca_tn10p CFSR_Tmin_2017.nc CFSR_Tmin_10_2017.nc CFSR_TN10p_2017.nc
+cdo eca_tn10p CFSR_Tmin_2018.nc CFSR_Tmin_10_2018.nc CFSR_TN10p_2018.nc
+cdo eca_tn10p CFSR_Tmin_2019.nc CFSR_Tmin_10_2019.nc CFSR_TN10p_2019.nc
+cdo mergetime CFSR_TN10p_1981.nc CFSR_TN10p_1982.nc CFSR_TN10p_1983.nc CFSR_TN10p_1984.nc CFSR_TN10p_1985.nc CFSR_TN10p_1986.nc CFSR_TN10p_1987.nc CFSR_TN10p_1988.nc CFSR_TN10p_1989.nc CFSR_TN10p1981-1989.nc
+cdo mergetime CFSR_TN10p_1990.nc CFSR_TN10p_1991.nc CFSR_TN10p_1992.nc CFSR_TN10p_1993.nc CFSR_TN10p_1994.nc CFSR_TN10p_1995.nc CFSR_TN10p_1996.nc CFSR_TN10p_1997.nc CFSR_TN10p_1998.nc CFSR_TN10p1990-1998.nc
+cdo mergetime CFSR_TN10p_1999.nc CFSR_TN10p_2000.nc CFSR_TN10p_2001.nc CFSR_TN10p_2002.nc CFSR_TN10p_2003.nc CFSR_TN10p_2004.nc CFSR_TN10p_2005.nc CFSR_TN10p_2006.nc CFSR_TN10p_2007.nc CFSR_TN10p1999-2007.nc
+cdo mergetime CFSR_TN10p_2008.nc CFSR_TN10p_2009.nc CFSR_TN10p_2010.nc CFSR_TN10p_2011.nc CFSR_TN10p_2012.nc CFSR_TN10p_2013.nc CFSR_TN10p_2014.nc CFSR_TN10p_2015.nc CFSR_TN10p_2016.nc CFSR_TN10p2008-2016.nc          
+cdo mergetime CFSR_TN10p_2017.nc CFSR_TN10p_2018.nc CFSR_TN10p_2019.nc CFSR_TN10p2017-2019.nc
+cdo mergetime CFSR_TN10p1981-1989.nc CFSR_TN10p1990-1998.nc CFSR_TN10p1999-2007.nc CFSR_TN10p2008-2016.nc CFSR_TN10p2017-2019.nc $DIR/CFSR_TN10p1981-2019.nc
+########################################################################
+
