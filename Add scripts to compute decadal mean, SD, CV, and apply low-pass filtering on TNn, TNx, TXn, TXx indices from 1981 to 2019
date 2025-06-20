@@ -1,0 +1,272 @@
+##################################################      
+############### Directory #######################    
+mkdir C:/cygwin64/home/dell/Decadal_Temp     
+mkdir C:/cygwin64/home/dell/standard_deviation     
+mkdir C:/cygwin64/home/dell/coefficient_of_variation     
+mkdir C:/cygwin64/home/dell/lowpass_filter     
+export DIR=C:/cygwin64/home/dell/Decadal_Temp     
+export DIR1=C:/cygwin64/home/dell/standard_deviation     
+export DIR2=C:/cygwin64/home/dell/coefficient_of_variation     
+export DIR3=C:/cygwin64/home/dell/lowpass_filter     
+#############################################################      
+#############################################################      
+##############    The Decadal Mean     ################ 
+###################   ERA5__TNn    #############
+cdo -timmean -selyear,1981/1990 ERA5__TNn.nc $DIR/ERA5_TNn_decade1981-1990.nc  
+cdo -timmean -selyear,1991/2000 ERA5__TNn.nc $DIR/ERA5_TNn_decade1991-2000.nc  
+cdo -timmean -selyear,2001/2010 ERA5__TNn.nc $DIR/ERA5_TNn_decade2001-2010.nc  
+cdo -timmean -selyear,2011/2019 ERA5__TNn.nc $DIR/ERA5_TNn_decade2011-2019.nc  
+###################     ERA5__TNx.nc     #############      
+cdo -timmean -selyear,1981/1990 ERA5__TNx.nc $DIR/ERA5_TNx_decade1981-1990.nc  
+cdo -timmean -selyear,1991/2000 ERA5__TNx.nc $DIR/ERA5_TNx_decade1991-2000.nc  
+cdo -timmean -selyear,2001/2010 ERA5__TNx.nc $DIR/ERA5_TNx_decade2001-2010.nc  
+cdo -timmean -selyear,2011/2019 ERA5__TNx.nc $DIR/ERA5_TNx_decade2011-2019.nc 
+###################   ERA5_TXn    #############
+cdo -timmean -selyear,1981/1990 ERA5_TXn.nc $DIR/ERA5_TXn_decade1981-1990.nc  
+cdo -timmean -selyear,1991/2000 ERA5_TXn.nc $DIR/ERA5_TXn_decade1991-2000.nc  
+cdo -timmean -selyear,2001/2010 ERA5_TXn.nc $DIR/ERA5_TXn_decade2001-2010.nc  
+cdo -timmean -selyear,2011/2019 ERA5_TXn.nc $DIR/ERA5_TXn_decade2011-2019.nc 
+###################     ERA5_TXx.nc     #############      
+cdo -timmean -selyear,1981/1990 ERA5_TXx.nc $DIR/ERA5_TXx_decade1981-1990.nc  
+cdo -timmean -selyear,1991/2000 ERA5_TXx.nc $DIR/ERA5_TXx_decade1991-2000.nc  
+cdo -timmean -selyear,2001/2010 ERA5_TXx.nc $DIR/ERA5_TXx_decade2001-2010.nc  
+cdo -timmean -selyear,2011/2019 ERA5_TXx.nc $DIR/ERA5_TXx_decade2011-2019.nc 
+###################   Power_TNn    #############      
+cdo -timmean -selyear,1981/1990 Power_TNn.nc $DIR/Power_TNn_decade1981-1990.nc  
+cdo -timmean -selyear,1991/2000 Power_TNn.nc $DIR/Power_TNn_decade1991-2000.nc  
+cdo -timmean -selyear,2001/2010 Power_TNn.nc $DIR/Power_TNn_decade2001-2010.nc  
+cdo -timmean -selyear,2011/2019 Power_TNn.nc $DIR/Power_TNn_decade2011-2019.nc  
+###################     Power_TNx     #############      
+cdo -timmean -selyear,1981/1990 Power_TNx.nc $DIR/Power_TNx_decade1981-1990.nc  
+cdo -timmean -selyear,1991/2000 Power_TNx.nc $DIR/Power_TNx_decade1991-2000.nc  
+cdo -timmean -selyear,2001/2010 Power_TNx.nc $DIR/Power_TNx_decade2001-2010.nc  
+cdo -timmean -selyear,2011/2019 Power_TNx.nc $DIR/Power_TNx_decade2011-2019.nc  
+###################   Power_TXn    #############      
+cdo -timmean -selyear,1981/1990 Power_TXn.nc $DIR/Power_TXn_decade1981-1990.nc  
+cdo -timmean -selyear,1991/2000 Power_TXn.nc $DIR/Power_TXn_decade1991-2000.nc  
+cdo -timmean -selyear,2001/2010 Power_TXn.nc $DIR/Power_TXn_decade2001-2010.nc  
+cdo -timmean -selyear,2011/2019 Power_TXn.nc $DIR/Power_TXn_decade2011-2019.nc 
+###################     Power_TXx     #############      
+cdo -timmean -selyear,1981/1990 Power_TXx.nc $DIR/Power_TXx_decade1981-1990.nc  
+cdo -timmean -selyear,1991/2000 Power_TXx.nc $DIR/Power_TXx_decade1991-2000.nc  
+cdo -timmean -selyear,2001/2010 Power_TXx.nc $DIR/Power_TXx_decade2001-2010.nc  
+cdo -timmean -selyear,2011/2019 Power_TXx.nc $DIR/Power_TXx_decade2011-2019.nc  
+###################   CFSR_TNn   c#############      
+cdo -timmean -selyear,1981/1990 CFSR_TNn.nc $DIR/CFSR_TNn_decade1981-1990.nc  
+cdo -timmean -selyear,1991/2000 CFSR_TNn.nc $DIR/CFSR_TNn_decade1991-2000.nc  
+cdo -timmean -selyear,2001/2010 CFSR_TNn.nc $DIR/CFSR_TNn_decade2001-2010.nc  
+cdo -timmean -selyear,2011/2019 CFSR_TNn.nc $DIR/CFSR_TNn_decade2011-2019.nc  
+ ###################    CFSR_TNx     ############      
+cdo -timmean -selyear,1981/1990 CFSR_TNx.nc $DIR/CFSR_TNx_decade1981-1990.nc  
+cdo -timmean -selyear,1991/2000 CFSR_TNx.nc $DIR/CFSR_TNx_decade1991-2000.nc  
+cdo -timmean -selyear,2001/2010 CFSR_TNx.nc $DIR/CFSR_TNx_decade2001-2010.nc  
+cdo -timmean -selyear,2011/2019 CFSR_TNx.nc $DIR/CFSR_TNx_decade2011-2019.nc 
+###################   CFSR_TXn   c#############      
+cdo -timmean -selyear,1981/1990 CFSR_TXn.nc $DIR/CFSR_TXn_decade1981-1990.nc  
+cdo -timmean -selyear,1991/2000 CFSR_TXn.nc $DIR/CFSR_TXn_decade1991-2000.nc  
+cdo -timmean -selyear,2001/2010 CFSR_TXn.nc $DIR/CFSR_TXn_decade2001-2010.nc  
+cdo -timmean -selyear,2011/2019 CFSR_TXn.nc $DIR/CFSR_TXn_decade2011-2019.nc  
+###################    CFSR_TXx     ############      
+cdo -timmean -selyear,1981/1990 CFSR_TXx.nc $DIR/CFSR_TXx_decade1981-1990.nc  
+cdo -timmean -selyear,1991/2000 CFSR_TXx.nc $DIR/CFSR_TXx_decade1991-2000.nc  
+cdo -timmean -selyear,2001/2010 CFSR_TXx.nc $DIR/CFSR_TXx_decade2001-2010.nc  
+cdo -timmean -selyear,2011/2019 CFSR_TXx.nc $DIR/CFSR_TXx_decade2011-2019.nc 
+ 
+#############################################################      
+#############################################################      
+############## The standard deviation (SD) ################ 
+###################    ERA5__TNn    ############# 
+cdo -timstd -selyear,1981/1990 ERA5__TNn.nc $DIR1/ERA5_TNn_STD1981-1990.nc
+cdo -timstd -selyear,1991/2000 ERA5__TNn.nc $DIR1/ERA5_TNn_STD1991-2000.nc
+cdo -timstd -selyear,2001/2010 ERA5__TNn.nc $DIR1/ERA5_TNn_STD2001-2010.nc
+cdo -timstd -selyear,2011/2019 ERA5__TNn.nc $DIR1/ERA5_TNn_STD2011-2019.nc
+###################   ERA5__TNx   #############      
+cdo -timstd -selyear,1981/1990 ERA5__TNx.nc $DIR1/ERA5_TNx_STD1981-1990.nc
+cdo -timstd -selyear,1991/2000 ERA5__TNx.nc $DIR1/ERA5_TNx_STD1991-2000.nc
+cdo -timstd -selyear,2001/2010 ERA5__TNx.nc $DIR1/ERA5_TNx_STD2001-2010.nc
+cdo -timstd -selyear,2011/2019 ERA5__TNx.nc $DIR1/ERA5_TNx_STD2011-2019.nc
+###################    ERA5_TXn    ############# 
+cdo -timstd -selyear,1981/1990 ERA5_TXn.nc $DIR1/ERA5_TXn_STD1981-1990.nc
+cdo -timstd -selyear,1991/2000 ERA5_TXn.nc $DIR1/ERA5_TXn_STD1991-2000.nc
+cdo -timstd -selyear,2001/2010 ERA5_TXn.nc $DIR1/ERA5_TXn_STD2001-2010.nc
+cdo -timstd -selyear,2011/2019 ERA5_TXn.nc $DIR1/ERA5_TXn_STD2011-2019.nc
+###################   ERA5_TXx   #############      
+cdo -timstd -selyear,1981/1990 ERA5_TXx.nc $DIR1/ERA5_TXx_STD1981-1990.nc
+cdo -timstd -selyear,1991/2000 ERA5_TXx.nc $DIR1/ERA5_TXx_STD1991-2000.nc
+cdo -timstd -selyear,2001/2010 ERA5_TXx.nc $DIR1/ERA5_TXx_STD2001-2010.nc
+cdo -timstd -selyear,2011/2019 ERA5_TXx.nc $DIR1/ERA5_TXx_STD2011-2019.nc
+###################  Power_TNn   #############      
+cdo -timstd -selyear,1981/1990 Power_TNn.nc $DIR1/Power_TNn_STD1981-1990.nc
+cdo -timstd -selyear,1991/2000 Power_TNn.nc $DIR1/Power_TNn_STD1991-2000.nc
+cdo -timstd -selyear,2001/2010 Power_TNn.nc $DIR1/Power_TNn_STD2001-2010.nc
+cdo -timstd -selyear,2011/2019 Power_TNn.nc $DIR1/Power_TNn_STD2011-2019.nc
+###################    Power_TNx    #############      
+cdo -timstd -selyear,1981/1990 Power_TNx.nc $DIR1/Power_TNx_STD1981-1990.nc
+cdo -timstd -selyear,1991/2000 Power_TNx.nc $DIR1/Power_TNx_STD1991-2000.nc
+cdo -timstd -selyear,2001/2010 Power_TNx.nc $DIR1/Power_TNx_STD2001-2010.nc
+cdo -timstd -selyear,2011/2019 Power_TNx.nc $DIR1/Power_TNx_STD2011-2019.nc
+###################  Power_TXn   #############      
+cdo -timstd -selyear,1981/1990 Power_TXn.nc $DIR1/Power_TXn_STD1981-1990.nc
+cdo -timstd -selyear,1991/2000 Power_TXn.nc $DIR1/Power_TXn_STD1991-2000.nc
+cdo -timstd -selyear,2001/2010 Power_TXn.nc $DIR1/Power_TXn_STD2001-2010.nc
+cdo -timstd -selyear,2011/2019 Power_TXn.nc $DIR1/Power_TXn_STD2011-2019.nc
+###################    Power_TXx    #############      
+cdo -timstd -selyear,1981/1990 Power_TXx.nc $DIR1/Power_TXx_STD1981-1990.nc
+cdo -timstd -selyear,1991/2000 Power_TXx.nc $DIR1/Power_TXx_STD1991-2000.nc
+cdo -timstd -selyear,2001/2010 Power_TXx.nc $DIR1/Power_TXx_STD2001-2010.nc
+cdo -timstd -selyear,2011/2019 Power_TXx.nc $DIR1/Power_TXx_STD2011-2019.nc
+###################    CFSR_TNn     #############      
+cdo -timstd -selyear,1981/1990 CFSR_TNn.nc $DIR1/CFSR_TNn_STD1981-1990.nc
+cdo -timstd -selyear,1991/2000 CFSR_TNn.nc $DIR1/CFSR_TNn_STD1991-2000.nc
+cdo -timstd -selyear,2001/2010 CFSR_TNn.nc $DIR1/CFSR_TNn_STD2001-2010.nc
+cdo -timstd -selyear,2011/2019 CFSR_TNn.nc $DIR1/CFSR_TNn_STD2011-2019.nc
+###################     CFSR_TNx     #############      
+cdo -timstd -selyear,1981/1990 CFSR_TNx.nc $DIR1/CFSR_TNx_STD1981-1990.nc
+cdo -timstd -selyear,1991/2000 CFSR_TNx.nc $DIR1/CFSR_TNx_STD1991-2000.nc
+cdo -timstd -selyear,2001/2010 CFSR_TNx.nc $DIR1/CFSR_TNx_STD2001-2010.nc
+cdo -timstd -selyear,2011/2019 CFSR_TNx.nc $DIR1/CFSR_TNx_STD2011-2019.nc
+###################    CFSR_TXn     #############      
+cdo -timstd -selyear,1981/1990 CFSR_TXn.nc $DIR1/CFSR_TXn_STD1981-1990.nc
+cdo -timstd -selyear,1991/2000 CFSR_TXn.nc $DIR1/CFSR_TXn_STD1991-2000.nc
+cdo -timstd -selyear,2001/2010 CFSR_TXn.nc $DIR1/CFSR_TXn_STD2001-2010.nc
+cdo -timstd -selyear,2011/2019 CFSR_TXn.nc $DIR1/CFSR_TXn_STD2011-2019.nc
+###################     CFSR_TXx     #############      
+cdo -timstd -selyear,1981/1990 CFSR_TXx.nc $DIR1/CFSR_TXx_STD1981-1990.nc
+cdo -timstd -selyear,1991/2000 CFSR_TXx.nc $DIR1/CFSR_TXx_STD1991-2000.nc
+cdo -timstd -selyear,2001/2010 CFSR_TXx.nc $DIR1/CFSR_TXx_STD2001-2010.nc
+cdo -timstd -selyear,2011/2019 CFSR_TXx.nc $DIR1/CFSR_TXx_STD2011-2019.nc
+#############################################################      
+#############################################################      
+########### The coefficient of variation (CV) #############
+###################     ERA5_TNn    #############      
+cdo div $DIR1/ERA5_TNn_STD1981-1990.nc $DIR/ERA5_TNn_decade1981-1990.nc $DIR2/ERA5_TNn_CV1981-1990.nc  
+cdo div $DIR1/ERA5_TNn_STD1991-2000.nc $DIR/ERA5_TNn_decade1991-2000.nc $DIR2/ERA5_TNn_CV1991-2000.nc  
+cdo div $DIR1/ERA5_TNn_STD2001-2010.nc $DIR/ERA5_TNn_decade2001-2010.nc $DIR2/ERA5_TNn_CV2001-2010.nc  
+cdo div $DIR1/ERA5_TNn_STD2011-2019.nc $DIR/ERA5_TNn_decade2011-2019.nc $DIR2/ERA5_TNn_CV2011-2019.nc  
+###################    ERA5__TNx     #############      
+cdo div $DIR1/ERA5_TNx_STD1981-1990.nc $DIR/ERA5_TNx_decade1981-1990.nc $DIR2/ERA5_TNx_CV1981-1990.nc  
+cdo div $DIR1/ERA5_TNx_STD1991-2000.nc $DIR/ERA5_TNx_decade1991-2000.nc $DIR2/ERA5_TNx_CV1991-2000.nc  
+cdo div $DIR1/ERA5_TNx_STD2001-2010.nc $DIR/ERA5_TNx_decade2001-2010.nc $DIR2/ERA5_TNx_CV2001-2010.nc  
+cdo div $DIR1/ERA5_TNx_STD2011-2019.nc $DIR/ERA5_TNx_decade2011-2019.nc $DIR2/ERA5_TNx_CV2011-2019.nc
+###################     ERA5_TXn    #############      
+cdo div $DIR1/ERA5_TXn_STD1981-1990.nc $DIR/ERA5_TXn_decade1981-1990.nc $DIR2/ERA5_TXn_CV1981-1990.nc  
+cdo div $DIR1/ERA5_TXn_STD1991-2000.nc $DIR/ERA5_TXn_decade1991-2000.nc $DIR2/ERA5_TXn_CV1991-2000.nc  
+cdo div $DIR1/ERA5_TXn_STD2001-2010.nc $DIR/ERA5_TXn_decade2001-2010.nc $DIR2/ERA5_TXn_CV2001-2010.nc  
+cdo div $DIR1/ERA5_TXn_STD2011-2019.nc $DIR/ERA5_TXn_decade2011-2019.nc $DIR2/ERA5_TXn_CV2011-2019.nc
+###################    ERA5_TXx     #############      
+cdo div $DIR1/ERA5_TXx_STD1981-1990.nc $DIR/ERA5_TXx_decade1981-1990.nc $DIR2/ERA5_TXx_CV1981-1990.nc  
+cdo div $DIR1/ERA5_TXx_STD1991-2000.nc $DIR/ERA5_TXx_decade1991-2000.nc $DIR2/ERA5_TXx_CV1991-2000.nc  
+cdo div $DIR1/ERA5_TXx_STD2001-2010.nc $DIR/ERA5_TXx_decade2001-2010.nc $DIR2/ERA5_TXx_CV2001-2010.nc  
+cdo div $DIR1/ERA5_TXx_STD2011-2019.nc $DIR/ERA5_TXx_decade2011-2019.nc $DIR2/ERA5_TXx_CV2011-2019.nc
+###################   Power_TNn    #############      
+cdo div $DIR1/Power_TNn_STD1981-1990.nc $DIR/Power_TNn_decade1981-1990.nc $DIR2/Power_TNn_CV1981-1990.nc  
+cdo div $DIR1/Power_TNn_STD1991-2000.nc $DIR/Power_TNn_decade1991-2000.nc $DIR2/Power_TNn_CV1991-2000.nc  
+cdo div $DIR1/Power_TNn_STD2001-2010.nc $DIR/Power_TNn_decade2001-2010.nc $DIR2/Power_TNn_CV2001-2010.nc  
+cdo div $DIR1/Power_TNn_STD2011-2019.nc $DIR/Power_TNn_decade2011-2019.nc $DIR2/Power_TNn_CV2011-2019.nc
+###################    Power_TNx      #############      
+cdo div $DIR1/Power_TNx_STD1981-1990.nc $DIR/Power_TNx_decade1981-1990.nc $DIR2/Power_TNx_CV1981-1990.nc  
+cdo div $DIR1/Power_TNx_STD1991-2000.nc $DIR/Power_TNx_decade1991-2000.nc $DIR2/Power_TNx_CV1991-2000.nc  
+cdo div $DIR1/Power_TNx_STD2001-2010.nc $DIR/Power_TNx_decade2001-2010.nc $DIR2/Power_TNx_CV2001-2010.nc  
+cdo div $DIR1/Power_TNx_STD2011-2019.nc $DIR/Power_TNx_decade2011-2019.nc $DIR2/Power_TNx_CV2011-2019.nc  
+###################   Power_TXn    #############      
+cdo div $DIR1/Power_TXn_STD1981-1990.nc $DIR/Power_TXn_decade1981-1990.nc $DIR2/Power_TXn_CV1981-1990.nc  
+cdo div $DIR1/Power_TXn_STD1991-2000.nc $DIR/Power_TXn_decade1991-2000.nc $DIR2/Power_TXn_CV1991-2000.nc  
+cdo div $DIR1/Power_TXn_STD2001-2010.nc $DIR/Power_TXn_decade2001-2010.nc $DIR2/Power_TXn_CV2001-2010.nc  
+cdo div $DIR1/Power_TXn_STD2011-2019.nc $DIR/Power_TXn_decade2011-2019.nc $DIR2/Power_TXn_CV2011-2019.nc
+###################    Power_TXx      #############      
+cdo div $DIR1/Power_TXx_STD1981-1990.nc $DIR/Power_TXx_decade1981-1990.nc $DIR2/Power_TXx_CV1981-1990.nc  
+cdo div $DIR1/Power_TXx_STD1991-2000.nc $DIR/Power_TXx_decade1991-2000.nc $DIR2/Power_TXx_CV1991-2000.nc  
+cdo div $DIR1/Power_TXx_STD2001-2010.nc $DIR/Power_TXx_decade2001-2010.nc $DIR2/Power_TXx_CV2001-2010.nc  
+cdo div $DIR1/Power_TXx_STD2011-2019.nc $DIR/Power_TXx_decade2011-2019.nc $DIR2/Power_TXx_CV2011-2019.nc
+###################   CFSR_TNn     #############      
+cdo div $DIR1/CFSR_TNn_STD1981-1990.nc $DIR/CFSR_TNn_decade1981-1990.nc $DIR2/CFSR_TNn_CV1981-1990.nc  
+cdo div $DIR1/CFSR_TNn_STD1991-2000.nc $DIR/CFSR_TNn_decade1991-2000.nc $DIR2/CFSR_TNn_CV1991-2000.nc  
+cdo div $DIR1/CFSR_TNn_STD2001-2010.nc $DIR/CFSR_TNn_decade2001-2010.nc $DIR2/CFSR_TNn_CV2001-2010.nc  
+cdo div $DIR1/CFSR_TNn_STD2011-2019.nc $DIR/CFSR_TNn_decade2011-2019.nc $DIR2/CFSR_TNn_CV2011-2019.nc  
+###################    CFSR_TNx      #############      
+cdo div $DIR1/CFSR_TNx_STD1981-1990.nc $DIR/CFSR_TNx_decade1981-1990.nc $DIR2/CFSR_TNx_CV1981-1990.nc  
+cdo div $DIR1/CFSR_TNx_STD1991-2000.nc $DIR/CFSR_TNx_decade1991-2000.nc $DIR2/CFSR_TNx_CV1991-2000.nc  
+cdo div $DIR1/CFSR_TNx_STD2001-2010.nc $DIR/CFSR_TNx_decade2001-2010.nc $DIR2/CFSR_TNx_CV2001-2010.nc  
+cdo div $DIR1/CFSR_TNx_STD2011-2019.nc $DIR/CFSR_TNx_decade2011-2019.nc $DIR2/CFSR_TNx_CV2011-2019.nc
+###################   CFSR_TXn     #############      
+cdo div $DIR1/CFSR_TXn_STD1981-1990.nc $DIR/CFSR_TXn_decade1981-1990.nc $DIR2/CFSR_TXn_CV1981-1990.nc  
+cdo div $DIR1/CFSR_TXn_STD1991-2000.nc $DIR/CFSR_TXn_decade1991-2000.nc $DIR2/CFSR_TXn_CV1991-2000.nc  
+cdo div $DIR1/CFSR_TXn_STD2001-2010.nc $DIR/CFSR_TXn_decade2001-2010.nc $DIR2/CFSR_TXn_CV2001-2010.nc  
+cdo div $DIR1/CFSR_TXn_STD2011-2019.nc $DIR/CFSR_TXn_decade2011-2019.nc $DIR2/CFSR_TXn_CV2011-2019.nc  
+###################    CFSR_TXx      #############      
+cdo div $DIR1/CFSR_TXx_STD1981-1990.nc $DIR/CFSR_TXx_decade1981-1990.nc $DIR2/CFSR_TXx_CV1981-1990.nc  
+cdo div $DIR1/CFSR_TXx_STD1991-2000.nc $DIR/CFSR_TXx_decade1991-2000.nc $DIR2/CFSR_TXx_CV1991-2000.nc  
+cdo div $DIR1/CFSR_TXx_STD2001-2010.nc $DIR/CFSR_TXx_decade2001-2010.nc $DIR2/CFSR_TXx_CV2001-2010.nc  
+cdo div $DIR1/CFSR_TXx_STD2011-2019.nc $DIR/CFSR_TXx_decade2011-2019.nc $DIR2/CFSR_TXx_CV2011-2019.nc  
+#############################################################      
+#############################################################      
+############# The time  lowpass filter ############## 
+###################   ERA5_TNn  #############   
+cdo -lowpass,1 -selyear,1981/1990 ERA5__TNn.nc $DIR3/ERA5_TNn_filter1981-1990.nc
+cdo -lowpass,1 -selyear,1991/2000 ERA5__TNn.nc $DIR3/ERA5_TNn_filter1991-2000.nc
+cdo -lowpass,1 -selyear,2001/2010 ERA5__TNn.nc $DIR3/ERA5_TNn_filter2001-2010.nc
+cdo -lowpass,1 -selyear,2011/2019 ERA5__TNn.nc $DIR3/ERA5_TNn_filter2011-2019.nc
+###################   ERA5__TNx     #############      
+cdo -lowpass,1 -selyear,1981/1990 ERA5__TNx.nc $DIR3/ERA5_TNx_filter1981-1990.nc
+cdo -lowpass,1 -selyear,1991/2000 ERA5__TNx.nc $DIR3/ERA5_TNx_filter1991-2000.nc
+cdo -lowpass,1 -selyear,2001/2010 ERA5__TNx.nc $DIR3/ERA5_TNx_filter2001-2010.nc
+cdo -lowpass,1 -selyear,2011/2019 ERA5__TNx.nc $DIR3/ERA5_TNx_filter2011-2019.nc
+###################   ERA5_TXn  #############   
+cdo -lowpass,1 -selyear,1981/1990 ERA5_TXn.nc $DIR3/ERA5_TXn_filter1981-1990.nc
+cdo -lowpass,1 -selyear,1991/2000 ERA5_TXn.nc $DIR3/ERA5_TXn_filter1991-2000.nc
+cdo -lowpass,1 -selyear,2001/2010 ERA5_TXn.nc $DIR3/ERA5_TXn_filter2001-2010.nc
+cdo -lowpass,1 -selyear,2011/2019 ERA5_TXn.nc $DIR3/ERA5_TXn_filter2011-2019.nc
+###################   ERA5_TXx     #############      
+cdo -lowpass,1 -selyear,1981/1990 ERA5_TXx.nc $DIR3/ERA5_TXx_filter1981-1990.nc
+cdo -lowpass,1 -selyear,1991/2000 ERA5_TXx.nc $DIR3/ERA5_TXx_filter1991-2000.nc
+cdo -lowpass,1 -selyear,2001/2010 ERA5_TXx.nc $DIR3/ERA5_TXx_filter2001-2010.nc
+cdo -lowpass,1 -selyear,2011/2019 ERA5_TXx.nc $DIR3/ERA5_TXx_filter2011-2019.nc
+####  ERROR in POWER DATA as follow 
+# cdo    lowpass (Abort): Missing value support for operators in module Filter not added yet! ##### 
+# So we will apply the following 
+cdo setmisstoc,0 Power_TNn.nc Power_TNn1.nc
+cdo setmisstoc,0 Power_TNx.nc Power_TNx1.nc
+cdo setmisstoc,0 Power_TXn.nc Power_TXn1.nc
+cdo setmisstoc,0 Power_TXx.nc Power_TXx1.nc
+###################    Power_TNn    #############
+cdo -lowpass,1 -selyear,1981/1990 Power_TNn1.nc $DIR3/Power_TNn_filter1981-1990.nc
+cdo -lowpass,1 -selyear,1991/2000 Power_TNn1.nc $DIR3/Power_TNn_filter1991-2000.nc
+cdo -lowpass,1 -selyear,2001/2010 Power_TNn1.nc $DIR3/Power_TNn_filter2001-2010.nc
+cdo -lowpass,1 -selyear,2011/2019 Power_TNn1.nc $DIR3/Power_TNn_filter2011-2019.nc
+###################     Power_TNx     #############      
+cdo -lowpass,1 -selyear,1981/1990 Power_TNx1.nc $DIR3/Power_TNx_filter1981-1990.nc
+cdo -lowpass,1 -selyear,1991/2000 Power_TNx1.nc $DIR3/Power_TNx_filter1991-2000.nc
+cdo -lowpass,1 -selyear,2001/2010 Power_TNx1.nc $DIR3/Power_TNx_filter2001-2010.nc
+cdo -lowpass,1 -selyear,2011/2019 Power_TNx1.nc $DIR3/Power_TNx_filter2011-2019.nc
+###################    Power_TXn    #############      
+cdo -lowpass,1 -selyear,1981/1990 Power_TXn1.nc $DIR3/Power_TXn_filter1981-1990.nc
+cdo -lowpass,1 -selyear,1991/2000 Power_TXn1.nc $DIR3/Power_TXn_filter1991-2000.nc
+cdo -lowpass,1 -selyear,2001/2010 Power_TXn1.nc $DIR3/Power_TXn_filter2001-2010.nc
+cdo -lowpass,1 -selyear,2011/2019 Power_TXn1.nc $DIR3/Power_TXn_filter2011-2019.nc
+###################     Power_TXx     #############      
+cdo -lowpass,1 -selyear,1981/1990 Power_TXx1.nc $DIR3/Power_TXx_filter1981-1990.nc
+cdo -lowpass,1 -selyear,1991/2000 Power_TXx1.nc $DIR3/Power_TXx_filter1991-2000.nc
+cdo -lowpass,1 -selyear,2001/2010 Power_TXx1.nc $DIR3/Power_TXx_filter2001-2010.nc
+cdo -lowpass,1 -selyear,2011/2019 Power_TXx1.nc $DIR3/Power_TXx_filter2011-2019.nc
+###################   CFSR_TNn    #############      
+cdo -lowpass,1 -selyear,1981/1990 CFSR_TNn.nc $DIR3/CFSR_TNn_filter1981-1990.nc
+cdo -lowpass,1 -selyear,1991/2000 CFSR_TNn.nc $DIR3/CFSR_TNn_filter1991-2000.nc
+cdo -lowpass,1 -selyear,2001/2010 CFSR_TNn.nc $DIR3/CFSR_TNn_filter2001-2010.nc
+cdo -lowpass,1 -selyear,2011/2019 CFSR_TNn.nc $DIR3/CFSR_TNn_filter2011-2019.nc
+###################     CFSR_TNx       #############      
+cdo -lowpass,1 -selyear,1981/1990 CFSR_TNx.nc $DIR3/CFSR_TNx_filter1981-1990.nc
+cdo -lowpass,1 -selyear,1991/2000 CFSR_TNx.nc $DIR3/CFSR_TNx_filter1991-2000.nc
+cdo -lowpass,1 -selyear,2001/2010 CFSR_TNx.nc $DIR3/CFSR_TNx_filter2001-2010.nc
+cdo -lowpass,1 -selyear,2011/2019 CFSR_TNx.nc $DIR3/CFSR_TNx_filter2011-2019.nc
+###################   CFSR_TXn    #############      
+cdo -lowpass,1 -selyear,1981/1990 CFSR_TXn.nc $DIR3/CFSR_TXn_filter1981-1990.nc
+cdo -lowpass,1 -selyear,1991/2000 CFSR_TXn.nc $DIR3/CFSR_TXn_filter1991-2000.nc
+cdo -lowpass,1 -selyear,2001/2010 CFSR_TXn.nc $DIR3/CFSR_TXn_filter2001-2010.nc
+cdo -lowpass,1 -selyear,2011/2019 CFSR_TXn.nc $DIR3/CFSR_TXn_filter2011-2019.nc
+###################     CFSR_TXx       #############      
+cdo -lowpass,1 -selyear,1981/1990 CFSR_TXx.nc $DIR3/CFSR_TXx_filter1981-1990.nc
+cdo -lowpass,1 -selyear,1991/2000 CFSR_TXx.nc $DIR3/CFSR_TXx_filter1991-2000.nc
+cdo -lowpass,1 -selyear,2001/2010 CFSR_TXx.nc $DIR3/CFSR_TXx_filter2001-2010.nc
+cdo -lowpass,1 -selyear,2011/2019 CFSR_TXx.nc $DIR3/CFSR_TXx_filter2011-2019.nc
+
+###############################################################################################################################   
